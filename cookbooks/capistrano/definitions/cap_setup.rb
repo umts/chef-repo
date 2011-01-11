@@ -23,15 +23,14 @@ define :cap_setup, :path => nil, :owner => "root", :group => "root", :appowner =
   directory params[:path] do
     owner params[:owner]
     group params[:group]
-    mode 0755
+    mode "2755"
   end
   
-  # after chef-174 fixed, change mode to 2775
   %w{ releases shared }.each do |dir|
     directory "#{params[:path]}/#{dir}" do
       owner params[:owner]
       group params[:group]
-      mode 0775
+      mode "2775"
     end
   end
   
@@ -39,7 +38,7 @@ define :cap_setup, :path => nil, :owner => "root", :group => "root", :appowner =
     directory "#{params[:path]}/shared/#{dir}" do
       owner params[:appowner]
       group params[:group]
-      mode 0775
+      mode "2775"
     end
   end  
   
