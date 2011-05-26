@@ -1,0 +1,58 @@
+{
+  "id": "round-two",
+  "server_roles": [
+    "round-two"
+  ],
+  "type": {
+    "round-two": [
+      "rails",
+      "passenger_apache2"
+    ]
+  },
+  "database_master_role": [
+    "round-two-database-master"
+  ],
+  "repository": "git@transit-dev.admin.umass.edu:round-two/round-two.git",
+  "revision": {
+    "production": "live",
+    "development": "master"
+  },
+  "force": {
+    "production": "false",
+    "development": "false"
+  },
+  "migrate": {
+    "production": "false",
+    "development": "true"
+  },
+  "databases": {
+    "production": {
+      "reconnect": "true",
+      "encoding": "utf8",
+      "username": "round-two",
+      "adapter": "mysql",
+      "password": "awesome_password",
+      "database": "round-two_production"
+    },
+    "development": {
+      "reconnect": "true",
+      "encoding": "utf8",
+      "username": "root",
+      "adapter": "mysql",
+      "password": "",
+      "database": "round-two_development"
+    }
+  },
+  "mysql_root_password": {
+    "production": "password for the root user in mysql",
+    "development": "",
+
+  },
+  "deploy_key": "-----BEGIN RSA PRIVATE KEY-----\nMIIEogIBAAKCAQEAmhZa1ITeTz6LVbSRgUhZPaxlsmPXw1jMNHHfd6Mrz+csLrPT\n5CsvqeERchQhhJT9it2y3a+Q64ZhE26jM1WlnhWI5+6XXm9h4/wTthedXCcg6yIt\n5m5My5i0Z6aJd0ixZuW18MGqsi3gIQqH8T0b6BF1nJXLDLjq3dMjWSDspSRNVNk7\noVSguuJC92TcevMBJZ5h5e3XN4J7EJbUMT7YXO37NnXii6i85HLMy1aQEEed1YJW\nn0Pe0a0y+JJY07Av2M9JXSU8WIK/8ee4tAzOOr5t4fSFDsFSCtP+zMIA4q8e1zka\nV93nDP9U/bb+FJ/85B9uvU/OXBP2x3eQ88+WwQIBIwKCAQBK16h12iLWCG+QBz9c\nDTKo7VX3j5SvVwQZeSNl/swjJyQWrx3GmKIfUA/JsgGmzAYe4LX2pbtrFWJZ5Uf0\nXMzJIGcRkSTzWqvjw5SLpRHq7m8THzrdo0nfO4rTQkLE6Msx+ouSMi5Wi0+bBR11\nLE9iFxveV2Kfx4gFV+yZAVz/wGvwKGUwSPTKtN0a53u/DYUCzoBIAZZWFBnFiGxz\nFL2f7h2slby+8PducV3niP2ILaR8bueujmmznb5IRecCsXJeCyHz7hziGR/31Zh7\nHPmHbNiVhyK1BIwh8WLigQvjmvSzYsbM/SqHEIuo0lCWoQ9Udf9c7gVvnu8FKCkR\nnsxnAoGBAMckywvf0O8gq9xemcVC0DpgN/rT5GqhRpWL5aHIl/vk8FUNwkJqtzr1\ngAs0Yo2jPYRsjfTyLu4xDVo3+6fuhPu5LgjfTXjr/ErQ0B/rSTo8ICnrmwyt8yKP\n/oOeCQrjmCo39wlLuwRR24TWCB67ZAm09aBx2CWgb4Ya4iKk3UTLAoGBAMYUb7nH\nhBP44Cbo7oHb9+IZ+X0UYIJde+yxxYBOizfyfNJ6Fe5bl/z8gdMUnbw2jgL/W1eB\n77ynTAWzUhGFRWbHbDbS7Yf1YcnmnBOPD3QkCXb+u7hzprSeXPrj64MqfZNqK2ix\nZPSWAb+t/d8UDnlFCbF9FSUSEe38Uc519q0jAoGBAJmgClmeB5PmAOvT8vdCK5q/\nQSCU1MdJNnNdSr6iDthC5UjtW1fOqpsyahdFqxzOYqf7+HshOiV2TCEGnZAtB4Bb\npytqbvbh7oLbmT0x2WdwNhG1wMCjcmsen8SefAEV+QqgM5l071sak2Z5OXbLEqhn\nBqBX0qCu9vJsgo/BAnblAoGBAIfTf8/ZRJ/7HVyCd6mA5H3IqxPwtzTSY5r9jr5h\nvozDiMrXX37fuK158p9emAwIJt175tzrYo/9sHjv/cLfCwSmAQ+mlD/4uBVq7q5T\neE+jrrf/IaMNeaBsl4d3t2/in0CDUPdVEgbNQwcYOQ3/H94gtjCQSQN6GuxVP2kA\nbqKbAoGAeS6Y8qRWSoc4bBzcNlR2ElPDqnWMBmTaZOh6nr39iz3wAA8UEff6H96O\nwH/t77vJU/H91nVVrb93iz+mIzErNq7xrlp+p/Yn6lWjbFORvLJDRPT1ustAbKUk\n4OftFZ49fqL27349h6oEQ/dkKOiSA/sPNev50313kv93fD3cCSU=\n-----END RSA PRIVATE KEY-----",
+  "deploy_to": "/srv/round-two",
+  "owner": "apache",
+  "group": "wheel",
+  "gems": {
+    "bundler"
+  }
+}
