@@ -1,5 +1,5 @@
 current_dir =            File.dirname(__FILE__)
-user =                   ENV['OPSCODE_USER'] || ENV['USER']
+user =                   ENV['CHEF_SERVER_USER'] || ENV['USER']
 orgname =                ENV['ORGNAME'] || 'umts'
 
 log_level                :info
