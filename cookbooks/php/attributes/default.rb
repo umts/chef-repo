@@ -1,8 +1,9 @@
 #
+# Author:: Seth Chisamore (<schisamo@opscode.com>)
 # Cookbook Name:: php
-# Attributes:: php
+# Attribute:: default
 #
-# Copyright 2008-2009, Opscode, Inc.
+# Copyright 2011, Opscode, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,12 +18,68 @@
 # limitations under the License.
 #
 
-# Where the various parts of php5 are
-case platform
-when "redhat","centos","fedora","suse"
-  set[:php][:dir]     = "/etc/php.d"
-when "debian","ubuntu"
-  set[:php][:dir]     = "/etc/php/conf.d"
+lib_dir = kernel['machine'] =~ /x86_64/ ? 'lib64' : 'lib'
+
+default['php']['install_method'] = 'package'
+
+case node["platform"]
+when "centos", "redhat", "fedora"
+  default['php']['conf_dir']      = '/etc'
+  default['php']['ext_conf_dir']  = '/etc/php.d'
+  default['php']['fpm_user']      = 'nobody'
+  default['php']['fpm_group']     = 'nobody'
+  default['php']['ext_dir']       = "/usr/#{lib_dir}/php/modules"
+when "debian", "ubuntu"
+  default['php']['conf_dir']      = '/etc/php5/cli'
+  default['php']['ext_conf_dir']  = '/etc/php5/conf.d'
+  default['php']['fpm_user']      = 'www-data'
+  default['php']['fpm_group']     = 'www-data'
 else
-  set[:php][:dir]     = "/etc/php.d"
+  default['php']['conf_dir']      = '/etc/php5/cli'
+  default['php']['ext_conf_dir']  = '/etc/php5/conf.d'
+  default['php']['fpm_user']      = 'www-data'
+  default['php']['fpm_group']     = 'www-data'
 end
+
+default['php']['url'] = 'http://us.php.net/distributions'
+default['php']['version'] = '5.3.5'
+default['php']['checksum'] = 'a25ddae6a59d7345bcbb69ef2517784f56c2069af663ae4611e580cbdec77e22'
+default['php']['prefix_dir'] = '/usr/local'
+
+default['php']['configure_options'] = %W{--prefix=#{php['prefix_dir']}
+                                          --with-libdir=#{lib_dir}
+                                          --with-config-file-path=#{php['conf_dir']}
+                                          --with-config-file-scan-dir=#{php['ext_conf_dir']}
+                                          --with-pear
+                                          --enable-fpm
+                                          --with-fpm-user=#{php['fpm_user']}
+                                          --with-fpm-group=#{php['fpm_group']}
+                                          --with-zlib
+                                          --with-openssl
+                                          --with-kerberos
+                                          --with-bz2
+                                          --with-curl
+                                          --enable-ftp
+                                          --enable-zip
+                                          --enable-exif
+                                          --with-gd
+                                          --enable-gd-native-ttf
+                                          --with-gettext
+                                          --with-gmp
+                                          --with-mhash
+                                          --with-iconv
+                                          --with-imap
+                                          --with-imap-ssl
+                                          --enable-sockets
+                                          --enable-soap
+                                          --with-xmlrpc
+                                          --with-libevent-dir
+                                          --with-mcrypt
+                                          --enable-mbstring
+                                          --with-t1lib
+                                          --with-mysql
+                                          --with-mysqli=/usr/bin/mysql_config
+                                          --with-mysql-sock
+                                          --with-sqlite3
+                                          --with-pdo-mysql
+                                          --with-pdo-sqlite}
