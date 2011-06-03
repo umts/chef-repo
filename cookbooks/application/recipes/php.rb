@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: application
-# Recipe:: django
+# Recipe:: php
 #
 # Copyright 2011, Opscode, Inc.
 #
@@ -19,20 +19,38 @@
 
 app = node.run_state[:current_app]
 
-include_recipe "python"
+include_recipe "php"
 
 ###
 # You really most likely don't want to run this recipe from here - let the
 # default application recipe work it's mojo for you.
 ###
 
-node.default[:apps][app['id']][node.chef_environment][:run_migrations] = false
+node.default['apps'][app['id']][node.chef_environment]['run_migrations'] = false
 
-# the Django split-settings file name varies from project to project...+1 for standardization
-local_settings_full_path = app['local_settings_file'] || 'settings_local.py'
+# the PHP projects have no standard local settings file name..or path in the project
+local_settings_full_path = app['local_settings_file'] || 'LocalSettings.php'
 local_settings_file_name = local_settings_full_path.split(/[\\\/]/).last
 
-## Create required directories
+## First, install any application specific packages
+if app['packages']
+  app['packages'].each do |pkg,ver|
+    package pkg do
+      action :install
+      version ver if ver && ver.length > 0
+    end
+  end
+end
+
+## Next, install any application specific gems
+if app['pears']
+  app['pears'].each do |pear,ver|
+    php_pear pear do
+      action :install
+      version ver if ver && ver.length > 0
+    end
+  end
+end
 
 directory app['deploy_to'] do
   owner app['owner']
@@ -46,33 +64,6 @@ directory "#{app['deploy_to']}/shared" do
   group app['group']
   mode '0755'
   recursive true
-end
-
-## Create a virtualenv for the app
-ve = python_virtualenv app['id'] do
-  path "#{app['deploy_to']}/shared/env"
-  action :create
-end
-
-## First, install any application specific packages
-if app['packages']
-  app['packages'].each do |pkg,ver|
-    package pkg do
-      action :install
-      version ver if ver && ver.length > 0
-    end
-  end
-end
-
-## Next, install any application specific gems
-if app['pips']
-  app['pips'].each do |pip,ver|
-    python_pip pip do
-      version ver if ver && ver.length > 0
-      virtualenv ve.path
-      action :install
-    end
-  end
 end
 
 if app.has_key?("deploy_key")
@@ -113,29 +104,24 @@ if app["database_master_role"]
       dbm = rows[0]
     end
   end
-  
-  # we need the django version to render the correct type of settings.py file
-  django_version = 1.2
-  if app['pips'].has_key?('django') && !app['pips']['django'].strip.empty?
-    django_version = app['pips']['django'].to_f
-  end
 
   # Assuming we have one...
   if dbm
-    # local_settings.py
     template "#{app['deploy_to']}/shared/#{local_settings_file_name}" do
-      source "settings.py.erb"
+      source "#{local_settings_file_name}.erb"
+      cookbook app["id"]
       owner app["owner"]
       group app["group"]
       mode "644"
       variables(
+        :path => "#{app['deploy_to']}/current",
         :host => dbm['fqdn'],
         :database => app['databases'][node.chef_environment],
-        :django_version => django_version
+        :app => app
       )
     end
   else
-    Chef::Log.warn("No node with role #{app["database_master_role"][0]}, #{local_settings_file_name} not rendered!")
+    Chef::Log.warn("No node with role #{app['database_master_role'][0]}, #{local_settings_file_name} not rendered!")
   end
 end
 
@@ -152,42 +138,7 @@ deploy_revision app['id'] do
   purge_before_symlink([])
   create_dirs_before_symlink([])
   symlinks({})
-  before_migrate do
-    requirements_file = nil
-    # look for requirements.txt files in common locations
-    if ::File.exists?(::File.join(release_path, "requirements", "#{node[:chef_environment]}.txt"))
-      requirements_file = ::File.join(release_path, "requirements", "#{node.chef_environment}.txt")
-    elsif ::File.exists?(::File.join(release_path, "requirements.txt"))
-      requirements_file = ::File.join(release_path, "requirements.txt")
-    end
-    
-    if requirements_file
-      Chef::Log.info("Installing pips using requirements file: #{requirements_file}")
-      execute "pip install -E #{ve.path} -r #{requirements_file}" do
-        ignore_failure true
-        cwd release_path
-      end
-    end
-  end
-
   symlink_before_migrate({
     local_settings_file_name => local_settings_full_path
   })
-
-  if app['migrate'][node.chef_environment] && node[:apps][app['id']][node.chef_environment][:run_migrations]
-    migrate true
-    migration_command app['migration_command'] || "#{::File.join(ve.path, "bin", "python")} manage.py migrate"
-  else
-    migrate false
-  end
-  before_symlink do
-    ruby_block "remove_run_migrations" do
-      block do
-        if node.role?("#{app['id']}_run_migrations")
-          Chef::Log.info("Migrations were run, removing role[#{app['id']}_run_migrations]")
-          node.run_list.remove("role[#{app['id']}_run_migrations]")
-        end
-      end
-    end
-  end
 end
