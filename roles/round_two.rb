@@ -1,2 +1,2 @@
 name      "round_two"
-run_list  ["recipe[git]", "recipe[application]"]
+run_list  ["recipe[round_two]", "recipe[git]", "recipe[application]"]
