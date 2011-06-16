@@ -25,6 +25,7 @@
     "production": "false",
     "development": "true"
   },
+  "migration_command": "bundle exec rake db:migrate",
   "databases": {
     "production": {
       "reconnect": "true",
