@@ -25,7 +25,8 @@
     "production": "false",
     "development": "true"
   },
-  "migration_command": "bundle exec rake db:migrate",
+  "migration_command":
+    "bundle exec rake db:migrate && bundle exec rake db:load_fixtures",
   "databases": {
     "production": {
       "reconnect": "true",
