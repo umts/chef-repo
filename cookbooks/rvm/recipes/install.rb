@@ -28,8 +28,8 @@ end
 node.default[:languages][:ruby][:ruby_bin] = `rvm default exec which ruby`.chomp
 
 gem_package "chef" do
-  gem_binary "/usr/local/rvm/bin/rvm-gem.sh"
-  only_if "test -e /usr/local/rvm/bin/rvm-gem.sh"
+  gem_binary "/usr/local/bin/rvm-gem.sh"
+  only_if "test -e /usr/local/bin/rvm-gem.sh"
   # re-install the chef gem into rvm to enable subsequent chef-client run
 end
 
