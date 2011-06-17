@@ -16,7 +16,7 @@ end
  
 bash "installing system-wide RVM stable" do
   user "root"
-  code "bash < <( curl -L http://bit.ly/rvm-install-system-wide )"
+  code "bash < <( curl -L https://rvm.beginrescueend.com/install/rvm )"
   not_if "which rvm"
 end
 
@@ -44,3 +44,6 @@ cookbook_file "/usr/local/bin/rvm-gem.sh" do
   group "root"
   mode 0755
 end
+
+# set this for compatibilty with other people's recipes
+node.default[:languages][:ruby][:ruby_bin] = `rvm default exec which ruby`.chomp

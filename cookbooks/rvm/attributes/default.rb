@@ -18,3 +18,5 @@ default[:rvm][:version] = :stable
 # note: this will effectively inhibit
 # installation of :head.
 default[:rvm][:track_updates] = false
+
+
