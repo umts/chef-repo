@@ -9,7 +9,7 @@ default[:rvm][:ruby][:implementation] = 'ruby'
 # even if I prefer 1.9.2.
 default[:rvm][:ruby][:version] = '1.8.7'
 # set the default patch level
-default[:rvm][:ruby][:patch_level] = 'p334'
+# default[:rvm][:ruby][:patch_level] = 'p334'
 
 # Use either :stable or :head versions of
 # RVM.
