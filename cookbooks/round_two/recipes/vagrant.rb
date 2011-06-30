@@ -43,6 +43,6 @@ web_app "round_two_vagrant" do
   rails_env node.chef_environment
 end
 
-apache_site "round_two" do
+apache_site "round_two.conf" do
   enable false
 end
