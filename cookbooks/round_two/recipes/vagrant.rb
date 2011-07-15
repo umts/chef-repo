@@ -4,6 +4,8 @@
 
 include_recipe "apache2"
 
+#database.yml output (this is super overkill, but it might allow you to
+#have a seperate DB VM, or use (shudder) the live db for development
 app = data_bag_item("apps", "round_two")
 if app["database_master_role"]
   dbm = nil
@@ -35,14 +37,24 @@ if app["database_master_role"]
   end
 end
 
+#Create a web app config that points to the vagrant shared folder
 web_app "round_two_vagrant" do
-  docroot "/vagrant"
+  docroot "/vagrant/public"
   template "round_two.conf.erb"
   server_name "round_two.#{node[:domain]}"
   log_dir node[:apache][:log_dir]
   rails_env node.chef_environment
 end
 
+#Disable the internal Apache site definition
 apache_site "round_two.conf" do
   enable false
+end
+
+#Link in the deployment bundle
+link "/vagrant/.bundle" do
+  to "#{app["deploy_to"]}/current/.bundle"
+end
+link "/vagrant/vendor/bundle" do
+  to "#{app["deploy_to"]}/current/vendor/bundle"
 end
