@@ -61,7 +61,7 @@ attribute "gitorious/notification_emails",
 attribute "gitorious/public_mode",
   :display_name => "Gitorious Public mode",
   :description => "Is this Gitorious install open to the public?",
-  :default => false
+  :default => "false"
 
 attribute "gitorious/locale",
   :display_name => "Gitorious Locale",
@@ -70,12 +70,12 @@ attribute "gitorious/locale",
 attribute "gitorious/only_admin_create",
   :display_name => "Gitorious Admin creation",
   :description => "Can only admin create projects/repositories?",
-  :default => false
+  :default => "false"
 
 attribute "gitorious/hide_http_clone_urls",
   :display_name => "Gitorious Hide http Clone URLs",
   :description => "Hide the http clone urls from users (http takes more work to setup",
-  :default => true
+  :default => "true"
 
 grouping "gitorious/admin",
   :title => "Gitorious Admin",

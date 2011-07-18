@@ -125,8 +125,8 @@ if app["database_master_role"]
   if dbm
     template "#{app['deploy_to']}/shared/database.yml" do
       source "database.yml.erb"
-      owner app["owner"]
-      group app["group"]
+      owner gitorious_user
+      group gitorious_user
       mode "644"
       variables(
         :host => dbm['fqdn'],
