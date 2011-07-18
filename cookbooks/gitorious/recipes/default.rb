@@ -130,8 +130,7 @@ if app["database_master_role"]
       mode "644"
       variables(
         :host => dbm['fqdn'],
-        :databases => app['databases'],
-        :rails_env => rails_env
+        :databases => app['databases']
       )
     end
   else
