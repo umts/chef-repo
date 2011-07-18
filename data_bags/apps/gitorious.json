@@ -1,7 +1,7 @@
 {
   "id": "gitorious",
   "database_master_role": [
-    "round_two_database_master"
+    "gitorious_database_master"
   ],
   "databases": {
     "production": {
