@@ -1,7 +1,10 @@
-production:
-  adapter: mysql
-  username: <%= @username %>
-  password: <%= @password %>
+<%- @databases.each do |env, db| %>
+<%= (env =~ /_default/ ? "production" : env) %>:
+  adapter: <%= db['adapter'] %>
   host: <%= @host %>
-  database: <%= @database %>
-  encoding: utf8
+  database: <%= db['database'] %>
+  username: <%= db['username'] %>
+  password: <%= db['password'] %>
+  encoding: <%= db.has_key?('encoding') ? db['encoding'] : 'utf8' %>
+  reconnect: true
+<%- end %>

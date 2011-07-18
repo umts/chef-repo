@@ -3,17 +3,17 @@ apache_module "rewrite"
 include_recipe "apache2::mod_ssl"
 
 %w( libonig-dev libyaml-dev geoip-bin libgeoip-dev libgeoip1 imagemagick libmagickwand-dev libaspell-dev
-    aspell mysql-server libmysqlclient-dev stompserver ssh apg sphinxsearch memcached ).each { |p| package p }
+    aspell stompserver ssh apg sphinxsearch memcached ).each { |p| package p }
 
 # comment the above line if you want to keep portmap and rpcbind
 %w( portmap rpcbind ).each {|p| package(p) { action :purge } }
 
 gem_package 'raspell'
 
-gitorious_user  = 'git'
-gitorious_user_home = "/home/#{gitorious_user}"
 deploy_path = node[:gitorious][:deploy_path]
 storage_dir = node[:gitorious][:storage_dir]
+gitorious_user  = 'git'
+gitorious_user_home = deploy_path
 
 user(gitorious_user) { system true }
 
@@ -76,12 +76,13 @@ web_app "gitorious" do
   cookbook "passenger_apache2"
 end
 
-template "/etc/apache2/sites-available/gitorious-ssl" do
-  source "gitorious-ssl.conf.erb"
-  notifies :reload, "service[apache2]"
-end
+#template "/etc/apache2/sites-available/gitorious-ssl" do
+#  source "gitorious-ssl.conf.erb"
+#  notifies :reload, "service[apache2]"
+#end
+
 apache_site("default") { enable false }
-apache_site "gitorious-ssl"
+#apache_site "gitorious-ssl"
 
 gem_package 'bundler'
 
@@ -104,32 +105,38 @@ template "#{deploy_path}/config/gitorious.yml" do
   notifies    :run, "execute[restart_gitorious_webapp]"
 end
 
-db_host     = node[:gitorious][:db][:host]
-db_database = node[:gitorious][:db][:database]
-db_user     = node[:gitorious][:db][:user]
-db_password = node[:gitorious][:db][:password]
+app = data_bag_item('apps', 'gitorious')
 
-template "#{deploy_path}/config/database.yml" do
-  source      "database.yml.erb"
-  owner       gitorious_user
-  group       gitorious_user
-  mode        "0640"
-  variables   :host => db_host, :database => db_database, :username => db_user, :password => db_password
-  notifies    :run, "execute[restart_gitorious_webapp]"
-end
+if app["database_master_role"]
+  dbm = nil
+  # If we are the database master
+  if node.run_list.roles.include?(app["database_master_role"][0])
+    dbm = node
+  else
+  # Find the database master
+    results = search(:node, "role:#{app["database_master_role"][0]} AND chef_environment:#{node.chef_environment}", nil, 0, 1)
+    rows = results[0]
+    if rows.length == 1
+      dbm = rows[0]
+    end
+  end
 
-script "create gitorious database" do
-  interpreter "bash"
-  cwd deploy_path
-  code %Q{
-    mysqladmin create #{db_database}
-    mysql -e "GRANT ALL ON #{db_database}.* TO '#{db_user}'@'localhost' IDENTIFIED BY '#{db_password}';"
-    export RAILS_ENV=production
-    bundle exec rake db:setup
-    echo -e "#{node[:gitorious][:admin][:email]}\\n#{node[:gitorious][:admin][:password]}" | script/create_admin
-    chown -R git:git .
-  }
-  not_if "mysql -e 'show databases' | grep -q #{db_database}"
+  # Assuming we have one...
+  if dbm
+    template "#{app['deploy_to']}/shared/database.yml" do
+      source "database.yml.erb"
+      owner app["owner"]
+      group app["group"]
+      mode "644"
+      variables(
+        :host => dbm['fqdn'],
+        :databases => app['databases'],
+        :rails_env => rails_env
+      )
+    end
+  else
+    Chef::Log.warn("No node with role #{app["database_master_role"][0]}, database.yml not rendered!")
+  end
 end
 
 cookbook_file "#{deploy_path}/config/broker.yml" do
@@ -151,7 +158,7 @@ script "setup ultrasphinx for Gitorious" do
     cp vendor/plugins/ultrasphinx/examples/ap.multi /usr/lib/aspell/
     bundle exec rake ultrasphinx:spelling:build
 
-    chown git:git config/ultrasphinx/production.conf
+    chown #{gitorious_user}:#{gitorious_user} config/ultrasphinx/production.conf
   }
   creates     "#{deploy_path}/config/ultrasphinx/production.conf"
   notifies    :restart, "service[apache2]"

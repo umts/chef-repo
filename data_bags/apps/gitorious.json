@@ -1,0 +1,16 @@
+{
+  "id": "gitorious",
+  "database_master_role": [
+    "round_two_database_master"
+  ],
+  "databases": {
+    "production": {
+      "reconnect": "true",
+      "encoding": "utf8",
+      "username": "git",
+      "adapter": "mysql",
+      "password": "",
+      "database": "gitorious_production"
+    }
+  }
+}
