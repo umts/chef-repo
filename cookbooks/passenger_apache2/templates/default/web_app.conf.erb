@@ -1,10 +1,12 @@
 <VirtualHost *:80>
   ServerName <%= @params[:server_name] %>
-  ServerAlias <% @params[:server_aliases].each do |a| %><%= "#{a}" %> <% end %>
+  <% if @params[:server_aliases] %>
+    ServerAlias <% @params[:server_aliases].each do |a| %><%= "#{a}" %> <% end %>
+  <% end %>
   DocumentRoot <%= @params[:docroot] %>
 
+  RailsEnv <%= @params[:rails_env] || 'production' %>
   RailsBaseURI /
-  RailsEnv <%= @params[:rails_env] %>
   RailsAllowModRewrite on
 
   <Directory <%= @params[:docroot] %>>

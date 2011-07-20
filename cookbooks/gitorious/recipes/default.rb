@@ -15,33 +15,6 @@ storage_dir = node[:gitorious][:storage_dir]
 gitorious_user  = 'git'
 gitorious_user_home = deploy_path
 
-user(gitorious_user) { system true }
-
-[gitorious_user_home, "#{gitorious_user_home}/.ssh"].each do |dir|
-  directory dir do
-    owner       gitorious_user
-    group       gitorious_user
-    mode        0700
-  end
-end
-
-file(authorized_keys_path = "#{gitorious_user_home}/.ssh/authorized_keys") do
-  owner       gitorious_user
-  group       gitorious_user
-  mode        0600
-  action      :create
-  not_if { File.exists? authorized_keys_path }
-end
-
-%w{ repositories tarballs tarballs-work }.each do |dir|
-  directory "#{storage_dir}/#{dir}" do
-    owner       gitorious_user
-    group       gitorious_user
-    mode        "2755"
-    recursive   true
-  end
-end
-
 execute "restart_gitorious_webapp" do
   command     %{touch #{deploy_path}/tmp/restart.txt}
   user        gitorious_user
@@ -70,10 +43,39 @@ directory "#{deploy_path}/tmp/pids" do
   recursive   true
 end
 
+user gitorious_user do
+  system true
+  home   gitorious_user_home
+end
+
+directory "#{gitorious_user_home}/.ssh" do
+  owner       gitorious_user
+  group       gitorious_user
+  mode        0700
+end
+
+file(authorized_keys_path = "#{gitorious_user_home}/.ssh/authorized_keys") do
+  owner       gitorious_user
+  group       gitorious_user
+  mode        0600
+  action      :create
+  not_if { File.exists? authorized_keys_path }
+end
+
+%w{ repositories tarballs tarballs-work }.each do |dir|
+  directory "#{storage_dir}/#{dir}" do
+    owner       gitorious_user
+    group       gitorious_user
+    mode        "2755"
+    recursive   true
+  end
+end
+
 web_app "gitorious" do
   docroot "/var/www/gitorious/public"
   server_name node[:gitorious][:host]
   cookbook "passenger_apache2"
+  rails_env node.chef_environment
 end
 
 #template "/etc/apache2/sites-available/gitorious-ssl" do
