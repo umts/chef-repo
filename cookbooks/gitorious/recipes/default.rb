@@ -154,7 +154,7 @@ execute "patch_boot_rb" do
   cwd      deploy_path
   user     gitorious_user
   action   :nothing
-  not_if   "grep \"require 'thread'\" #{deploy_path}/config/boot.rb"
+  #not_if   "grep \"require 'thread'\" #{deploy_path}/config/boot.rb"
   notifies :run, "execute[restart_gitorious_webapp]"
 end
 
@@ -163,23 +163,23 @@ cookbook_file "#{deploy_path}/config/boot.rb.patch" do
   owner       gitorious_user
   group       gitorious_user
   mode        "0644"
-  notifies    :run, "execute[patch_boot_rb]"
+  notifies    :run, "execute[patch_boot_rb]", :immediately
 end
 
 script "setup ultrasphinx for Gitorious" do
   interpreter "bash"
   cwd         deploy_path
   code %Q{
-    export RAILS_ENV=production
+    export RAILS_ENV=#{node.chef_environment}
     bundle exec rake ultrasphinx:bootstrap
 
     aspell config dict-dir /usr/lib/aspell
     cp vendor/plugins/ultrasphinx/examples/ap.multi /usr/lib/aspell/
     bundle exec rake ultrasphinx:spelling:build
 
-    chown #{gitorious_user}:#{gitorious_user} config/ultrasphinx/production.conf
+    chown #{gitorious_user}:#{gitorious_user} config/ultrasphinx/#{node.chef_environment}.conf
   }
-  creates     "#{deploy_path}/config/ultrasphinx/production.conf"
+  creates     "#{deploy_path}/config/ultrasphinx/#{node.chef_environment}.conf"
   notifies    :restart, "service[apache2]"
 end
 

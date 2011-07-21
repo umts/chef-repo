@@ -1,4 +1,4 @@
-production:
+<%= node.chef_environment -%>:
   # The session secret key (`apg -m 64` is always useful for this kinda stuff)
   cookie_secret: "<%= node[:gitorious][:cookie_secret] %>"
 

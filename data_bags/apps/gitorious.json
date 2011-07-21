@@ -11,6 +11,14 @@
       "adapter": "mysql",
       "password": "",
       "database": "gitorious_production"
+    },
+    "development": {
+      "reconnect": "true",
+      "encoding": "utf8",
+      "username": "git",
+      "adapter": "mysql",
+      "password": "",
+      "database": "gitorious_development"
     }
   }
 }
