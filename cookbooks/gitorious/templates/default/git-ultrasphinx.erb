@@ -22,16 +22,16 @@ PID_FILE=<%= @deploy_path %>/db/sphinx/log/searchd.pid
 
 case "$1" in
   start)
-    /bin/su git -c "$START_CMD"
+    /bin/su - git -c "$START_CMD"
     ;;
   stop)
-    /bin/su git -c "$STOP_CMD"
+    /bin/su - git -c "$STOP_CMD"
     ;;
   status)
-    /bin/su git -c "$STATUS_CMD"
+    /bin/su - git -c "$STATUS_CMD"
     ;;
         restart)
-    /bin/su git -c "$RESTART_CMD"
+    /bin/su  - git -c "$RESTART_CMD"
                 ;;
   *)
     echo $"Usage: $0 {start|stop|restart|status}"

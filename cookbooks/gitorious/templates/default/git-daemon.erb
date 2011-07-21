@@ -35,7 +35,7 @@ start()
   do_check_pid
   if [ $RUNNING != 2 ] ; then
     echo -n "Starting $PROG: "
-    /bin/su git -c "$GIT_DAEMON"
+    /bin/su - git -c "$GIT_DAEMON"
     sleep 5
     if [ -f $PID_FILE ] ; then
       echo "success"
