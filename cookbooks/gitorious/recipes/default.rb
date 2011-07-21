@@ -1,3 +1,4 @@
+include_recipe "git"
 include_recipe "passenger_apache2::mod_rails"
 apache_module "rewrite"
 include_recipe "apache2::mod_ssl"
@@ -14,6 +15,11 @@ deploy_path = node[:gitorious][:deploy_path]
 storage_dir = node[:gitorious][:storage_dir]
 gitorious_user  = 'git'
 gitorious_user_home = deploy_path
+
+user gitorious_user do
+  system true
+  home   gitorious_user_home
+end
 
 execute "restart_gitorious_webapp" do
   command     %{touch #{deploy_path}/tmp/restart.txt}
@@ -41,11 +47,6 @@ directory "#{deploy_path}/tmp/pids" do
   owner       gitorious_user
   group       gitorious_user
   recursive   true
-end
-
-user gitorious_user do
-  system true
-  home   gitorious_user_home
 end
 
 directory "#{gitorious_user_home}/.ssh" do
@@ -125,7 +126,7 @@ if app["database_master_role"]
 
   # Assuming we have one...
   if dbm
-    template "#{app['deploy_to']}/shared/database.yml" do
+    template "#{deploy_path}/config/database.yml" do
       source "database.yml.erb"
       owner gitorious_user
       group gitorious_user
@@ -146,6 +147,23 @@ cookbook_file "#{deploy_path}/config/broker.yml" do
   group       gitorious_user
   mode        "0644"
   notifies    :run, "execute[restart_gitorious_webapp]"
+end
+
+execute "patch_boot_rb" do
+  command  "patch config/boot.rb config/boot.rb.patch"
+  cwd      deploy_path
+  user     gitorious_user
+  action   :nothing
+  not_if   "grep \"require 'thread'\" #{deploy_path}/config/boot.rb"
+  notifies :run, "execute[restart_gitorious_webapp]"
+end
+
+cookbook_file "#{deploy_path}/config/boot.rb.patch" do
+  source      "boot.rb.patch"
+  owner       gitorious_user
+  group       gitorious_user
+  mode        "0644"
+  notifies    :run, "execute[patch_boot_rb]"
 end
 
 script "setup ultrasphinx for Gitorious" do

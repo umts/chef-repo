@@ -10,7 +10,7 @@ recipe            "gitorious", "Installs Gitorious"
   supports os
 end
 
-%w{ apache2 passenger_apache2}.each do |cb|
+%w{ git apache2 passenger_apache2}.each do |cb|
   depends cb
 end
 
