@@ -22,3 +22,5 @@ when "debian", "ubuntu"
 else 
   package "git"
 end
+
+gem_package "git"
