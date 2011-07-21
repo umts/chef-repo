@@ -73,7 +73,7 @@ end
 end
 
 web_app "gitorious" do
-  docroot "/var/www/gitorious/public"
+  docroot "#{deploy_path}/public"
   server_name node[:gitorious][:host]
   cookbook "passenger_apache2"
   rails_env node.chef_environment
