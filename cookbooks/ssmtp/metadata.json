@@ -1,0 +1,157 @@
+{
+  "attributes": {
+    "ssmtp\/use_starttls": {
+      "default": "true",
+      "type": "string",
+      "description": "Specifies whether ssmtp does a EHLO\/STARTTLS before starting SSL negotiation. See RFC 2487.",
+      "multiple_values": false,
+      "display_name": "Use StartTLS",
+      "recipes": [
+
+      ],
+      "required": false
+    },
+    "ssmtp\/auth_password": {
+      "default": "undefined",
+      "type": "string",
+      "description": "Password to use for SMTP AUTH",
+      "multiple_values": false,
+      "display_name": "SMTP AUTH Password",
+      "recipes": [
+
+      ],
+      "required": false
+    },
+    "ssmtp": {
+      "type": "hash",
+      "description": "Hash of sSMTP attributes",
+      "multiple_values": false,
+      "display_name": "sSMTP",
+      "recipes": [
+
+      ],
+      "required": false
+    },
+    "ssmtp\/domain": {
+      "default": "#{domain}",
+      "type": "string",
+      "description": "Domain Name to use in the From: address",
+      "multiple_values": false,
+      "display_name": "Domain Name",
+      "recipes": [
+
+      ],
+      "required": false
+    },
+    "ssmtp\/smtp_server_port": {
+      "default": "587",
+      "type": "string",
+      "description": "Port number for the SMTP Server",
+      "multiple_values": false,
+      "display_name": "SMTP Server Port Number",
+      "recipes": [
+
+      ],
+      "required": false
+    },
+    "ssmtp\/smtp_server_host": {
+      "default": "smtp.#{domain}",
+      "type": "string",
+      "description": "The SMTP Server to use as a relay",
+      "multiple_values": false,
+      "display_name": "STMP Server Hostname",
+      "recipes": [
+
+      ],
+      "required": false
+    },
+    "ssmtp\/auth_method": {
+      "default": "DIGEST-MD5",
+      "type": "string",
+      "description": "Encoding Method used for SMTP AUTH",
+      "multiple_values": false,
+      "display_name": "SMTP AUTH Method",
+      "recipes": [
+
+      ],
+      "required": false
+    },
+    "ssmtp\/hostname": {
+      "default": "undefined",
+      "type": "string",
+      "description": "The full qualified name of the host. If not specified, the host is queried for its hostname.",
+      "multiple_values": false,
+      "display_name": "Hostname",
+      "recipes": [
+
+      ],
+      "required": false
+    },
+    "ssmtp\/auth_username": {
+      "default": "undefined",
+      "type": "string",
+      "description": "Username to use for SMTP AUTH",
+      "multiple_values": false,
+      "display_name": "SMTP AUTH Username",
+      "recipes": [
+
+      ],
+      "required": false
+    },
+    "ssmtp\/from_line_override": {
+      "default": "true",
+      "type": "string",
+      "description": "Specifies whether the From header of an email, if any, may override the default domain.",
+      "multiple_values": false,
+      "display_name": "From: line override",
+      "recipes": [
+
+      ],
+      "required": false
+    },
+    "ssmtp\/root": {
+      "default": "undefined",
+      "type": "string",
+      "description": "The user that gets all mail for userids less than 1000. If blank, address rewriting is disabled.",
+      "multiple_values": false,
+      "display_name": "root mail recipient",
+      "recipes": [
+
+      ],
+      "required": false
+    }
+  },
+  "recommendations": {
+
+  },
+  "maintainer_email": "sander@vanzoest.com",
+  "recipes": {
+    "ssmtp": ""
+  },
+  "suggestions": {
+
+  },
+  "name": "ssmtp",
+  "license": "Apache 2.0",
+  "version": "0.1.0",
+  "conflicting": {
+
+  },
+  "description": "Installs\/Configures ssmtp",
+  "providing": {
+    "ssmtp": [
+
+    ]
+  },
+  "replacing": {
+
+  },
+  "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES: \n\n= USAGE:\n\n",
+  "dependencies": {
+
+  },
+  "platforms": {
+
+  },
+  "maintainer": "Van Zoest Technologies"
+}
