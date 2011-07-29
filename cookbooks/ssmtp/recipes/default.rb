@@ -35,6 +35,7 @@ template "/etc/ssmtp/ssmtp.conf" do
      :smtp_server_host => node[:ssmtp][:smtp_server_host],
      :smtp_server_port => node[:ssmtp][:smtp_server_port],
      :domain           => node[:ssmtp][:domain],
+     :use_auth         => node[:ssmtp][:use_auth],
      :auth_username    => node[:ssmtp][:auth_username],
      :auth_password    => node[:ssmtp][:auth_password],
      :auth_method      => node[:ssmtp][:auth_method]

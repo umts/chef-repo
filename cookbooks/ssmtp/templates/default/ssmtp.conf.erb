@@ -28,9 +28,11 @@ UseSTARTTLS=YES
 UseSTARTTLS=NO
 <% end %>
 
+<% if @use_auth %>
 # user/pass used to connect to the MTA
 AuthUser=<%= @auth_username %>
 AuthPass=<%= @auth_password %>
 <% if @auth_method %>
 AuthMethod=<%= @auth_method %>
+<% end %>
 <% end %>
