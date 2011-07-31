@@ -18,9 +18,7 @@
 # limitations under the License.
 #
 
-package "ssmtp" do
-  action :install
-end
+%w{ssmtp mailutils}.each  {|p| package p }
 
 template "/etc/ssmtp/ssmtp.conf" do
   source "ssmtp.conf.erb"

@@ -7,7 +7,7 @@
 # The user that gets all mail for userids less than 1000. If blank, address rewriting is disabled.
 root=<%= @root %>
 <% end %>
-mailhub=<%= @smtp_server_host %>:<%= @smtp_server_port %>
+mailhub=<%= @smtp_server_host %><% if @smtp_server_port %>:<%= @smtp_server_port %><% end %>
 <% if @hostname %>
 hostname=<%= @hostname %>
 <% end %>
