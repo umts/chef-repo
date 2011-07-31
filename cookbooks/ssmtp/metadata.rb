@@ -17,7 +17,7 @@ attribute "ssmtp/smtp_server_host",
 
 attribute "ssmtp/smtp_server_port",
   :display_name => "SMTP Server Port Number",
-  :description  => "Port number for the SMTP Server",
+  :description  => "Port number for the SMTP Server.  Set to false to not specify a port in the configuration.",
   :default      => "587"
 
 attribute "ssmtp/auth_username",
@@ -58,4 +58,9 @@ attribute "ssmtp/from_line_override",
 attribute "ssmtp/use_starttls",
   :display_name => "Use StartTLS",
   :description  => "Specifies whether ssmtp does a EHLO/STARTTLS before starting SSL negotiation. See RFC 2487.",
+  :default      => "true"
+
+attribute "ssmtp/use_auth",
+  :display_name => "Use Authentication",
+  :description  => "Specifies whether to use authentication to your SMTP host.",
   :default      => "true"
