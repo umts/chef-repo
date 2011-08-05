@@ -8,7 +8,9 @@ included in the cookbook and also available [here][vmdocs].
 Requirements
 ============
 This cookbook requires the [apt][apt] or [yum][yum] cookbook in order to
-install the 3rd-party repository.
+install the 3rd-party repository.  For Redhat-based distros, you also
+need the redhat-lsb package to allow ohai to determine what version of
+RHEL or Centos you're running.
 
 Attributes
 ==========

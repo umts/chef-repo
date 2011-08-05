@@ -43,14 +43,11 @@ when "ubuntu"
   package "vmware-tools-esx-nox"
 
 when "centos", "redhat"
+  include_recipe "redhat-lsb"
   include_recipe "yum"
 
   #also works for CentOS:
-  if node[:lsb][:release]
-    rhel_major_version = node[:lsb][:relase].split(".").first
-  else
-    raise "Aw SHit"
-  end
+  rhel_major_version = node[:lsb][:relase].split(".").first
 
   yum_key "VMWARE-PACKAGING-GPG-RSA-KEY" do
     url gpg_key

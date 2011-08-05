@@ -5,7 +5,7 @@ description      "Installs/Configures vmware-tools"
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          "0.0.1"
 
-%w(apt yum).each do |cb|
+%w(apt yum redhat-lsb).each do |cb|
   depends cb
 end
 
