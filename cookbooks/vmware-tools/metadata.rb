@@ -10,8 +10,8 @@ version          "0.0.1"
 end
 
 supports "ubuntu", "<= 10.11"
-supports "centos", ">=5"
-supports "redhat", ">=5"
+supports "centos", ">= 5.0"
+supports "redhat", ">= 5.0"
 
 attribute "virtualization/vmware_version",
   :dispay_name => "VMWare host version",

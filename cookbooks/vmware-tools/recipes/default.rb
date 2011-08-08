@@ -34,7 +34,7 @@ when "ubuntu"
   #"server", "generic", "virtual", etc
   kernel_type = node[:kernel][:release].split("-").last
 
-  if /3.5/ =~ vm_version
+  if /3\.5/ =~ vm_version
     package "oven-vm-tools-kmod-#{kernel_type}"
   else
     package "vmware-open-vm-tools-kmod-#{kernel_type}"
