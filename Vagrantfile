@@ -1,6 +1,8 @@
-# Parse in knife configuration.  This should leave you with a
-# Chef::Config that is the same as if you were running 'knife'
-# in this directory.
+# Read in your knife configuration.  This should leave you with a
+# Chef::Config object that is the same as if you were running 'knife'
+# withing in this directory.  That is, if you have a valid knife.rb file
+# in either ~/.chef or ./.chef, this Vagrantfile will use that file to
+# figure out the details of your chef server.
 require 'chef/config'
 require 'chef/knife'
 Chef::Knife.new.configure_chef
