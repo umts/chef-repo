@@ -40,7 +40,7 @@ Vagrant::Config.run do |config|
   # and the path to the validation key (relative to this Vagrantfile).
   user = ENV['CHEF_SERVER_USER'] || ENV['USER']
 
-  config.vm.provision :chef_server do |chef|
+  config.vm.provision :chef_client do |chef|
     chef.chef_server_url = Chef::Config[:chef_server_url]
     chef.validation_key_path = Chef::Config[:validation_key]
     chef.validation_client_name = Chef::Config[:validation_client_name]
