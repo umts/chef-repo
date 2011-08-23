@@ -19,6 +19,14 @@
 
 ::Chef::Resource::Package.send(:include, Opscode::Mysql::Helpers)
 
+package "mysql-client" do
+  package_name value_for_platform(
+    [ "centos", "redhat", "suse", "fedora"] => { "default" => "mysql" },
+    "default" => "mysql-client"
+  )
+  action :install
+end
+
 package "mysql-devel" do
   package_name begin
     if platform?(%w{ centos redhat suse fedora })
