@@ -15,22 +15,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-require 'openssl'
-
-pw = String.new
-
-while pw.length < 20
-  pw << OpenSSL::Random.random_bytes(1).gsub(/\W/, '')
-end
-
-#database_server = search(:node, "database_master:true").map {|n| n['fqdn']}.first
-
 set[:redmine][:dir] = "/srv/redmine-#{redmine[:version]}"
 
-default[:redmine][:dl_id]   = "56909"
-default[:redmine][:version] = "0.8.4"
-
-default[:redmine][:db][:type]     = "sqlite"
-default[:redmine][:db][:user]     = "redmine"
-default[:redmine][:db][:password] = pw
-default[:redmine][:db][:hostname] = "localhost"
+default[:redmine][:dl_id]   = "75097"
+default[:redmine][:version] = "1.2.1"

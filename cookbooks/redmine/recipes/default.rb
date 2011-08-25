@@ -18,7 +18,6 @@
 # limitations under the License.
 #
 
-include_recipe "rails"
 include_recipe "apache2"
 include_recipe "apache2::mod_rewrite"
 include_recipe "passenger_apache2::mod_rails"
@@ -38,28 +37,42 @@ link "/srv/redmine" do
   to "/srv/redmine-#{node[:redmine][:version]}"
 end
 
-case node[:redmine][:db][:type]
-when "sqlite"
-  include_recipe "sqlite"
-  gem_package "sqlite3-ruby"
-  file "/srv/redmine-#{node[:redmine][:version]}/db/production.db" do
-    owner node[:apache][:user]
-    group node[:apache][:user]
-    mode "0644"
+app = data_bag_item('apps', 'redmine')
+
+if app["database_master_role"]
+  dbm = nil
+  # If we are the database master
+  if node.run_list.roles.include?(app["database_master_role"][0])
+    dbm = node
+  else
+  # Find the database master
+    results = search(:node, "role:#{app["database_master_role"][0]} AND chef_environment:#{node.chef_environment}", nil, 0, 1)
+    rows = results[0]
+    if rows.length == 1
+      dbm = rows[0]
+    end
   end
-when "mysql"
-  include_recipe "mysql::client"
+
+  # Assuming we have one...
+  if dbm
+    template "/srv/redmine-#{node[:redmine][:version]}/config/database.yml" do
+      source "database.yml.erb"
+      mode "644"
+      variables(
+        :host => dbm['fqdn'],
+        :databases => app['databases']
+      )
+    end
+  else
+    Chef::Log.warn("No node with role #{app["database_master_role"][0]}, database.yml not rendered!")
+  end
 end
 
-template "/srv/redmine-#{node[:redmine][:version]}/config/database.yml" do
-  source "database.yml.erb"
-  owner "root"
-  group "root"
-  variables :database_server => node[:redmine][:db][:hostname]
-  mode "0664"
+execute "bundle install" do
+
 end
 
-execute "rake db:migrate RAILS_ENV='production'" do
+execute "rake db:migrate RAILS_ENV='#{node.chef_environment}'" do
   user node[:apache][:user]
   cwd "/srv/redmine-#{node[:redmine][:version]}"
   not_if { ::File.exists?("/srv/redmine-#{node[:redmine][:version]}/db/schema.rb") }
@@ -70,5 +83,5 @@ web_app "redmine" do
   template "redmine.conf.erb"
   server_name "redmine.#{node[:domain]}"
   server_aliases [ "redmine", node[:hostname] ]
-  rails_env "production"
+  rails_env node.chef_environment
 end
