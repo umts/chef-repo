@@ -68,14 +68,30 @@ if app["database_master_role"]
   end
 end
 
-execute "bundle install" do
+gem_package "bundler"
 
+cookbook_file "/srv/redmine-#{node[:redmine][:version]}/Gemfile" do
+  source "Gemfile"
+  mode '644'
+  notifies :run, "execute[bundle-install]", :immediately
+end
+
+execute "bundle-install" do
+  command "bundle install"
+  cwd "/srv/redmine-#{node[:redmine][:version]}/"
+  action :nothing
 end
 
 execute "rake db:migrate RAILS_ENV='#{node.chef_environment}'" do
   user node[:apache][:user]
   cwd "/srv/redmine-#{node[:redmine][:version]}"
   not_if { ::File.exists?("/srv/redmine-#{node[:redmine][:version]}/db/schema.rb") }
+end
+
+execute "rake generate_session_store" do
+  user node[:apache][:user]
+  cwd "/srv/redmine-#{node[:redmine][:version]}"
+  not_if { ::File.exists?("/srv/redmine-#{node[:redmine][:version]}/config/initializers/session_store.rb") }
 end
 
 web_app "redmine" do
