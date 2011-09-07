@@ -1,6 +1,6 @@
 # Read in your knife configuration.  This should leave you with a
 # Chef::Config object that is the same as if you were running 'knife'
-# withing in this directory.  That is, if you have a valid knife.rb file
+# from within this directory.  That is, if you have a valid knife.rb file
 # in either ~/.chef or ./.chef, this Vagrantfile will use that file to
 # figure out the details of your chef server.
 require 'chef/config'
@@ -47,11 +47,16 @@ Vagrant::Config.run do |config|
     chef.environment = "development"
     chef.node_name = "vagrant-test-#{user}"
 
+    # Here you can set attributes on the node
     chef.json.merge!({
       'tz' => 'America/New_York'
     })
 
-    chef.add_recipe "apt"
-    chef.add_recipe "timezone"
+    # The runlist for the vm: an array of recipes and roles such as
+    # "recipe[foo]" or "role[bar]"
+    chef.run_list = [
+      "recipe[apt]",
+      "recipe[timezone]"
+    ]
   end
 end
