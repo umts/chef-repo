@@ -56,11 +56,35 @@ The first, `config/rake.rb` configures the Rakefile in two sections.
 
 If you use the `ssl_cert` task, change the values in the `config/rake.rb` file appropriately. These values were also used in the `new_cookbook` task, but that task is replaced by the `knife cookbook create` command which can be configured below.
 
-The second config file, `.chef/knife.rb` is a repository specific configuration file for knife. If you're using the Opscode Platform, you can download one for your organization from the management console. If you're using the Open Source Chef Server, you can generate a new one with `knife configure`. For more information about configuring Knife, see the Knife documentation.
+The second config file, `.chef/knife.rb` is a repository specific configuration file for knife. If you're using the Opscode Platform, you can download one for your organization from the management console. If you're using the Open Source Chef Server, you can generate a new one with `knife configure`. For more information about configuring Knife, see the [Knife documentation][knifedoc].
 
-http://help.opscode.com/faqs/chefbasics/knife
+This particular repository comes with a slightly UMTS specific `.chef/knife.rb` file.  It expects the following things:
+
+* That your chef server username is the same as either your local username _or_ the value of the `CHEF_SERVER_USER` environment variable (your might consider setting this in a `.rvmrc.local` file -- see below) 
+* That your orgname (OpsCode Platform only) is either "umts" or set in the `ORGNAME` environment variable
+* That your client key is stored in `~/.chef/username.pem` (where "username" is your chef server username mentioned above)
+* That your validation key is stored in `~/.chef/orgname-validator.pem`
+
+Vagrant
+=======
+
+This repository also has a `Vagrantfile` in it to help with testing cookbooks. Documentation on Vagrant han be found [here][vagrant].
+
+There is one peculiarity of our `Vagrantfile` to mention.  Vagrant, when run from within the project directory loads your Chef server configuration with Knife.  That is, it uses the same configuration mentioned in the "Configuration" section above.
+
+rvm and Bundler
+===============
+
+There is a `Gemfile` in the project that installs chef, vagrant, and some other tools.  You can `bundle` and get it all set up.
+
+However, I'm also adding a fairly sophisticated `.rvmrc` file to the project.  If you let it, rvm will create a gemset called "chef" and automatically use bundler to install the necessary gems into it.
+
+If you have personal customizations to add to the `.rvmrc` file -- say, for example, setting your chef server username environment variable -- add them to a file named `.rvmrc.local` in the project root.  That file will be sourced if it exists.
 
 Next Steps
 ==========
 
 Read the README file in each of the subdirectories for more information about what goes in those directories.
+
+[knifedoc]: http://help.opscode.com/faqs/chefbasics/knife
+[vagrant]:  http://vagrantup.com/docs/
