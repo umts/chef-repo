@@ -20,6 +20,8 @@ require_recipe "python"
 
 kedpm_url = "http://sourceforge.net/projects/kedpm/files/kedpm/0.4.0/kedpm-0.4.0.tar.gz/download"
 
-["pycrypto", kedpm_url].each do |pkg|
-  easy_install_package pkg
-end
+easy_install_package "pycrypto"
+
+# It'd be nice to do this with easy_install_package like above, but the
+# proveider doesn't support urls or files as sources.  See CHEF-1695
+execute "easy_install #{kedpm_url}"
