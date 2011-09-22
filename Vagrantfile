@@ -7,6 +7,15 @@ require 'chef/config'
 require 'chef/knife'
 Chef::Knife.new.configure_chef
 
+# Warn the user if they don't have a encrypted data bag secret file.  Many
+# cookbooks in this repository will work file without it, but some  won't.
+data_bag_secret =  File.join(File.dirname(__FILE__), "encrypted_data_bag_secret")
+unless File.exists? data_bag_secret
+  puts "WARN: You don't have a 'encrypted_data_bag_secret' file in the the project root.
+        Some recipes may rely on encrypted data bags and will fail -- proceed with caution.
+        Get this file from the password database or another user.".gsub(/[ \t]+/, " ")
+end
+
 Vagrant::Config.run do |config|
   # All Vagrant configuration is done here. The most common configuration
   # options are documented and commented below. For a complete reference,
@@ -46,6 +55,8 @@ Vagrant::Config.run do |config|
     chef.validation_client_name = Chef::Config[:validation_client_name]
     chef.environment = "development"
     chef.node_name = "vagrant-test-#{user}"
+
+    chef.encrypted_data_bag_secret_key_path = data_bag_secret if File.exists? data_bag_secret
 
     # Here you can set attributes on the node
     chef.json.merge!({
