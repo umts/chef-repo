@@ -56,7 +56,10 @@ Vagrant::Config.run do |config|
     chef.environment = "development"
     chef.node_name = "vagrant-test-#{user}"
 
-    chef.encrypted_data_bag_secret_key_path = data_bag_secret if File.exists? data_bag_secret
+    if File.exists? data_bag_secret
+      chef.encrypted_data_bag_secret_key_path = data_bag_secret
+      chef.encrypted_data_bag_secret = "/home/vagrant/encrypted_data_bag_secret"
+    end
 
     # Here you can set attributes on the node
     chef.json.merge!({
