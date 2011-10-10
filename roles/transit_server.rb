@@ -7,4 +7,4 @@ default_attributes(
   }
 )
 
-run_list    "recipe[sudo]", "recipe[users::sysadmins]", "recipe[ntp]"
+run_list    "recipe[sudo]", "recipe[users::sysadmins]", "recipe[ntp]", "recipe[iptables]"
