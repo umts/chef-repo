@@ -1,0 +1,3 @@
+# Web: both http and https 
+-A FWR -p tcp -m state --state NEW -m tcp --dport 80 -j ACCEPT
+-A FWR -p tcp -m state --state NEW -m tcp --dport 443 -j ACCEPT
