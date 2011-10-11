@@ -63,7 +63,12 @@ Vagrant::Config.run do |config|
 
     # Here you can set attributes on the node
     chef.json.merge!({
-      'tz' => 'America/New_York'
+      'tz' => 'America/New_York',
+      'authorization' => {
+        'sudo' => {
+          'users' => ['vagrant']
+        }
+      }
     })
 
     # The runlist for the vm: an array of recipes and roles such as
