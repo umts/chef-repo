@@ -1,5 +1,6 @@
 source "http://rubygems.org"
 
+gem "json", "~>1.5.1"
 gem "chef", "~>0.10"
 gem "knife-github-cookbooks"
 gem "spice"
