@@ -18,7 +18,7 @@
 # limitations under the License.
 #
 
-roles = node.run_list.roles
+run_list = node.run_list.map{ |rl| rl.to_s }
 
 template "/etc/motd.tail" do
   source "motd.tail.erb"
@@ -26,6 +26,6 @@ template "/etc/motd.tail" do
   owner "root"
   mode "0644"
   backup 0
-  variables(:roles => roles )
+  variables(:run_list => run_list )
 end
 
