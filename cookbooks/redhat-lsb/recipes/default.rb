@@ -24,5 +24,5 @@ end
 
 package "redhat-lsb" do
   action   :upgrade
-  notifies :reload, resources(:ohai => "reload-lsb"), :immeadiately
+  notifies :reload, "ohai[reload-lsb]", :immediately
 end
