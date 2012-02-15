@@ -30,5 +30,5 @@
   "recipes": {
     "iptables": "Installs iptables and sets up .d style config directory of iptables rules"
   },
-  "version": "0.9.3"
+  "version": "0.10.0"
 }
