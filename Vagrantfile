@@ -37,7 +37,8 @@ Vagrant::Config.run do |config|
 
   # Forward a port from the guest to the host, which allows for outside
   # computers to access the VM, whereas host only networking does not.
-  config.vm.forward_port "http", 80, 8080
+  config.vm.forward_port 80, 8080
+  config.vm.forward_port 443, 8443
 
   # Share an additional folder to the guest VM. The first argument is
   # an identifier, the second is the path on the guest to mount the
@@ -75,7 +76,10 @@ Vagrant::Config.run do |config|
     # "recipe[foo]" or "role[bar]"
     chef.run_list = [
       "recipe[apt]",
-      "recipe[timezone]"
+      "recipe[timezone]",
+      "role[transit_server]",
+      "role[gitorious_database_master]",
+      "recipe[gitorious]"
     ]
   end
 end

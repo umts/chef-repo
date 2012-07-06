@@ -1,10 +1,8 @@
 source "http://rubygems.org"
 
-gem "json", "~>1.5.1"
-gem "chef", "~>0.10"
-gem "knife-github-cookbooks"
+gem "chef", "~>10"
+#gem "knife-github-cookbooks"
 gem "spice"
 gem "spiceweasel"
-gem "vagrant"
-gem "vagrant-snap"
+gem "vagrant", "~>1.0"
 gem "veewee"
