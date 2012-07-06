@@ -41,6 +41,11 @@ GEM
     json (1.5.4)
     knife-dwim (0.1.0)
       chef
+    librarian (0.0.20)
+      archive-tar-minitar (>= 0.5.2)
+      chef (>= 0.10)
+      highline
+      thor
     log4r (1.1.10)
     mime-types (1.19)
     mixlib-authentication (1.1.4)
@@ -119,6 +124,7 @@ PLATFORMS
 DEPENDENCIES
   chef (~> 10)
   knife-dwim
+  librarian
   spiceweasel
   vagrant (~> 1.0)
   veewee
