@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+#^syntax detection
+
+site 'http://community.opscode.com/api/v1'
+
+cookbook "apt"
+cookbook 'chef-client'
+cookbook "ntp"
+cookbook "sudo"
+cookbook "timezone"
+cookbook "users"
+
+cookbook "motd-tail",
+  :git => "https://github.com/umts/motd-tail"
+
+# cookbook 'apache2', '>= 1.0.0'
+
+# cookbook 'postgresql',
+#   :git => 'https://github.com/findsyou/cookbooks',
+#   :ref => 'postgresql-improvements'

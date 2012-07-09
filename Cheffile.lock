@@ -1,0 +1,26 @@
+SITE
+  remote: http://community.opscode.com/api/v1
+  specs:
+    apt (1.4.2)
+    chef-client (1.1.4)
+    ntp (1.1.8)
+    sudo (1.1.0)
+    timezone (0.0.1)
+    users (1.1.2)
+
+GIT
+  remote: https://github.com/umts/motd-tail
+  ref: master
+  sha: d53bf1d8706e1849aa8785ea8060ccd6479cb151
+  specs:
+    motd-tail (1.0.0)
+
+DEPENDENCIES
+  apt (>= 0)
+  chef-client (>= 0)
+  motd-tail (>= 0)
+  ntp (>= 0)
+  sudo (>= 0)
+  timezone (>= 0)
+  users (>= 0)
+
