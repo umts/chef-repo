@@ -13,6 +13,9 @@ cookbook "users"
 cookbook "motd-tail",
   :git => "https://github.com/umts/motd-tail"
 
+cookbook "kedpm",
+  :git => "https://github.com/umts/chef-kedpm"
+
 # cookbook 'apache2', '>= 1.0.0'
 
 # cookbook 'postgresql',

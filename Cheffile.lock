@@ -2,8 +2,11 @@ SITE
   remote: http://community.opscode.com/api/v1
   specs:
     apt (1.4.2)
+    build-essential (1.0.2)
     chef-client (1.1.4)
     ntp (1.1.8)
+    python (1.0.6)
+      build-essential (>= 0.0.0)
     sudo (1.1.0)
     timezone (0.0.1)
     users (1.1.2)
@@ -15,9 +18,16 @@ GIT
   specs:
     motd-tail (1.0.0)
 
+PATH
+  remote: /Users/matt/projects/chef-kedpm
+  specs:
+    kedpm (0.0.2)
+      python (>= 0.0.0)
+
 DEPENDENCIES
   apt (>= 0)
   chef-client (>= 0)
+  kedpm (>= 0)
   motd-tail (>= 0)
   ntp (>= 0)
   sudo (>= 0)
