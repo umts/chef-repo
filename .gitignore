@@ -8,5 +8,5 @@
 encrypted_data_bag_secret
 
 #Cookbook directory is handled by Librarian
-cookbooks
-tmp
+/cookbooks
+/tmp

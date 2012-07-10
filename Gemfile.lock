@@ -9,7 +9,7 @@ GEM
       bunny (>= 0.6.0)
       erubis
       highline (>= 1.6.9)
-      json (>= 1.4.4, <= 1.6.1)
+      json (<= 1.6.1, >= 1.4.4)
       mixlib-authentication (>= 1.1.0)
       mixlib-cli (>= 1.1.0)
       mixlib-config (>= 1.1.2)
@@ -19,7 +19,7 @@ GEM
       net-ssh (~> 2.2.2)
       net-ssh-multi (~> 1.1.0)
       ohai (>= 0.6.0)
-      rest-client (>= 1.0.4, < 1.7.0)
+      rest-client (< 1.7.0, >= 1.0.4)
       treetop (~> 1.4.9)
       uuidtools
       yajl-ruby (~> 1.1)

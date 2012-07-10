@@ -12,17 +12,19 @@ SITE
     users (1.1.2)
 
 GIT
+  remote: https://github.com/umts/chef-kedpm
+  ref: master
+  sha: aab650c397189e44f60d95ce8ef6d66d9b1bd8cc
+  specs:
+    kedpm (0.0.2)
+      python (>= 0.0.0)
+
+GIT
   remote: https://github.com/umts/motd-tail
   ref: master
   sha: d53bf1d8706e1849aa8785ea8060ccd6479cb151
   specs:
     motd-tail (1.0.0)
-
-PATH
-  remote: /Users/matt/projects/chef-kedpm
-  specs:
-    kedpm (0.0.2)
-      python (>= 0.0.0)
 
 DEPENDENCIES
   apt (>= 0)
