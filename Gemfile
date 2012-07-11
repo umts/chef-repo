@@ -7,4 +7,5 @@ gem "spiceweasel"
 gem "knife-dwim"
 
 gem "vagrant", "~>1.0"
+gem "vagrant-snap"
 gem "veewee"
