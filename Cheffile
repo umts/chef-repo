@@ -10,11 +10,14 @@ cookbook "sudo"
 cookbook "timezone"
 cookbook "users"
 
+cookbook "kedpm",
+  :git => "https://github.com/umts/chef-kedpm"
+
 cookbook "motd-tail",
   :git => "https://github.com/umts/motd-tail"
 
-cookbook "kedpm",
-  :git => "https://github.com/umts/chef-kedpm"
+cookbook "redmine",
+  :git => "https://github.com/juanje/cookbook-redmine.git"
 
 # cookbook 'apache2', '>= 1.0.0'
 
