@@ -82,7 +82,7 @@ This particular repository comes with a slightly UMTS specific `.chef/knife.rb`
 file.  It expects the following things:
 
 * That your chef server username is the same as either your local username _or_
-  the value of the `CHEF_SERVER_USER` environment variable (your might consider
+  the value of the `CHEF\_SERVER\_USER` environment variable (your might consider
   setting this in a `.rvmrc.local` file -- see below)
 * That your orgname (OpsCode Platform only) is either "umts" or set in the
   `ORGNAME` environment variable
@@ -102,9 +102,8 @@ familiar with Bundler, this file should seem familiar.  Cookbooks in the
 `Cheffile` and their dependancies are handled by Librarian, and you
 don't have to worry too much about them.
 
-If you'd like to see what our cookbook collection looks like, you can
-run `librarian-chef install` and they will be downloaded into the
-`cookbooks/` directory.  You don't *have* to do this, however; the
+To see what our cookbook collection looks like, run `librarian-chef install`
+and they will be downloaded into the `cookbooks/` directory.  The
 `cookbooks/` directory is completely ignored by both Librarian and Chef.
 
 The traditional locations for cookbooks have been modified slightly.
@@ -113,7 +112,7 @@ You can use knife to upload any cookbooks that Librarian knows about,
 whether or not you've downloaded them to `cookbooks/`.
 `site-cookbooks/` contains cookbooks that you don't feel warrant their
 own git repo.  Unlike a "normal" chef repository, however, it is not in
-the "`cookbook_path`".  This is by design.  You can keep cookbooks in
+the "`cookbook\_path`".  This is by design.  You can keep cookbooks in
 `site-cookbooks/` if you like, but they must also be added to the
 `Cheffile` with a path argument:
 
