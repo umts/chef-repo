@@ -55,6 +55,12 @@ GIT
   specs:
     motd-tail (1.0.0)
 
+PATH
+  remote: site-cookbooks/redmine-custom
+  specs:
+    redmine-custom (0.0.1)
+      redmine (>= 0.0.0)
+
 DEPENDENCIES
   apt (>= 0)
   chef-client (>= 0)
@@ -62,6 +68,7 @@ DEPENDENCIES
   motd-tail (>= 0)
   ntp (>= 0)
   redmine (>= 0)
+  redmine-custom (>= 0)
   sudo (>= 0)
   timezone (>= 0)
   users (>= 0)

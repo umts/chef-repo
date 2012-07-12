@@ -19,6 +19,9 @@ cookbook "motd-tail",
 cookbook "redmine",
   :git => "https://github.com/juanje/cookbook-redmine.git"
 
+cookbook "redmine-custom",
+  :path => "site-cookbooks/redmine-custom"
+
 # cookbook 'apache2', '>= 1.0.0'
 
 # cookbook 'postgresql',
