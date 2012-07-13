@@ -49,17 +49,19 @@ GIT
       python (>= 0.0.0)
 
 GIT
+  remote: https://github.com/umts/chef-redmine-custom.git
+  ref: master
+  sha: 7b2d47f8413a9a33cc9a00875f24b99daaf11b7c
+  specs:
+    redmine-custom (0.0.1)
+      redmine (>= 0.0.0)
+
+GIT
   remote: https://github.com/umts/motd-tail
   ref: master
   sha: d53bf1d8706e1849aa8785ea8060ccd6479cb151
   specs:
     motd-tail (1.0.0)
-
-PATH
-  remote: site-cookbooks/redmine-custom
-  specs:
-    redmine-custom (0.0.1)
-      redmine (>= 0.0.0)
 
 DEPENDENCIES
   apt (>= 0)

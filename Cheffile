@@ -20,7 +20,7 @@ cookbook "redmine",
   :git => "https://github.com/juanje/cookbook-redmine.git"
 
 cookbook "redmine-custom",
-  :path => "site-cookbooks/redmine-custom"
+  :git => "https://github.com/umts/chef-redmine-custom.git"
 
 # cookbook 'apache2', '>= 1.0.0'
 
