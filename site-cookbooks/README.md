@@ -6,9 +6,9 @@ In a "normal" Chef repository, this directory would be in the
 `cookbook_path` and you could use Knife to upload cookbboks from here
 the same way as with `cookbooks/`.  In our repository, that is not the
 case.  If you add a cookbook here, add it to the `Cheffile` with a
-"file" argument, like this"
+"path" argument, like this"
 
 ```ruby
 cookbook "some_cookbook",
-  :file => site-cookbooks/some_cookbook"
+  :path => site-cookbooks/some_cookbook"
 ```
