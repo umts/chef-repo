@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: redmine-custom
-# Recipe:: default
+# Recipe:: email
 #
 # Copyright 2012, UMass Transit Service
 #
@@ -16,6 +16,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-require_recipe "redmine"
-require_recipe "redmine-custom::markdown"
-require_recipe "redmine-custom::email"
+template "#{node["redmine"]["path"]}/config/configuration.yml" do
+  source "configuration.yml.erb"
+  owner node["redmine"]["user"]
+  group node["redmine"]["group"]
+  mode "644"
+  evars = %w{method address port authentication domain user_name password}
+  variables Hash[ evars.map{ |v| [v.to_sym, node["redmine"]["email"][v]] } ]
+end

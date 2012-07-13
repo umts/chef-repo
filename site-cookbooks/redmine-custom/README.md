@@ -12,6 +12,7 @@ Usage
 =====
 The default recipe is a meta-recipe that calls all of the following:
 * `redmine-custom::markdown` installs the [Markdown formatter][mdf]
+* `redmine-custom::email` configures basic outgoing email
 
 [rm]: http://www.redmine.org/
 [rmcb]: https://github.com/juanje/cookbook-redmine
