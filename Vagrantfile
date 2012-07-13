@@ -46,7 +46,8 @@ Vagrant::Config.run do |config|
       'tz' => 'America/New_York',
       'authorization' => {
         'sudo' => {
-          'users' => ['vagrant']
+          'users' => ['vagrant'],
+          'passwordless' => true
         }
       }
     })
