@@ -1,0 +1,4 @@
+#!/bin/bash
+
+alias vrollback='vagrant halt && vagrant snap back'
+alias hi='health_inspector inspect'

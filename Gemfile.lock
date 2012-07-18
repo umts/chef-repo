@@ -39,6 +39,9 @@ GEM
       xml-simple (~> 1.1.1)
     gherkin (2.11.1)
       json (>= 1.4.6)
+    health_inspector (0.0.5)
+      chef
+      thor
     highline (1.6.13)
     i18n (0.6.0)
     ipaddress (0.8.0)
@@ -133,6 +136,7 @@ PLATFORMS
 DEPENDENCIES
   chef (~> 10)
   foodcritic
+  health_inspector
   knife-dwim
   librarian
   spiceweasel
