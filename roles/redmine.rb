@@ -14,6 +14,7 @@ override_attributes(
   "redmine" => {
     "revision" => "2.0.3",
     "path" => "/srv/redmine",
+    "server_aliases" => [ "redmine.umasstransit.org" ],
     "databases" => {
       "production" => {
         "password" => pw
