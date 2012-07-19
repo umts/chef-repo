@@ -20,6 +20,9 @@ cookbook "motd-tail",
 cookbook "rbenv",
   :git => 'https://github.com/fnichol/chef-rbenv', :ref => 'v0.6.10'
 
+cookbook "python",
+  :git => "https://github.com/opscode-cookbooks/python.git"
+
 cookbook "redmine",
   :git => "https://github.com/juanje/cookbook-redmine.git"
 

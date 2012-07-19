@@ -17,7 +17,7 @@ SITE
       passenger_apache2 (>= 0.0.0)
       runit (>= 0.0.0)
       unicorn (>= 0.0.0)
-    apt (1.4.2)
+    apt (1.4.4)
     aws (0.100.0)
     build-essential (1.1.0)
     chef-client (1.1.4)
@@ -39,7 +39,6 @@ SITE
       openssl (>= 0.0.0)
       windows (>= 0.0.0)
     ntp (1.1.8)
-    ohai (1.0.2)
     openssl (1.0.0)
     passenger_apache2 (0.99.4)
       apache2 (>= 1.0.4)
@@ -50,9 +49,6 @@ SITE
       xml (>= 0.0.0)
     postgresql (0.99.4)
       openssl (>= 0.0.0)
-    python (1.0.8)
-      build-essential (>= 0.0.0)
-      yum (>= 0.0.0)
     ruby_build (0.6.2)
     runit (0.15.0)
     sudo (1.1.0)
@@ -86,9 +82,18 @@ GIT
       passenger_apache2 (>= 0.0.0)
 
 GIT
+  remote: https://github.com/opscode-cookbooks/python.git
+  ref: master
+  sha: e7d06b4db5aec229a4737b8025482df013ebaefe
+  specs:
+    python (1.0.8)
+      build-essential (>= 0.0.0)
+      yum (>= 0.0.0)
+
+GIT
   remote: https://github.com/umts/chef-kedpm
   ref: master
-  sha: aab650c397189e44f60d95ce8ef6d66d9b1bd8cc
+  sha: b007f5df8fc2541052d9dca4453f4a7b592b200b
   specs:
     kedpm (0.0.2)
       python (>= 0.0.0)
@@ -96,10 +101,9 @@ GIT
 GIT
   remote: https://github.com/umts/chef-redmine-custom.git
   ref: master
-  sha: 087902089588e5a2569fafd70daea9210e8e64a3
+  sha: 3c36feef101efb6683fe7af5ed8310f48f338503
   specs:
     redmine-custom (0.0.1)
-      apache2 (>= 0.0.0)
       redmine (>= 0.0.0)
 
 GIT
@@ -134,6 +138,7 @@ DEPENDENCIES
   kedpm (>= 0)
   motd-tail (>= 0)
   ntp (>= 0)
+  python (>= 0)
   rbenv (>= 0)
   redmine (>= 0)
   redmine-custom (>= 0)
