@@ -71,17 +71,6 @@ GIT
     rbenv (0.6.10)
 
 GIT
-  remote: https://github.com/juanje/cookbook-redmine.git
-  ref: master
-  sha: a9708ffed20439fe288645e962215ae49298c81b
-  specs:
-    redmine (0.0.4)
-      apache2 (>= 0.0.0)
-      git (>= 0.0.0)
-      mysql (>= 0.0.0)
-      passenger_apache2 (>= 0.0.0)
-
-GIT
   remote: https://github.com/opscode-cookbooks/python.git
   ref: master
   sha: e7d06b4db5aec229a4737b8025482df013ebaefe
@@ -112,6 +101,16 @@ GIT
   sha: d53bf1d8706e1849aa8785ea8060ccd6479cb151
   specs:
     motd-tail (1.0.0)
+
+PATH
+  remote: site-cookbooks/redmine
+  specs:
+    redmine (0.0.1)
+      application (>= 0.0.0)
+      application_ruby (>= 0.0.0)
+      database (>= 0.0.0)
+      git (>= 0.0.0)
+      mysql (>= 0.0.0)
 
 PATH
   remote: site-cookbooks/round-three

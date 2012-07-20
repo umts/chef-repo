@@ -16,9 +16,7 @@ override_attributes(
     "path" => "/srv/redmine",
     "server_aliases" => [ "redmine.umasstransit.org" ],
     "databases" => {
-      "production" => {
-        "password" => pw
-      }
+      "password" => pw
     },
     "packages" => {
       "scm" => []   #git is always installed
@@ -27,7 +25,10 @@ override_attributes(
       "method" => "smtp",
       "address" => "mailhub.oit.umass.edu"
     }
+  },
+  "build_essential" => {
+    "compiletime" => true
   }
 )
 
-run_list "recipe[redmine]", "recipe[redmine-custom]"
+run_list "recipe[redmine]"
