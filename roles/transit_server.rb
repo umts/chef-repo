@@ -4,6 +4,11 @@ description "The basics that all Transit servers need as a base"
 default_attributes(
   "ntp" => {
     "servers" => [ "ntp.umass.edu" ]
+  },
+  'authorization' => {
+    'sudo' => {
+      'passwordless' => true
+    }
   }
 )
 
