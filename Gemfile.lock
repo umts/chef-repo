@@ -39,6 +39,12 @@ GEM
       xml-simple (~> 1.1.1)
     gherkin (2.11.1)
       json (>= 1.4.6)
+    guard (1.2.3)
+      listen (>= 0.4.2)
+      thor (>= 0.14.6)
+    guard-knife (0.1.2)
+      chef (>= 0.10)
+      guard
     health_inspector (0.0.5)
       chef
       thor
@@ -53,6 +59,10 @@ GEM
       chef (>= 0.10)
       highline
       thor
+    listen (0.4.7)
+      rb-fchange (~> 0.0.5)
+      rb-fsevent (~> 0.9.1)
+      rb-inotify (~> 0.8.8)
     log4r (1.1.10)
     mime-types (1.19)
     mixlib-authentication (1.1.4)
@@ -84,6 +94,11 @@ GEM
       Platform (>= 0.4.0)
       open4 (>= 0.4.0)
     progressbar (0.11.0)
+    rb-fchange (0.0.5)
+      ffi
+    rb-fsevent (0.9.1)
+    rb-inotify (0.8.8)
+      ffi (>= 0.5.0)
     rest-client (1.6.7)
       mime-types (>= 1.16)
     rspec (2.10.0)
@@ -136,6 +151,7 @@ PLATFORMS
 DEPENDENCIES
   chef (~> 10)
   foodcritic
+  guard-knife
   health_inspector
   knife-dwim
   librarian

@@ -7,6 +7,7 @@ gem "health_inspector"
 gem "spiceweasel"
 
 gem "knife-dwim"
+gem "guard-knife"
 
 gem "vagrant", "~>1.0"
 gem "vagrant-snap"
