@@ -31,4 +31,4 @@ override_attributes(
   }
 )
 
-run_list "recipe[redmine]"
+run_list "recipe[redmine]", "recipe[redmine-custom]"
