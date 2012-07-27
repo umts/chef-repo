@@ -2,7 +2,7 @@ maintainer       "UMass Transit Service"
 maintainer_email "transit-mis@admin.umass.edu"
 license          "Apache 2.0"
 description      "Install Redmine with the application cookbook"
-version          "0.0.1"
+version          "0.0.2"
 
 recipe "redmine", "Install the Redmine application from the source"
 

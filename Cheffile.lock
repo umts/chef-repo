@@ -105,7 +105,7 @@ GIT
 PATH
   remote: site-cookbooks/redmine
   specs:
-    redmine (0.0.1)
+    redmine (0.0.2)
       application (>= 0.0.0)
       application_ruby (>= 0.0.0)
       database (>= 0.0.0)

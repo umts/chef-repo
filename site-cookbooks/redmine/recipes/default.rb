@@ -40,6 +40,8 @@ end
 chef_gem "mysql"
 
 db = node['redmine']['databases']
+rmversion = node['redmine']['revision'].to_i
+
 mysql_connection = { :host => "localhost", :username => 'root', :password => node['mysql']['server_root_password'] }
 
 mysql_database db['database'] do
@@ -69,6 +71,7 @@ application "redmine" do
   rails do
     gems %w{ bundler }
     bundler_without_groups %w{ postgresql sqlite3 }
+    bundler_deployment false
     database do
       adapter  db['adapter']
       host     "localhost"
@@ -80,6 +83,19 @@ application "redmine" do
 
   passenger_apache2 do
     server_aliases node['redmine']['server_aliases']
+  end
+
+  #On RM 1.x, plugins are mixed in with the rails plugins.  I can't think of how to support that.
+  unless rmversion < 2
+    symlinks({"plugins" => "plugins"})
+    purge_before_symlink ['plugins']
+  end
+
+  before_symlink do
+    directory "#{node['redmine']['path']}/shared/plugins" do
+      owner node['apache']['user']
+      group node['apache']['group']
+    end
   end
 
 end
