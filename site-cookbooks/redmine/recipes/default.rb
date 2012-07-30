@@ -67,6 +67,7 @@ application "redmine" do
   packages node['redmine']['packages'].values.flatten
 
   migrate true
+  rollback_on_error false
 
   rails do
     gems %w{ bundler }
