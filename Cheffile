@@ -6,6 +6,7 @@ site 'http://community.opscode.com/api/v1'
 cookbook "apt"
 cookbook 'chef-client'
 cookbook "ntp"
+cookbook "ruby_build"
 cookbook "sudo"
 cookbook "timezone"
 cookbook "users"
@@ -16,11 +17,20 @@ cookbook "kedpm",
 cookbook "motd-tail",
   :git => "https://github.com/umts/motd-tail"
 
+cookbook "rbenv",
+  :git => 'https://github.com/fnichol/chef-rbenv', :ref => 'v0.6.10'
+
 cookbook "redmine",
   :git => "https://github.com/juanje/cookbook-redmine.git"
 
 cookbook "redmine-custom",
   :git => "https://github.com/umts/chef-redmine-custom.git"
+
+cookbook "round-three",
+  :path => "site-cookbooks/round-three"
+
+cookbook "ruby-193",
+  :path => "site-cookbooks/ruby-193"
 
 # cookbook 'apache2', '>= 1.0.0'
 
