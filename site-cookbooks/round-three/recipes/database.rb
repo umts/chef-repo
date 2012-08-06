@@ -6,11 +6,11 @@
 #
 # All rights reserved - Do Not Redistribute
 #
+require_recipe "postgresql::server"
+
 require 'rubygems'
 Gem.clear_paths
 require 'pg'
-
-require_recipe "postgresql::server"
 
 round_three_secrets = Chef::EncryptedDataBagItem.load("apps", "round-three")
 postgresql_connection = {:host => "127.0.0.1",
