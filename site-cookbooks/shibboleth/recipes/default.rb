@@ -16,9 +16,9 @@ service "shibd" do
 end
 
 execute 'shib-keygen' do
-  cwd '/etc/shobboleth'
+  cwd '/etc/shibboleth'
   creates '/etc/shibboleth/sp-cert.pem'
-  command "shib-keygen -f -h #{node['fqdn']} -e #{node['fqdn']}/shibboleth"
+  command "shib-keygen -f -h #{node['fqdn']} -e #{node['fqdn']}/shibboleth && chmod 644 /etc/shibboleth/sp-key.pem"
   notifies :run, "execute[shib-metagen]", :immediately
   notifies :restart, 'service[shibd]'
 end
@@ -33,11 +33,13 @@ end
 
 remote_file '/etc/shibboleth/idp-metadata.xml' do
   source "#{node['shibboleth']['idp']}/idp/profile/Metadata/SAML"
+  mode '0644'
   notifies :restart, 'service[shibd]'
 end
 
 template '/etc/shibboleth/shibboleth2.xml' do
   source 'shibboleth2.xml.erb'
+  mode '0644'
   variables(
     :idp_url => "#{node['shibboleth']['idp']}/idp/shibboleth"
   )
@@ -45,6 +47,7 @@ template '/etc/shibboleth/shibboleth2.xml' do
 end
 
 cookbook_file '/etc/shibboleth/attribute-map.xml' do
+  mode '0644'
   notifies :restart, 'service[shibd]'
 end
 
