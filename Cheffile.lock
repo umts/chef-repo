@@ -131,6 +131,12 @@ PATH
       rbenv (>= 0.0.0)
       ruby_build (>= 0.0.0)
 
+PATH
+  remote: site-cookbooks/shibboleth
+  specs:
+    shibboleth (0.0.1)
+      apache2 (>= 0.0.0)
+
 DEPENDENCIES
   apt (>= 0)
   chef-client (>= 0)
@@ -144,6 +150,7 @@ DEPENDENCIES
   round-three (>= 0)
   ruby-193 (>= 0)
   ruby_build (>= 0)
+  shibboleth (>= 0)
   sudo (>= 0)
   timezone (>= 0)
   users (>= 0)

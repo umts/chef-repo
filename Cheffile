@@ -37,6 +37,9 @@ cookbook "round-three",
 cookbook "ruby-193",
   :path => "site-cookbooks/ruby-193"
 
+cookbook "shibboleth",
+  :path => "site-cookbooks/shibboleth"
+
 # cookbook 'apache2', '>= 1.0.0'
 
 # cookbook 'postgresql',
