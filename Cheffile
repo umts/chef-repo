@@ -40,6 +40,9 @@ cookbook "ruby-193",
 cookbook "shibboleth",
   :path => "site-cookbooks/shibboleth"
 
+cookbook "ssl",
+  :git => "https://github.com/VendaTech/chef-cookbook-ssl.git"
+
 # cookbook 'apache2', '>= 1.0.0'
 
 # cookbook 'postgresql',

@@ -32,9 +32,13 @@ SITE
       dmg (>= 0.0.0)
       runit (>= 0.0.0)
       yum (>= 0.0.0)
+    gpg (0.0.1)
+      minitest (>= 0.0.0)
     gunicorn (1.0.0)
       python (>= 0)
     java (1.5.2)
+    minitest (0.1.5)
+      chef_handler (~> 1.0.4)
     mysql (1.2.6)
       openssl (>= 0.0.0)
       windows (>= 0.0.0)
@@ -62,6 +66,14 @@ SITE
     xfs (1.0.0)
     xml (1.0.4)
     yum (0.8.0)
+
+GIT
+  remote: https://github.com/VendaTech/chef-cookbook-ssl.git
+  ref: master
+  sha: be66b9ccec2a3d9560f0005b1f48fb3f84885ec4
+  specs:
+    ssl (1.0.0)
+      gpg (>= 0.0.0)
 
 GIT
   remote: https://github.com/fnichol/chef-rbenv
@@ -151,6 +163,7 @@ DEPENDENCIES
   ruby-193 (>= 0)
   ruby_build (>= 0)
   shibboleth (>= 0)
+  ssl (>= 0)
   sudo (>= 0)
   timezone (>= 0)
   users (>= 0)
