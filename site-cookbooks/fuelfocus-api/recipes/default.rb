@@ -12,6 +12,8 @@ require_recipe "build-essential"
 ff_secrets = Chef::EncryptedDataBagItem.load('apps', 'fleetfocus-api')
 deploy_path = "/srv/fleetfocus-api"
 
+rbenv_gem "bundler"
+
 application "fleetfocus-api" do
   path deploy_path
   repository "git://github.com/umts/fleetfocus-api.git"
@@ -25,7 +27,7 @@ application "fleetfocus-api" do
 
   # "rails" for purposes of db config and vendoring bundle
   rails do
-    gems ['bundler']
+    bundler true
     bundler_deployment false
     database do
       adapter 'sqlserver'
