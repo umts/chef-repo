@@ -21,7 +21,6 @@ SITE
     aws (0.100.0)
     build-essential (1.1.0)
     chef-client (1.1.4)
-    chef_handler (1.0.6)
     database (1.2.0)
       aws (>= 0.0.0)
       mysql (>= 1.2.0)
@@ -32,16 +31,12 @@ SITE
       dmg (>= 0.0.0)
       runit (>= 0.0.0)
       yum (>= 0.0.0)
-    gpg (0.0.1)
-      minitest (>= 0.0.0)
     gunicorn (1.0.0)
       python (>= 0)
     java (1.5.2)
-    minitest (0.1.5)
-      chef_handler (~> 1.0.4)
-    mysql (1.2.6)
+    mysql (1.3.0)
+      build-essential (>= 0.0.0)
       openssl (>= 0.0.0)
-      windows (>= 0.0.0)
     ntp (1.1.8)
     openssl (1.0.0)
     passenger_apache2 (0.99.4)
@@ -57,15 +52,20 @@ SITE
     runit (0.15.0)
     sudo (1.1.0)
     timezone (0.0.1)
-    tomcat (0.10.4)
+    tomcat (0.11.0)
       java (>= 0.0.0)
     unicorn (1.0.0)
     users (1.1.2)
-    windows (1.3.2)
-      chef_handler (>= 0.0.0)
     xfs (1.0.0)
     xml (1.0.4)
     yum (0.8.0)
+
+GIT
+  remote: https://github.com/VendaTech/chef-cookbook-gpg.git
+  ref: master
+  sha: e6b3809dac967e85073466e126e9846303c89d17
+  specs:
+    gpg (1.0.0)
 
 GIT
   remote: https://github.com/VendaTech/chef-cookbook-ssl.git
@@ -115,6 +115,15 @@ GIT
     motd-tail (1.0.0)
 
 PATH
+  remote: site-cookbooks/fuelfocus-api
+  specs:
+    fuelfocus-api (0.0.1)
+      application (>= 0.0.0)
+      application_ruby (>= 0.0.0)
+      build-essential (>= 0.0.0)
+      git (>= 0.0.0)
+
+PATH
   remote: site-cookbooks/redmine
   specs:
     redmine (0.0.2)
@@ -149,9 +158,18 @@ PATH
     shibboleth (0.0.1)
       apache2 (>= 0.0.0)
 
+PATH
+  remote: site-cookbooks/ssl-test
+  specs:
+    ssl-test (0.0.1)
+      apache2 (>= 0.0.0)
+      ssl (>= 0.0.0)
+
 DEPENDENCIES
   apt (>= 0)
   chef-client (>= 0)
+  fuelfocus-api (>= 0)
+  gpg (>= 0)
   kedpm (>= 0)
   motd-tail (>= 0)
   ntp (>= 0)
@@ -164,6 +182,7 @@ DEPENDENCIES
   ruby_build (>= 0)
   shibboleth (>= 0)
   ssl (>= 0)
+  ssl-test (>= 0)
   sudo (>= 0)
   timezone (>= 0)
   users (>= 0)

@@ -11,6 +11,12 @@ cookbook "sudo"
 cookbook "timezone"
 cookbook "users"
 
+cookbook "fuelfocus-api",
+  :path => "site-cookbooks/fuelfocus-api"
+
+cookbook "gpg",
+  :git => "https://github.com/VendaTech/chef-cookbook-gpg.git"
+
 cookbook "kedpm",
   :git => "https://github.com/umts/chef-kedpm"
 
@@ -42,6 +48,9 @@ cookbook "shibboleth",
 
 cookbook "ssl",
   :git => "https://github.com/VendaTech/chef-cookbook-ssl.git"
+
+cookbook "ssl-test",
+  :path => "site-cookbooks/ssl-test"
 
 # cookbook 'apache2', '>= 1.0.0'
 
