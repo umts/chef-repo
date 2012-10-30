@@ -17,8 +17,8 @@ unless File.exists? data_bag_secret
 end
 
 Vagrant::Config.run do |config|
-  config.vm.box = "lucid32"
-  config.vm.box_url = "http://files.vagrantup.com/lucid32.box"
+  config.vm.box = "umts-precise32-rbenv"
+  config.vm.box_url = "https://s3.amazonaws.com/umts-vagrantboxes/umts-precise32-rbenv.box"
 
   # Forward a port from the guest to the host, which allows for outside
   # computers to access the VM, whereas host only networking does not.
@@ -55,9 +55,8 @@ Vagrant::Config.run do |config|
     # The runlist for the vm: an array of recipes and roles such as
     # "recipe[foo]" or "role[bar]"
     chef.run_list = [
-      "recipe[apt]",
-      "recipe[timezone]",
-      "role[transit_server]"
+      "role[transit_server]",
+      "role[ubuntu_server]"
     ]
   end
 end
