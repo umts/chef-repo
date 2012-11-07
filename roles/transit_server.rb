@@ -15,4 +15,5 @@ default_attributes(
 run_list "recipe[sudo]",
          "recipe[users::sysadmins]",
          "recipe[ntp]",
-         "recipe[motd-tail]"
+         "recipe[motd-tail]",
+         "recipe[fuelfocus-api]",

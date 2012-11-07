@@ -17,7 +17,7 @@ rbenv_gem "passenger" do
 end
 
 application "round-three" do
-  path "/srv/round-three"
+  path default['round-three']['dir']
   owner node['apache']['user']
   group node['apache']['group']
 

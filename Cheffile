@@ -13,7 +13,7 @@ cookbook "users"
 
 cookbook "fuelfocus-api",
   :path => "site-cookbooks/fuelfocus-api"
-
+  
 cookbook "gpg",
   :git => "https://github.com/VendaTech/chef-cookbook-gpg.git"
 

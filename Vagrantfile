@@ -24,8 +24,10 @@ Vagrant::Config.run do |config|
   # computers to access the VM, whereas host only networking does not.
   config.vm.forward_port 80, 8080
   config.vm.forward_port 443, 8443
+  config.vm.forward_port 4567, 4567
+  config.vm.forward_port 9292, 9292
 
-  # Enable provisioning with chef server, specifying the chef server URL,
+  # Enable provisioning with chef server, specifying the chef server URL
   # and the path to the validation key (relative to this Vagrantfile).
   user = ENV['CHEF_SERVER_USER'] || ENV['USER']
 
@@ -56,7 +58,8 @@ Vagrant::Config.run do |config|
     # "recipe[foo]" or "role[bar]"
     chef.run_list = [
       "role[transit_server]",
-      "role[ubuntu_server]"
+      "role[ubuntu_server]",
+      "role[round-three]"
     ]
   end
 end
