@@ -8,7 +8,7 @@
 #
 
 service "faye" do
-	start_command "#{default['rbenv']['root_path']}/shims/bundle exec rackup #{default['round-three']['dir']}/current/private_pub.ru -s thin -E production"
+	start_command "#{node['rbenv']['root_path']}/shims/bundle exec rackup #{node['round-three']['dir']}/current/private_pub.ru -s thin -E production"
 	case node[:platform]
   when "ubuntu"
     if node[:platform_version].to_f >= 9.10
