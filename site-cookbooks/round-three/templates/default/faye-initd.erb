@@ -15,15 +15,15 @@
 
 case "$1" in
   start)
-  cd <%= @app_path %>
+  cd <%= @round_three_dir %>
   <%= @bundler %> exec thin start -C <%= @config %>
 	;;
   stop)
-  cd <%= @app_path %>
+  cd <%= @round_three_dir %>
   <%= @bundler %> exec thin stop -C <%= @config %>
 	;;
   restart)
-  cd <%= @app_path %>
+  cd <%= @round_three_dir %>
   <%= @bundler %> exec thin restart -C <%= @config %>
 	;;
   *)
