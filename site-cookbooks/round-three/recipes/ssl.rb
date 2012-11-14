@@ -9,12 +9,17 @@
 include_recipe "ssl"
 include_recipe "apache2::mod_ssl"
 
+domain = "transit-demo.admin.umass.edu"
+
 web_app "round-three-ssl" do
-  template       "round-three-ssl.conf.erb"
-  docroot        "#{node['round-three']['dir']}/current/public"
-  server_name    "round-three.#{node['domain']}"
-  server_aliases ["demo.umasstransit.org", "transit-demo.admin.umass.edu"]
-  log_dir        node['apache']['log_dir']
+  template        "round-three-ssl.conf.erb"
+  docroot         "#{node['round-three']['dir']}/current/public"
+  server_name     "round-three.#{node['domain']}"
+  server_aliases  ["demo.umasstransit.org", "transit-demo.admin.umass.edu"]
+  log_dir         node['apache']['log_dir']
+  rails_env       node.chef_environment =~ /_default/ ? "production" : node.chef_environment
+  ssl_key         "/etc/ssl/#{domain}.key"
+  ssl_certificate "/etc/ssl/#{domain}.cert"
 end
 
 apache_site "round-three.conf" do
@@ -22,8 +27,6 @@ apache_site "round-three.conf" do
 end
 
 ssl_certificate "transit-demo" do
-  domain = "transit-demo.admin.umass.edu"
-
   name        domain
   ca          "InCommon"
   key         "/etc/ssl/#{domain}.key"

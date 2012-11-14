@@ -11,6 +11,9 @@
 
 <VirtualHost *:443>
   SSLEngine On
+  SSLCertificateFile <%= @params[:ssl_certificate] %>
+  SSLCertificateKeyFile <%= @params[:ssl_key] %>
+
   ServerName <%= @params[:server_name] %>
   ServerAlias <% @params[:server_aliases].each do |a| %><%= "#{a}" %> <% end %>
   DocumentRoot <%= @params[:docroot] %>

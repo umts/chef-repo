@@ -1,8 +1,8 @@
 SITE
   remote: http://community.opscode.com/api/v1
   specs:
-    apache2 (1.1.12)
-    application (1.0.0)
+    apache2 (1.3.0)
+    application (1.0.4)
       apache2 (>= 0.0.0)
       gunicorn (>= 0.0.0)
       passenger_apache2 (>= 0.0.0)
@@ -11,42 +11,43 @@ SITE
       runit (>= 0.0.0)
       tomcat (>= 0.0.0)
       unicorn (>= 0.0.0)
-    application_ruby (1.0.0)
+    application_ruby (1.0.4)
       apache2 (>= 0.0.0)
       application (>= 0.0.0)
       passenger_apache2 (>= 0.0.0)
       runit (>= 0.0.0)
       unicorn (>= 0.0.0)
     apt (1.4.4)
-    aws (0.100.0)
-    build-essential (1.1.0)
+    aws (0.100.2)
+    build-essential (1.2.0)
     chef-client (1.1.4)
-    database (1.2.0)
+    database (1.3.6)
       aws (>= 0.0.0)
-      mysql (>= 1.2.0)
-      postgresql (>= 0.0.0)
+      mysql (>= 1.3.0)
+      postgresql (>= 1.0.0)
       xfs (>= 0.0.0)
     dmg (1.0.0)
-    git (1.0.0)
+    git (1.0.2)
+      build-essential (>= 0.0.0)
       dmg (>= 0.0.0)
       runit (>= 0.0.0)
       yum (>= 0.0.0)
-    gunicorn (1.0.0)
-      python (>= 0)
-    java (1.5.2)
+    gunicorn (1.1.0)
+      python (>= 0.0.0)
+    java (1.6.0)
     mysql (1.3.0)
       build-essential (>= 0.0.0)
       openssl (>= 0.0.0)
     ntp (1.1.8)
     openssl (1.0.0)
-    passenger_apache2 (0.99.4)
+    passenger_apache2 (1.0.0)
       apache2 (>= 1.0.4)
       build-essential (>= 0.0.0)
-    php (1.0.2)
+    php (1.1.0)
       build-essential (>= 0.0.0)
       mysql (>= 0.0.0)
       xml (>= 0.0.0)
-    postgresql (0.99.4)
+    postgresql (2.0.0)
       openssl (>= 0.0.0)
     ruby_build (0.6.2)
     runit (0.15.0)
@@ -54,23 +55,23 @@ SITE
     timezone (0.0.1)
     tomcat (0.11.0)
       java (>= 0.0.0)
-    unicorn (1.0.0)
+    unicorn (1.1.0)
     users (1.1.2)
     xfs (1.0.0)
     xml (1.0.4)
-    yum (0.8.0)
+    yum (1.0.0)
 
 GIT
   remote: https://github.com/VendaTech/chef-cookbook-gpg.git
   ref: master
-  sha: e6b3809dac967e85073466e126e9846303c89d17
+  sha: 2947a26c03a6c048b36c0f36a37e975bc69bbf36
   specs:
     gpg (1.0.0)
 
 GIT
   remote: https://github.com/VendaTech/chef-cookbook-ssl.git
   ref: master
-  sha: be66b9ccec2a3d9560f0005b1f48fb3f84885ec4
+  sha: d883bd04dceb92856747702b7ecc50b7bcd0ba2f
   specs:
     ssl (1.0.0)
       gpg (>= 0.0.0)
@@ -85,7 +86,7 @@ GIT
 GIT
   remote: https://github.com/opscode-cookbooks/python.git
   ref: master
-  sha: e7d06b4db5aec229a4737b8025482df013ebaefe
+  sha: ead613fa2389dc96408aa1bfb1bd246b5c1d315b
   specs:
     python (1.0.8)
       build-essential (>= 0.0.0)
@@ -143,6 +144,7 @@ PATH
       git (>= 0.0.0)
       postgresql (>= 0.0.0)
       rbenv (>= 0.0.0)
+      ssl (>= 0.0.0)
       xml (>= 0.0.0)
 
 PATH
