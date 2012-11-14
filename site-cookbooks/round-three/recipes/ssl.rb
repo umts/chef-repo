@@ -6,6 +6,7 @@
 #
 # All rights reserved - Do Not Redistribute
 #
+include_recipe "ssl"
 include_recipe "apache2::mod_ssl"
 
 web_app "round-three-ssl" do
