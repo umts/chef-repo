@@ -9,6 +9,15 @@ default_attributes(
     'sudo' => {
       'passwordless' => true
     }
+  },
+  "ssl" => {
+    "key_vault"    => "transit-mis@admin.umass.edu",
+    "country"      => "US",
+    "state"        => "MA",
+    "city"         => "Amherst",
+    "organization" => "UMass Transit Service",
+    "department"   => "MIS",
+    "email"        => "transit-mis@admin.umass.edu"
   }
 )
 

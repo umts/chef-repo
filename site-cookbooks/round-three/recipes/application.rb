@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: round-three
-# Recipe:: default
+# Recipe:: application
 #
 # Copyright 2012, UMass Transit Service
 #
@@ -8,6 +8,7 @@
 #
 require_recipe "git"
 require_recipe "xml"
+
 round_three_secrets = Chef::EncryptedDataBagItem.load("apps", "round-three")
 
 # Install the gem here, so the "passenger-install-apache-module" gets rehashed
