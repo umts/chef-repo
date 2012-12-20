@@ -13,5 +13,5 @@ run_list base
 env_run_lists(
   "_default" => base,
   "development" => base,
-  "production" => base + ["recipe[round-three::ssl]"]
+  "production" => base + ["recipe[round-three::ssl]", "recipe[round-three::shibboleth]"]
 )
