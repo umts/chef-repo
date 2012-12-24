@@ -1,7 +1,5 @@
-<VirtualHost *:443>
-  <Location />
-    AuthType shibboleth
-    ShibRequestSetting requireSession 1
-    require valid-user
-  </Location>
-</VirtualHost>
+<Location />
+  AuthType shibboleth
+  ShibRequestSetting requireSession 1
+  require valid-user
+</Location>
