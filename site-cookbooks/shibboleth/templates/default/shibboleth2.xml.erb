@@ -7,42 +7,17 @@
     xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata"
     clockSkew="180">
 
-    <!--
-    By default, in-memory StorageService, ReplayCache, ArtifactMap, and SessionCache
-    are used. See example-shibboleth2.xml for samples of explicitly configuring them.
-    -->
-
-    <!--
-    To customize behavior for specific resources on Apache, and to link vhosts or
-    resources to ApplicationOverride settings below, use web server options/commands.
-    See https://spaces.internet2.edu/display/SHIB2/NativeSPConfigurationElements for help.
-
-    For examples with the RequestMap XML syntax instead, see the example-shibboleth2.xml
-    file, and the https://spaces.internet2.edu/display/SHIB2/NativeSPRequestMapHowTo topic.
-    -->
-
     <!-- The ApplicationDefaults element is where most of Shibboleth's SAML bits are defined. -->
     <ApplicationDefaults entityID="https://<%= node['fqdn'] %>/shibboleth"
                          policyId="default"
-                         REMOTE_USER="eppn persistent-id targeted-id">
+                         REMOTE_USER="<%= node['shibboleth']['remote_user'] %>">
 
-        <!--
-        Controls session lifetimes, address checks, cookie handling, and the protocol handlers.
-        You MUST supply an effectively unique handlerURL value for each of your applications.
-        The value defaults to /Shibboleth.sso, and should be a relative path, with the SP computing
-        a relative value based on the virtual host. Using handlerSSL="true", the default, will force
-        the protocol to be https. You should also add a cookieProps setting of "; path=/; secure"
-        in that case. Note that while we default checkAddress to "false", this has a negative
-        impact on the security of the SP. Stealing cookies/sessions is much easier with this disabled.
-        -->
-        <Sessions lifetime="28800" timeout="3600" checkAddress="false" relayState="ss:mem" handlerSSL="false">
+        <Sessions lifetime="<%= node['shibboleth']['sessions']['lifetime'] %>"
+                  timeout="<%= node['shibboleth']['sessions']['timeout'] %>"
+                  checkAddress="<%= node['shibboleth']['sessions']['check_address'] %>"
+                  relayState="ss:mem"
+                  handlerSSL="<%= node['shibboleth']['sessions']['handler_ssl'] %>">
 
-            <!--
-            Configures SSO for a default IdP. To allow for >1 IdP, remove
-            entityID property and adjust discoveryURL to point to discovery service.
-            (Set discoveryProtocol to "WAYF" for legacy Shibboleth WAYF support.)
-            You can also override entityID on /Login query string, or in RequestMap/htaccess.
-            -->
             <SSO entityID="<%= @idp_url %>">
               SAML2 SAML1
             </SSO>
@@ -50,37 +25,32 @@
             <!-- SAML and local-only logout. -->
             <Logout>SAML2 Local</Logout>
 
-            <!-- Extension service that generates "approximate" metadata based on SP configuration. -->
-            <Handler type="MetadataGenerator" Location="/Metadata" signing="false"/>
+            <% if node['shibboleth']['handlers']['metadata_generator'] %>
+              <!-- Extension service that generates "approximate" metadata based on SP configuration. -->
+              <Handler type="MetadataGenerator" Location="/Metadata" signing="false"/>
+            <% end %>
 
-            <!-- Status reporting service. -->
-            <Handler type="Status" Location="/Status" acl="127.0.0.1"/>
+            <% if node['shibboleth']['handlers']['status'] %>
+              <!-- Status reporting service. -->
+              <Handler type="Status" Location="/Status" acl="127.0.0.1"/>
+            <% end %>
 
-            <!-- Session diagnostic service. -->
-            <Handler type="Session" Location="/Session" showAttributeValues="false"/>
+            <% if node['shibboleth']['handlers']['session'] %>
+              <!-- Session diagnostic service. -->
+              <Handler type="Session" Location="/Session" showAttributeValues="false"/>
+            <% end %>
 
-            <!-- JSON feed of discovery information. -->
-            <Handler type="DiscoveryFeed" Location="/DiscoFeed"/>
+            <% if node['shibboleth']['handlers']['discovery_feed'] %>
+              <!-- JSON feed of discovery information. -->
+              <Handler type="DiscoveryFeed" Location="/DiscoFeed"/>
+            <% end %>
+
         </Sessions>
 
-        <!--
-        Allows overriding of error template information/filenames. You can
-        also add attributes with values that can be plugged into the templates.
-        -->
-        <Errors supportContact="root@localhost"
-            logoLocation="/shibboleth-sp/logo.jpg"
-            styleSheet="/shibboleth-sp/main.css"/>
+        <Errors supportContact="<%= node['shibboleth']['errors']['contact'] %>"
+                logoLocation="<%= node['shibboleth']['errors']['logo'] %>"
+                styleSheet="<%= node['shibboleth']['errors']['css'] %>"/>
 
-        <!-- Example of remotely supplied batch of signed metadata. -->
-        <!--
-        <MetadataProvider type="XML" uri="http://federation.org/federation-metadata.xml"
-              backingFilePath="federation-metadata.xml" reloadInterval="7200">
-            <MetadataFilter type="RequireValidUntil" maxValidityInterval="2419200"/>
-            <MetadataFilter type="Signature" certificate="fedsigner.pem"/>
-        </MetadataProvider>
-        -->
-
-        <!-- Example of locally maintained metadata. -->
         <MetadataProvider type="Chaining">
           <MetadataProvider type="XML" file="<%= node['fqdn'] %>-metadata.xml" />
           <MetadataProvider type="XML" file="idp-metadata.xml" />
@@ -99,18 +69,6 @@
         <!-- Simple file-based resolver for using a single keypair. -->
         <CredentialResolver type="File" key="sp-key.pem" certificate="sp-cert.pem"/>
 
-        <!--
-        The default settings can be overridden by creating ApplicationOverride elements (see
-        the https://spaces.internet2.edu/display/SHIB2/NativeSPApplicationOverride topic).
-        Resource requests are mapped by web server commands, or the RequestMapper, to an
-        applicationId setting.
-
-        Example of a second application (for a second vhost) that has a different entityID.
-        Resources on the vhost would map to an applicationId of "admin":
-        -->
-        <!--
-        <ApplicationOverride id="admin" entityID="https://admin.example.org/shibboleth"/>
-        -->
     </ApplicationDefaults>
 
     <!-- Policies that determine how to process and authenticate runtime messages. -->
