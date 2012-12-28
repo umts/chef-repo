@@ -46,6 +46,8 @@ template '/etc/shibboleth/shibboleth2.xml' do
   notifies :restart, 'service[shibd]'
 end
 
+# Using ruby_block with ::File.open instead of file because I want to wait
+# until converge-time to read in the .xml bits
 ruby_block 'build-attribute-map' do
   block do
     head = <<-EOF
