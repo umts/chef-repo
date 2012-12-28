@@ -46,9 +46,28 @@ template '/etc/shibboleth/shibboleth2.xml' do
   notifies :restart, 'service[shibd]'
 end
 
-cookbook_file '/etc/shibboleth/attribute-map.xml' do
-  mode '0644'
+ruby_block 'build-attribute-map' do
+  block do
+    head = <<-EOF
+      <!-- This file is managed with Chef.  Any changes WILL BE OVER-WRITTEN -->
+      <Attributes xmlns="urn:mace:shibboleth:2.0:attribute-map" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    EOF
+
+    tail = "</Attributes>\n"
+
+    content = (head + ::Dir.glob('/etc/shibboleth/attributes.d/*.xml').map { |file| ::File.read(file) }.join + tail)
+
+    ::File.open("/etc/shibboleth/attribute-map.xml", "w", 0644) { |f| f.write(content) }
+  end
+
+  action :nothing
   notifies :restart, 'service[shibd]'
+end
+
+remote_directory '/etc/shibboleth/attributes.d' do
+  mode '0755'
+  files_mode '0644'
+  notifies :create, 'ruby_block[build-attribute-map]'
 end
 
 apache_module 'shib2'
