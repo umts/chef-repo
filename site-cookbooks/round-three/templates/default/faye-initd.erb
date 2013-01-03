@@ -16,7 +16,7 @@
 case "$1" in
   start)
   cd <%= @round_three_dir %>
-  <%= @bundler %> exec thin start --ssl -C <%= @config %>
+  <%= @bundler %> exec thin start -C <%= @config %>
 	;;
   stop)
   cd <%= @round_three_dir %>
