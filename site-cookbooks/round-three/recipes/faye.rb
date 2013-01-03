@@ -50,6 +50,7 @@ template node['round-three']['dir']+"/shared/faye.yml" do
 		:environment => node.chef_environment,
 		:rackup => "private_pub.ru"
 	)
+	notifies :restart, "service[faye]"
 end
     
 template "/etc/init.d/faye" do
