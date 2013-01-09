@@ -40,7 +40,7 @@ end
 link "#{node['round-three']['dir']}/current/config/faye.yml" do
   to "#{node['round-three']['dir']}/shared/faye.yml"
 end
-	
+
 template node['round-three']['dir']+"/shared/faye.yml" do
 	source "faye.yml.erb"
 	mode "0755"
@@ -50,6 +50,7 @@ template node['round-three']['dir']+"/shared/faye.yml" do
 		:environment => node.chef_environment,
 		:rackup => "private_pub.ru"
 	)
+	notifies :restart, "service[faye]"
 end
     
 template "/etc/init.d/faye" do
