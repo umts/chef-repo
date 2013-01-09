@@ -13,6 +13,7 @@
   SSLEngine On
   SSLCertificateFile <%= @params[:ssl_certificate] %>
   SSLCertificateKeyFile <%= @params[:ssl_key] %>
+  SSLCertificateChainFile <%= @params[:ssl_chain] %>
 
   ServerName <%= @params[:server_name] %>
   ServerAlias <% @params[:server_aliases].each do |a| %><%= "#{a}" %> <% end %>
