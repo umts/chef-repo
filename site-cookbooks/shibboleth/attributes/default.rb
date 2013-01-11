@@ -4,7 +4,7 @@ default['shibboleth']['remote_user'] = "eppn persistent-id targeted-id"
 default['shibboleth']['sessions']['lifetime'] = 28800
 default['shibboleth']['sessions']['timeout'] = 3600
 default['shibboleth']['sessions']['check_address'] = false
-default['shibboleth']['sessions']['handler_ssl'] = false
+default['shibboleth']['sessions']['handler_ssl'] = true
 
 default['shibboleth']['handlers']['metadata_generator'] = true
 default['shibboleth']['handlers']['status'] = true
