@@ -1,65 +1,53 @@
 SITE
   remote: http://community.opscode.com/api/v1
   specs:
-    apache2 (1.3.0)
-    application (1.0.4)
-      apache2 (>= 0.0.0)
-      gunicorn (>= 0.0.0)
-      passenger_apache2 (>= 0.0.0)
-      php (>= 0.0.0)
-      python (>= 1.0.6)
-      runit (>= 0.0.0)
-      tomcat (>= 0.0.0)
-      unicorn (>= 0.0.0)
-    application_ruby (1.0.4)
+    apache2 (1.4.2)
+    application (2.0.0)
+    application_ruby (1.0.8)
       apache2 (>= 0.0.0)
       application (>= 0.0.0)
       passenger_apache2 (>= 0.0.0)
       runit (>= 0.0.0)
       unicorn (>= 0.0.0)
     apt (1.4.4)
-    aws (0.100.2)
-    build-essential (1.2.0)
+    aws (0.100.6)
+    build-essential (1.3.2)
     chef-client (1.1.4)
-    database (1.3.6)
+    chef_handler (1.1.4)
+    database (1.3.10)
       aws (>= 0.0.0)
       mysql (>= 1.3.0)
       postgresql (>= 1.0.0)
       xfs (>= 0.0.0)
-    dmg (1.0.0)
-    git (1.0.2)
+    dmg (1.1.0)
+    git (2.1.2)
       build-essential (>= 0.0.0)
       dmg (>= 0.0.0)
       runit (>= 0.0.0)
+      windows (>= 0.0.0)
       yum (>= 0.0.0)
-    gunicorn (1.1.0)
-      python (>= 0.0.0)
-    java (1.6.0)
-    mysql (1.3.0)
+    mysql (2.1.0)
       build-essential (>= 0.0.0)
       openssl (>= 0.0.0)
     ntp (1.1.8)
     openssl (1.0.0)
-    passenger_apache2 (1.0.0)
+    passenger_apache2 (1.1.0)
       apache2 (>= 1.0.4)
       build-essential (>= 0.0.0)
-    php (1.1.0)
-      build-essential (>= 0.0.0)
-      mysql (>= 0.0.0)
-      xml (>= 0.0.0)
-    postgresql (2.0.0)
+    postgresql (2.1.0)
       openssl (>= 0.0.0)
     ruby_build (0.6.2)
-    runit (0.15.0)
+    runit (0.16.2)
     sudo (1.1.0)
     timezone (0.0.1)
-    tomcat (0.11.0)
-      java (>= 0.0.0)
     unicorn (1.1.0)
     users (1.1.2)
-    xfs (1.0.0)
-    xml (1.0.4)
-    yum (1.0.0)
+    windows (1.7.0)
+      chef_handler (>= 0.0.0)
+    xfs (1.1.0)
+    xml (1.1.2)
+      build-essential (>= 0.0.0)
+    yum (2.1.0)
 
 GIT
   remote: https://github.com/VendaTech/chef-cookbook-gpg.git
@@ -71,9 +59,9 @@ GIT
 GIT
   remote: https://github.com/VendaTech/chef-cookbook-ssl.git
   ref: master
-  sha: d883bd04dceb92856747702b7ecc50b7bcd0ba2f
+  sha: 0c7c36a5d5f93bf117d10799cba660de8beebe22
   specs:
-    ssl (1.0.0)
+    ssl (1.0.3)
       gpg (>= 0.0.0)
 
 GIT
@@ -86,9 +74,9 @@ GIT
 GIT
   remote: https://github.com/opscode-cookbooks/python.git
   ref: master
-  sha: ead613fa2389dc96408aa1bfb1bd246b5c1d315b
+  sha: 34cb929504f9972d9d0ce66cad70254d3ab36f21
   specs:
-    python (1.0.8)
+    python (1.2.0)
       build-essential (>= 0.0.0)
       yum (>= 0.0.0)
 
@@ -107,6 +95,14 @@ GIT
   specs:
     redmine-custom (0.0.1)
       redmine (>= 0.0.0)
+
+GIT
+  remote: https://github.com/umts/chef-shibboleth.git
+  ref: master
+  sha: 066311224af724a7f9f26483d4ad0b7dccc7a445
+  specs:
+    shibboleth (0.0.2)
+      apache2 (>= 0.0.0)
 
 GIT
   remote: https://github.com/umts/motd-tail
@@ -144,6 +140,7 @@ PATH
       git (>= 0.0.0)
       postgresql (>= 0.0.0)
       rbenv (>= 0.0.0)
+      shibboleth (>= 0.0.0)
       ssl (>= 0.0.0)
       xml (>= 0.0.0)
 
@@ -153,12 +150,6 @@ PATH
     ruby-193 (0.0.1)
       rbenv (>= 0.0.0)
       ruby_build (>= 0.0.0)
-
-PATH
-  remote: site-cookbooks/shibboleth
-  specs:
-    shibboleth (0.0.1)
-      apache2 (>= 0.0.0)
 
 PATH
   remote: site-cookbooks/ssl-test

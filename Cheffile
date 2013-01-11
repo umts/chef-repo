@@ -44,7 +44,7 @@ cookbook "ruby-193",
   :path => "site-cookbooks/ruby-193"
 
 cookbook "shibboleth",
-  :path => "site-cookbooks/shibboleth"
+  :git => "https://github.com/umts/chef-shibboleth.git"
 
 cookbook "ssl",
   :git => "https://github.com/VendaTech/chef-cookbook-ssl.git"
