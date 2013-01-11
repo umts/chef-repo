@@ -10,3 +10,6 @@ encrypted_data_bag_secret
 #Cookbook directory is handled by Librarian
 /cookbooks
 /tmp
+
+#Vagrant boxes made by VeeWee
+*.box
