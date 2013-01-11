@@ -24,6 +24,15 @@ cookbook_file "/etc/ssl/in-common-intermediate.cert" do
   notifies :restart, 'service[apache2]'
 end
 
+execute "create_ssl_bundle" do
+  cert = "/etc/ssl/#{domain}.cert"
+  interm = "/etc/ssl/in-common-intermediate.cert"
+  combo = "/etc/ssl/#{domain}_combined.cert"
+
+  command "cat #{cert} #{interm} > #{combo}"
+  only_if { ::File.exists?(cert) && ::File.exists?(interm) }
+end
+
 web_app "round-three-ssl" do
   template        "round-three-ssl.conf.erb"
   docroot         "#{node['round-three']['dir']}/current/public"

@@ -8,29 +8,29 @@
 #
 
 %w{log pids}.each do |dir|
-	directory "#{node['round-three']['dir']}/shared/#{dir}" do
-		owner "root"
-		group "root"
-		mode "0755"
-		action :create
-	end
+  directory "#{node['round-three']['dir']}/shared/#{dir}" do
+    owner "root"
+    group "root"
+    mode "0755"
+    action :create
+  end
 end
 
 directory "#{node['round-three']['dir']}/current/tmp/pids" do
-	owner "root"
-	group "root"
-	mode "0755"
-	action :create
-	recursive true
+  owner "root"
+  group "root"
+  mode "0755"
+  action :create
+  recursive true
 end
 
 template "#{node['round-three']['dir']}/shared/faye.yml" do
-	mode "0755"
-	variables(
-		:dir => "#{node['round-three']['dir']}/current/",
-		:port => 9292,
-		:environment => node.chef_environment
-	)
+  mode "0755"
+  variables(
+    :dir => "#{node['round-three']['dir']}/current/",
+    :port => 9292,
+    :environment => node.chef_environment
+  )
 end
 
 link "#{node['round-three']['dir']}/current/log" do
@@ -42,17 +42,19 @@ link "#{node['round-three']['dir']}/current/config/faye.yml" do
 end
 
 template node['round-three']['dir']+"/shared/faye.yml" do
-	source "faye.yml.erb"
-	mode "0755"
-	variables(
-		:dir => node['round-three']['dir']+"/current/",
-		:port => 9292,
-		:environment => node.chef_environment,
-		:rackup => "private_pub.ru"
-	)
-	notifies :restart, "service[faye]"
+  source "faye.yml.erb"
+  mode "0755"
+  variables(
+    :dir => node['round-three']['dir']+"/current/",
+    :port => 9292,
+    :environment => node.chef_environment,
+    :rackup => "private_pub.ru",
+    :ssl_key => "/etc/ssl/transit-demo.admin.umass.edu.key",
+    :ssl_cert => "/etc/ssl/transit-demo.admin.umass.edu_combined.cert"
+  )
+  notifies :restart, "service[faye]"
 end
-    
+
 template "/etc/init.d/faye" do
   source "faye-initd.erb"
   mode   "0755"
@@ -65,5 +67,5 @@ end
 
 service "faye" do
   supports :restart => true
-	action [:enable, :start]
+  action [:enable, :start]
 end
