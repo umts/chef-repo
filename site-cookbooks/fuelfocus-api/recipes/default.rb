@@ -54,6 +54,8 @@ application "fleetfocus-api" do
       end
     end
   end
+
+  notifies :restart, 'service[fleetfocus-api]'
 end
 
 template "/etc/init.d/fleetfocus-api" do
@@ -69,4 +71,5 @@ end
 service "fleetfocus-api" do
   supports :restart => true
   action [:enable, :start]
+  pattern 'thin server \((?:\d{1,3}\.){3}\d{1,3}:4567\)'
 end

@@ -24,15 +24,6 @@ directory "#{node['round-three']['dir']}/current/tmp/pids" do
   recursive true
 end
 
-template "#{node['round-three']['dir']}/shared/faye.yml" do
-  mode "0755"
-  variables(
-    :dir => "#{node['round-three']['dir']}/current/",
-    :port => 9292,
-    :environment => node.chef_environment
-  )
-end
-
 link "#{node['round-three']['dir']}/current/log" do
   to "#{node['round-three']['dir']}/shared/log"
 end
@@ -68,4 +59,5 @@ end
 service "faye" do
   supports :restart => true
   action [:enable, :start]
+  pattern 'thin server \((?:\d{1,3}\.){3}\d{1,3}:9292\)'
 end
