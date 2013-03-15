@@ -20,6 +20,9 @@ cookbook "gpg",
 cookbook "kedpm",
   :git => "https://github.com/umts/chef-kedpm"
 
+cookbook "oit-email",
+  :path => "site-cookbooks/oit-email"
+
 cookbook "motd-tail",
   :git => "https://github.com/umts/motd-tail"
 
@@ -51,6 +54,9 @@ cookbook "ssl",
 
 cookbook "ssl-test",
   :path => "site-cookbooks/ssl-test"
+
+cookbook "ssmtp",
+  :git => "https://github.com/umts/chef-ssmtp.git"
 
 # cookbook 'apache2', '>= 1.0.0'
 
