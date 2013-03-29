@@ -4,6 +4,7 @@ description "umasstransit.org 'round-three'.  Our core web-app"
 # Everything but SSL
 base = [
   "role[round-three-base]",
+  "recipe[round-three::developer_logins.rb]",
   "recipe[round-three::faye]",
   "recipe[fuelfocus-api]"
 ]
