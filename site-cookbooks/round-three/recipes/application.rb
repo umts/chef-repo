@@ -45,10 +45,10 @@ application "round-three" do
     server_aliases ["demo.umasstransit.org", "transit-demo.admin.umass.edu"]
   end
 
-  migrate true
+  #migrate true
 
-  before_migrate do
-    excute "whenever" do
+  after_restart do
+    execute "whenever" do
       cwd "#{node['round-three']['dir']}/current/"
       command "#{node['rbenv']['root_path']}/shims/bundle exec whenever --update-crontab round-three"
       action :run
