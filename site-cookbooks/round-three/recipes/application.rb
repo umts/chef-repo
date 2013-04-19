@@ -44,6 +44,14 @@ application "round-three" do
   passenger_apache2 do
     server_aliases ["demo.umasstransit.org", "transit-demo.admin.umass.edu"]
   end
-  
+
   migrate true
+
+  before_migrate do
+    excute "whenever" do
+      cwd "#{node['round-three']['dir']}/current/"
+      command "#{node['rbenv']['root_path']}/shims/bundle exec whenever --update-crontab round-three"
+      action :run
+    end
+  end
 end
