@@ -2,8 +2,8 @@ SITE
   remote: http://community.opscode.com/api/v1
   specs:
     apache2 (1.6.2)
-    application (2.0.0)
-    application_ruby (1.1.0)
+    application (2.0.2)
+    application_ruby (1.1.2)
       apache2 (>= 0.0.0)
       application (>= 0.0.0)
       passenger_apache2 (>= 0.0.0)
@@ -12,7 +12,7 @@ SITE
     apt (1.9.2)
     aws (0.100.6)
     build-essential (1.4.0)
-    chef-client (2.2.0)
+    chef-client (2.2.2)
       cron (>= 0.0.0)
     chef_handler (1.1.4)
     cron (1.2.2)
@@ -32,6 +32,7 @@ SITE
       build-essential (>= 0.0.0)
       openssl (>= 0.0.0)
     ntp (1.3.2)
+    openssh (1.1.4)
     openssl (1.0.2)
     passenger_apache2 (2.0.0)
       apache2 (>= 1.0.4)
@@ -40,16 +41,17 @@ SITE
       apt (>= 0.0.0)
       build-essential (>= 0.0.0)
       openssl (>= 0.0.0)
+    rsync (0.8.0)
     ruby_build (0.7.2)
     runit (1.1.2)
       build-essential (>= 0.0.0)
       yum (>= 0.0.0)
-    sudo (2.0.4)
+    sudo (2.1.0)
     timezone (0.0.1)
     unicorn (1.2.2)
-    users (1.4.0)
+    users (1.5.0)
     vt-gpg (1.0.0)
-    windows (1.8.8)
+    windows (1.8.10)
       chef_handler (>= 0.0.0)
     xfs (1.1.0)
     xml (1.1.2)
@@ -81,9 +83,9 @@ GIT
 GIT
   remote: https://github.com/opscode-cookbooks/python.git
   ref: master
-  sha: 4afbc5523b0787e08c63d41b2a1a05b0c554bf62
+  sha: f0db2e141bae26a6124b4a3cf04a4722f0d7e5cb
   specs:
-    python (1.2.2)
+    python (1.2.3)
       build-essential (>= 0.0.0)
       yum (>= 0.0.0)
 
@@ -132,7 +134,7 @@ GIT
 GIT
   remote: https://github.com/umts/chef-ssmtp.git
   ref: master
-  sha: 4616b5f76bf5d9e1d4cc22a84283867c8efdbc90
+  sha: bc9f772f420158ecb5da73916ca16da4f47f602f
   specs:
     ssmtp (0.0.1)
 
@@ -142,6 +144,16 @@ GIT
   sha: d53bf1d8706e1849aa8785ea8060ccd6479cb151
   specs:
     motd-tail (1.0.0)
+
+GIT
+  remote: https://github.com/umts/rsnapshot.git
+  ref: master
+  sha: 7946cd535fa7710d8310cf691e9a825f571aa4a7
+  specs:
+    rsnapshot (0.0.1)
+      cron (>= 0.0.0)
+      openssh (>= 0.0.0)
+      rsync (>= 0.0.0)
 
 PATH
   remote: site-cookbooks/fuelfocus-api
@@ -197,6 +209,7 @@ DEPENDENCIES
   redmine (>= 0)
   redmine-custom (>= 0)
   round-three (>= 0)
+  rsnapshot (>= 0)
   ruby-193 (>= 0)
   ruby_build (>= 0)
   shibboleth (>= 0)

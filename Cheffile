@@ -43,6 +43,9 @@ cookbook "redmine-custom",
 cookbook "round-three",
   :git => "https://github.com/umts/chef-round-three.git"
 
+cookbook "rsnapshot",
+  :git => "https://github.com/umts/rsnapshot.git"
+
 cookbook "ruby-193",
   :path => "site-cookbooks/ruby-193"
 
