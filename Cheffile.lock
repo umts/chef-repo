@@ -148,12 +148,13 @@ GIT
 GIT
   remote: https://github.com/umts/rsnapshot.git
   ref: master
-  sha: 7946cd535fa7710d8310cf691e9a825f571aa4a7
+  sha: faf7f153566e64d9d1517407b7a551665f58f245
   specs:
     rsnapshot (0.0.1)
       cron (>= 0.0.0)
       openssh (>= 0.0.0)
       rsync (>= 0.0.0)
+      sudo (>= 0.0.0)
 
 PATH
   remote: site-cookbooks/fuelfocus-api
