@@ -104,6 +104,24 @@ GIT
       redmine (>= 0.0.0)
 
 GIT
+  remote: https://github.com/umts/chef-round-three.git
+  ref: master
+  sha: efa5f8aa74d6a7bdaaa5881fee4f0a6edd38e1e1
+  specs:
+    round-three (0.0.2)
+      application (>= 0.0.0)
+      application_ruby (>= 0.0.0)
+      database (>= 0.0.0)
+      git (>= 0.0.0)
+      postgresql (>= 0.0.0)
+      rbenv (>= 0.0.0)
+      shibboleth (>= 0.0.0)
+      ssl (>= 0.0.0)
+      sudo (>= 0.0.0)
+      users (>= 0.0.0)
+      xml (>= 0.0.0)
+
+GIT
   remote: https://github.com/umts/chef-shibboleth.git
   ref: master
   sha: 066311224af724a7f9f26483d4ad0b7dccc7a445
@@ -150,22 +168,6 @@ PATH
       database (>= 0.0.0)
       git (>= 0.0.0)
       mysql (>= 0.0.0)
-
-PATH
-  remote: site-cookbooks/round-three
-  specs:
-    round-three (0.0.2)
-      application (>= 0.0.0)
-      application_ruby (>= 0.0.0)
-      database (>= 0.0.0)
-      git (>= 0.0.0)
-      postgresql (>= 0.0.0)
-      rbenv (>= 0.0.0)
-      shibboleth (>= 0.0.0)
-      ssl (>= 0.0.0)
-      sudo (>= 0.0.0)
-      users (>= 0.0.0)
-      xml (>= 0.0.0)
 
 PATH
   remote: site-cookbooks/ruby-193

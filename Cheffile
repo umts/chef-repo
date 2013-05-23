@@ -41,7 +41,7 @@ cookbook "redmine-custom",
   :git => "https://github.com/umts/chef-redmine-custom.git"
 
 cookbook "round-three",
-  :path => "site-cookbooks/round-three"
+  :git => "https://github.com/umts/chef-round-three.git"
 
 cookbook "ruby-193",
   :path => "site-cookbooks/ruby-193"
