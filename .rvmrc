@@ -1,16 +1,22 @@
 #!/usr/bin/env bash
 
-ruby_string="ruby-1.9.3-p194"
+best_ruby_193=`rvm list strings | grep "1.9.3" | sort | tail -1`
+any_ruby_193="1.9.3"
 gemset_name="chef"
 
-if rvm list strings | grep -q "${ruby_string}" ; then
+if [ -z "${best_ruby_193:-1}" ]; then
+
+  # Notify the user to install the desired interpreter before proceeding.
+  echo "${any_ruby_193} was not found, please run 'rvm install ${any_ruby_193}' and then cd back into the project directory."
+
+else
 
   # Load or create the specified environment
   if [[ -d "${rvm_path:-$HOME/.rvm}/environments" \
-    && -s "${rvm_path:-$HOME/.rvm}/environments/${ruby_string}@${gemset_name}" ]] ; then
-    \. "${rvm_path:-$HOME/.rvm}/environments/${ruby_string}@${gemset_name}"
+    && -s "${rvm_path:-$HOME/.rvm}/environments/${best_ruby_193}@${gemset_name}" ]] ; then
+    \. "${rvm_path:-$HOME/.rvm}/environments/${best_ruby_193}@${gemset_name}"
   else
-    rvm --create  "${ruby_string}@${gemset_name}"
+    rvm --create  "${best_ruby_193}@${gemset_name}"
   fi
 
   (
@@ -22,11 +28,6 @@ if rvm list strings | grep -q "${ruby_string}" ; then
     # Bundle while redcing excess noise.
     bundle | grep -v 'Using' | grep -v 'complete' | sed '/^$/d'
   )&
-
-else
-
-  # Notify the user to install the desired interpreter before proceeding.
-  echo "${ruby_string} was not found, please run 'rvm install ${ruby_string}' and then cd back into the project directory."
 
 fi
 
