@@ -108,9 +108,9 @@ GIT
 GIT
   remote: https://github.com/umts/chef-round-three.git
   ref: master
-  sha: a507e0e2888cfe534c46b2a1aa399fc5758e7c9c
+  sha: 0b6e88f2cbe744019e9443740fcc0e869c9cb4cc
   specs:
-    round-three (0.0.3)
+    round-three (0.0.4)
       application (>= 0.0.0)
       application_ruby (>= 0.0.0)
       database (>= 0.0.0)
@@ -149,7 +149,7 @@ GIT
 GIT
   remote: https://github.com/umts/rsnapshot.git
   ref: master
-  sha: faf7f153566e64d9d1517407b7a551665f58f245
+  sha: eca014c61951be31855404dfdc7b7a07e50eb49c
   specs:
     rsnapshot (0.0.1)
       cron (>= 0.0.0)
