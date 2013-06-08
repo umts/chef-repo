@@ -20,6 +20,9 @@ cookbook "gpg",
 cookbook "kedpm",
   :git => "https://github.com/umts/chef-kedpm"
 
+cookbook "kedpm-transit",
+  :git => "https://github.com/umts/chef-kedpm-transit"
+
 cookbook "oit-email",
   :path => "site-cookbooks/oit-email"
 
