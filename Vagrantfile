@@ -14,13 +14,13 @@ module Vagrant
  module Provisioners
   class ChefClient
     def cleanup
-      user = ENV['CHEF_SERVER_USER'] || ENV['USER']
-      node = "vagrant-test-#{user}"
+      node = config.node_name
+      chef_server = ::Chef::REST.new(::Chef::Config[:chef_server_url])
       puts "cleaning up #{node} on chef server"
 
       begin
-        ::Chef::REST.new(::Chef::Config[:chef_server_url]).delete_rest("clients/#{node}")
-        ::Chef::REST.new(::Chef::Config[:chef_server_url]).delete_rest("nodes/#{node}")
+        chef_server.delete_rest("clients/#{node}")
+        chef_server.delete_rest("nodes/#{node}")
       rescue Net::HTTPServerException => e
         if e.message == '404 "Not Found"'
           puts "Server says it doesn't exist continuing.."
