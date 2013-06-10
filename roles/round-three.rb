@@ -1,6 +1,16 @@
 name "round-three"
 description "umasstransit.org 'round-three'.  Our core web-app"
 
+#TODO: Remove this after deployment is sorted out. This is duplicated in
+#the transit_server role.
+default_attributes(
+  'authorization' => {
+    'sudo' => {
+      'passwordless' => true
+    }
+  }
+)
+
 # Everything but SSL
 base = [
   "role[round-three-base]",
