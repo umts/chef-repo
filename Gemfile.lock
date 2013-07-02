@@ -128,6 +128,10 @@ GEM
     librarian (0.1.0)
       highline
       thor (~> 0.15)
+    librarian-chef (0.0.1)
+      archive-tar-minitar (>= 0.5.2)
+      chef (>= 0.10)
+      librarian (~> 0.1.0)
     libxml-ruby (2.6.0)
     listen (1.2.2)
       rb-fsevent (>= 0.9.3)
@@ -295,7 +299,7 @@ DEPENDENCIES
   guard-knife
   health_inspector
   knife-dwim
-  librarian
+  librarian-chef
   spiceweasel
   vagrant (~> 1.0)
   vagrant-snap
