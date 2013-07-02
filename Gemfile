@@ -10,5 +10,6 @@ gem "knife-dwim"
 gem "guard-knife"
 
 gem "vagrant", "~>1.0"
+gem "virtualbox"
 gem "vagrant-snap"
 gem "veewee"
