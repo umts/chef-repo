@@ -26,5 +26,6 @@ env_run_lists(
   "development" => base,
   "production" => base + ["recipe[round-three::ssl]",
                           "recipe[round-three::shibboleth]",
-                          "recipe[round-three::db-dumps]"]
+                          "recipe[round-three::db-dumps]",
+                          "recipe[round-three::peoplesoft-key]"]
 )

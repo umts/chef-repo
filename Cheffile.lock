@@ -12,8 +12,8 @@ SITE
     apt (2.0.0)
     aws (0.101.2)
     build-essential (1.4.0)
-    chef-client (2.2.2)
-      cron (>= 0.0.0)
+    chef-client (3.0.4)
+      cron (>= 1.2.0)
     chef_handler (1.1.4)
     cron (1.2.4)
     database (1.4.0)
@@ -44,7 +44,7 @@ SITE
       build-essential (>= 0.0.0)
       openssl (>= 0.0.0)
     rsync (0.8.0)
-    ruby_build (0.7.2)
+    ruby_build (0.8.0)
     runit (1.1.6)
       build-essential (>= 0.0.0)
       yum (>= 0.0.0)
@@ -85,9 +85,9 @@ GIT
 GIT
   remote: https://github.com/opscode-cookbooks/python.git
   ref: master
-  sha: b85a8babc8b988b58f40cfd714743f8c1256f848
+  sha: a96af3b7bef8ee2c66cd181ddcced942f2cafdbb
   specs:
-    python (1.3.1)
+    python (1.3.5)
       build-essential (>= 0.0.0)
       yum (>= 0.0.0)
 
@@ -119,9 +119,9 @@ GIT
 GIT
   remote: https://github.com/umts/chef-round-three.git
   ref: master
-  sha: 0b6e88f2cbe744019e9443740fcc0e869c9cb4cc
+  sha: 1bacc7cb8bcd2a5ff60307acbef0ea129bfa6985
   specs:
-    round-three (0.0.4)
+    round-three (0.0.6)
       application (>= 0.0.0)
       application_ruby (>= 0.0.0)
       database (>= 0.0.0)
