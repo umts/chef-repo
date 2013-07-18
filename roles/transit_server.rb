@@ -18,6 +18,11 @@ default_attributes(
     "organization" => "UMass Transit Service",
     "department"   => "MIS",
     "email"        => "transit-mis@admin.umass.edu"
+  },
+  "openssh" => {
+    "server" => {
+      "max_startups" => "10:30:100"
+    }
   }
 )
 
