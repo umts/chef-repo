@@ -23,6 +23,9 @@ default_attributes(
     "server" => {
       "max_startups" => "10:30:100"
     }
+  },
+  "apache" => {
+    "traceenable" => "Off"
   }
 )
 
