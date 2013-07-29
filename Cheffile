@@ -7,6 +7,7 @@ cookbook "apt"
 cookbook 'chef-client'
 cookbook "ntp"
 cookbook "ruby_build"
+cookbook "ssh_known_hosts"
 cookbook "sudo"
 cookbook "timezone"
 cookbook "users"
