@@ -9,7 +9,7 @@ SITE
       passenger_apache2 (>= 0.0.0)
       runit (~> 1.0)
       unicorn (>= 0.0.0)
-    apt (2.0.0)
+    apt (2.1.0)
     aws (0.101.2)
     build-essential (1.4.0)
     chef-client (3.0.4)
@@ -112,19 +112,11 @@ GIT
       rsnapshot (>= 0.0.0)
 
 GIT
-  remote: https://github.com/umts/chef-redmine-custom.git
-  ref: master
-  sha: 3c36feef101efb6683fe7af5ed8310f48f338503
-  specs:
-    redmine-custom (0.0.1)
-      redmine (>= 0.0.0)
-
-GIT
   remote: https://github.com/umts/chef-round-three.git
   ref: master
-  sha: 37750e2790ae5f7cdba906f14c664667e815f2ac
+  sha: a4f11aece1ad9faf083ba1833568af5f6d34a225
   specs:
-    round-three (0.0.8)
+    round-three (0.0.17)
       application (>= 0.0.0)
       application_ruby (>= 0.0.0)
       database (>= 0.0.0)
@@ -188,16 +180,6 @@ PATH
       ssmtp (>= 0.0.0)
 
 PATH
-  remote: site-cookbooks/redmine
-  specs:
-    redmine (0.0.2)
-      application (>= 0.0.0)
-      application_ruby (>= 0.0.0)
-      database (>= 0.0.0)
-      git (>= 0.0.0)
-      mysql (>= 0.0.0)
-
-PATH
   remote: site-cookbooks/ruby-193
   specs:
     ruby-193 (0.0.1)
@@ -223,8 +205,6 @@ DEPENDENCIES
   oit-email (>= 0)
   python (>= 0)
   rbenv (>= 0)
-  redmine (>= 0)
-  redmine-custom (>= 0)
   round-three (>= 0)
   rsnapshot (>= 0)
   ruby-193 (>= 0)
