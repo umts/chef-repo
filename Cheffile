@@ -36,14 +36,6 @@ cookbook "rbenv",
 cookbook "python",
   :git => "https://github.com/opscode-cookbooks/python.git"
 
-cookbook "redmine",
-  #:git => "https://github.com/umts/cookbook-redmine.git"
-  #:git => "https://github.com/juanje/cookbook-redmine.git"
-  :path => "site-cookbooks/redmine"
-
-cookbook "redmine-custom",
-  :git => "https://github.com/umts/chef-redmine-custom.git"
-
 cookbook "round-three",
   :git => "https://github.com/umts/chef-round-three.git"
 
