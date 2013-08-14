@@ -186,13 +186,6 @@ PATH
       rbenv (>= 0.0.0)
       ruby_build (>= 0.0.0)
 
-PATH
-  remote: site-cookbooks/ssl-test
-  specs:
-    ssl-test (0.0.1)
-      apache2 (>= 0.0.0)
-      ssl (>= 0.0.0)
-
 DEPENDENCIES
   apt (>= 0)
   chef-client (>= 0)
@@ -212,7 +205,6 @@ DEPENDENCIES
   shibboleth (>= 0)
   ssh_known_hosts (>= 0)
   ssl (>= 0)
-  ssl-test (>= 0)
   ssmtp (>= 0)
   sudo (>= 0)
   timezone (>= 0)

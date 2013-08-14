@@ -51,14 +51,5 @@ cookbook "shibboleth",
 cookbook "ssl",
   :git => "https://github.com/VendaTech/chef-cookbook-ssl.git"
 
-cookbook "ssl-test",
-  :path => "site-cookbooks/ssl-test"
-
 cookbook "ssmtp",
   :git => "https://github.com/umts/chef-ssmtp.git"
-
-# cookbook 'apache2', '>= 1.0.0'
-
-# cookbook 'postgresql',
-#   :git => 'https://github.com/findsyou/cookbooks',
-#   :ref => 'postgresql-improvements'
