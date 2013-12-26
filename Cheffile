@@ -4,6 +4,7 @@
 site 'http://community.opscode.com/api/v1'
 
 cookbook "apt"
+cookbook "application", "~> 3.0"
 cookbook 'chef-client'
 cookbook "ntp"
 cookbook "ruby_build"
@@ -11,6 +12,10 @@ cookbook "ssh_known_hosts"
 cookbook "sudo"
 cookbook "timezone"
 cookbook "users"
+
+#Bullshit. We don't even use this cookbook but it sure did introduce a
+#circular dependency
+cookbook "windows", "<=1.12.3"
 
 cookbook "fuelfocus-api",
   :path => "site-cookbooks/fuelfocus-api"

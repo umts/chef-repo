@@ -1,67 +1,74 @@
 SITE
   remote: http://community.opscode.com/api/v1
   specs:
-    apache2 (1.6.6)
+    apache2 (1.8.14)
     application (3.0.0)
-    application_ruby (2.0.0)
+    application_ruby (2.1.4)
       apache2 (>= 0.0.0)
       application (~> 3.0)
+      logrotate (~> 1.0)
       passenger_apache2 (>= 0.0.0)
       runit (~> 1.0)
       unicorn (>= 0.0.0)
-    apt (2.1.0)
-    aws (0.101.2)
-    build-essential (1.4.0)
-    chef-client (3.0.4)
+    apt (2.3.4)
+    aws (1.0.0)
+    build-essential (1.4.2)
+    chef-client (3.2.0)
       cron (>= 1.2.0)
+      logrotate (>= 1.2.0)
     chef_handler (1.1.4)
-    cron (1.2.4)
-    database (1.4.0)
+    cron (1.2.8)
+    database (1.6.0)
       aws (>= 0.0.0)
       mysql (>= 1.3.0)
       postgresql (>= 1.0.0)
       xfs (>= 0.0.0)
-    dmg (1.1.0)
-    git (2.5.2)
+    dmg (2.1.2)
+    git (2.9.0)
       build-essential (>= 0.0.0)
       dmg (>= 0.0.0)
-      runit (>= 1.0)
+      runit (>= 1.0.0)
       windows (>= 0.0.0)
-      yum (>= 0.0.0)
+      yum (~> 3.0)
+      yum-epel (>= 0.0.0)
     iptables (0.12.0)
-    mysql (3.0.2)
-      build-essential (> 1.1.0)
-      openssl (>= 0.0.0)
-    ntp (1.3.2)
-    openssh (1.2.0)
+    logrotate (1.4.0)
+    mysql (4.0.14)
+      build-essential (~> 1.4)
+      openssl (~> 1.1)
+    ntp (1.5.0)
+    openssh (1.3.2)
       iptables (>= 0.0.0)
-    openssl (1.0.2)
-    partial_search (1.0.2)
-    passenger_apache2 (2.0.2)
+    openssl (1.1.0)
+    partial_search (1.0.6)
+    passenger_apache2 (2.1.2)
       apache2 (>= 1.0.4)
       build-essential (>= 0.0.0)
-    postgresql (3.0.2)
+    postgresql (3.3.4)
       apt (>= 0.0.0)
       build-essential (>= 0.0.0)
       openssl (>= 0.0.0)
-    rsync (0.8.0)
+    rsync (0.8.4)
     ruby_build (0.8.0)
-    runit (1.1.6)
+    runit (1.5.3)
       build-essential (>= 0.0.0)
-      yum (>= 0.0.0)
-    ssh_known_hosts (1.0.0)
+      yum (~> 3.0)
+      yum-epel (>= 0.0.0)
+    ssh_known_hosts (1.1.0)
       partial_search (>= 0.0.0)
-    sudo (2.1.4)
+    sudo (2.3.0)
     timezone (0.0.1)
     unicorn (1.3.0)
-    users (1.5.0)
+    users (1.6.0)
     vt-gpg (1.0.0)
-    windows (1.10.0)
+    windows (1.12.2)
       chef_handler (>= 0.0.0)
     xfs (1.1.0)
-    xml (1.1.2)
+    xml (1.2.0)
       build-essential (>= 0.0.0)
-    yum (2.3.0)
+    yum (3.0.2)
+    yum-epel (0.2.0)
+      yum (~> 3.0)
 
 GIT
   remote: https://github.com/VendaTech/chef-cookbook-gpg.git
@@ -73,9 +80,9 @@ GIT
 GIT
   remote: https://github.com/VendaTech/chef-cookbook-ssl.git
   ref: master
-  sha: dd6a7afc9fc7360ad149acd0fcc4290b26b71a18
+  sha: 63cc6d8257c70bfd3618b2d38852bc5c7e254b99
   specs:
-    ssl (1.0.3)
+    ssl (1.1.0)
       vt-gpg (>= 0.0.0)
 
 GIT
@@ -88,9 +95,9 @@ GIT
 GIT
   remote: https://github.com/opscode-cookbooks/python.git
   ref: master
-  sha: 345c56acefdd8670938cd7d29a19fc5394aad9fc
+  sha: dd651062c538b3fd98d8b6bca12b97a0fdd5d5e8
   specs:
-    python (1.3.7)
+    python (1.4.5)
       build-essential (>= 0.0.0)
       yum (>= 0.0.0)
 
@@ -114,9 +121,10 @@ GIT
 GIT
   remote: https://github.com/umts/chef-round-three.git
   ref: master
-  sha: a4f11aece1ad9faf083ba1833568af5f6d34a225
+  sha: 470288b3c39d8bd568b88195eee7028163aab9b6
   specs:
-    round-three (0.0.17)
+    round-three (0.0.20)
+      apache2 (>= 0.0.0)
       application (>= 0.0.0)
       application_ruby (>= 0.0.0)
       database (>= 0.0.0)
@@ -187,6 +195,7 @@ PATH
       ruby_build (>= 0.0.0)
 
 DEPENDENCIES
+  application (~> 3.0)
   apt (>= 0)
   chef-client (>= 0)
   fuelfocus-api (>= 0)
@@ -209,4 +218,5 @@ DEPENDENCIES
   sudo (>= 0)
   timezone (>= 0)
   users (>= 0)
+  windows (<= 1.12.3)
 
