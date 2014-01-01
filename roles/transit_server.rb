@@ -7,7 +7,8 @@ default_attributes(
   },
   'authorization' => {
     'sudo' => {
-      'passwordless' => true
+      'passwordless' => true,
+      'include_sudoers_d' => true
     }
   },
   "ssl" => {
