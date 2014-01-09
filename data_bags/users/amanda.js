@@ -4,5 +4,6 @@
   "groups": "sysadmin",
   "uid": 2002,
   "shell": "\/bin\/bash",
-  "comment": "Amanda Cadwell-Frost"
+  "comment": "Amanda Cadwell-Frost",
+  "action": "remove"
 }
