@@ -13,3 +13,6 @@ encrypted_data_bag_secret
 
 #Vagrant boxes made by VeeWee
 *.box
+
+#Bundler logs and such
+/.bundle
