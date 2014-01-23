@@ -1,16 +1,6 @@
 This directory contains some miscellaneous utility scripts.  Safe to
 ignore, but here for your convenience.
 
-`aliases.sh`
-------------
-A collection of helpful aliases.  You could put them in your
-`.rvmrc.local` file or in your `.bash_profile` file or whatever.  Or, if
-you like all of them, you can just add
-
-```bash
-source util/aliases.sh
-```
-
 `run-chef.sh`
 -------------
 This script can be put on a chef client (any machine that has
