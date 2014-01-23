@@ -123,17 +123,6 @@ cookbook "some-cookbook",
 
 Only then can the cookbook be uploaded to the chef server.
 
-Vagrant
-=======
-
-This repository also has a `Vagrantfile` in it to help with testing cookbooks.
-Documentation on Vagrant han be found [here][vagrant].
-
-There is one peculiarity of our `Vagrantfile` to mention.  Vagrant, when run
-from within the project directory loads your Chef server configuration with
-Knife.  That is, it uses the same configuration mentioned in the "Configuration"
-section above.
-
 rvm and Bundler
 ===============
 
@@ -156,5 +145,4 @@ Read the README file in each of the subdirectories for more information about
 what goes in those directories.
 
 [knifedoc]: http://help.opscode.com/faqs/chefbasics/knife
-[vagrant]:  http://vagrantup.com/docs/
 [lib]: https://github.com/applicationsonline/librarian
