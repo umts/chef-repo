@@ -1,0 +1,8 @@
+{
+  "id": "rob",
+  "ssh_keys": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD2eZbC92LCt+/0zJ8/HirtkrGcqbOjAcQ7dCjifR/FpJgXcDc/B+jL9icph/fP3OKVsUtN6uqzMY7e0FcNkn/UCUUvqQj0a1YJGVBQ53d4YfEXj3cE8vCPF+bA4QmxelpVLXGDhNZyinOq1BCzjEax4xswHp5CkrPww4Gwfvi0laY/phX8XIiM0ueLK+ziTBrWL2zr0JCV09AfWXm1jZgmypw7z1p2Gc/IQy+Ak3qYkSaP3shvjJH36LeqWyhbSg2INCW+0KgeMRNDZWHbuw3v1NEj4xsjJe5OIRq1QPpGQlqUxMARQ1LNL0uIJVFoKSsvSGdhtuCLZuYLrmCEn5bv",
+  "groups": "sysadmin",
+  "uid": 2014,
+  "shell": "\/bin\/bash",
+  "comment": "Robert Annais"
+}
