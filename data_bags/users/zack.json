@@ -1,0 +1,8 @@
+{
+  "id": "zack",
+  "ssh_keys": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC2/Ud5ZPyZTq0Y7PeW0CMWGkDy3dCe6UGN6gagXLfmuAbWSb6wMkAnqqiL0WdtbiM9gYYIZU4ncnhYqMv8j0EGbqUsYjZCrs8655Ts47u3LMpmRfmrAT3ye3vwboJonJojQonHaz4cbuPaT1DWuuxYOiwlY6yb6A4YepOk8I4pTrdR4QBhjp+WYFiEd2PnjapmuS9G+VEDIAXgVsKh+pVqzRycNa+YzUIlCCXTqPEM1qhtDlN3cWeKEMfFJn7lHH+yiYn6PDXil09wAWle3Jtwg0GB7UFEd+0gvBZGV54aMopawOMaaN1R0KIRIYKwRdjVTD+5m6S2aOyyBjy80/tz",
+  "groups": "developers",
+  "uid": 2015,
+  "shell": "\/bin\/bash",
+  "comment": "Zack Windoloski"
+}

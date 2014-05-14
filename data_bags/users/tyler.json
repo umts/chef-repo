@@ -4,5 +4,6 @@
   "groups": "developers",
   "uid": 2009,
   "shell": "\/bin\/bash",
-  "comment": "Tyler Karuzis"
+  "comment": "Tyler Karuzis",
+  "action": "remove"
 }
