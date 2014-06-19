@@ -1,0 +1,8 @@
+{
+  "id": "nick",
+  "ssh_keys": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDCTx3lksFVPO1DhXjWBweo3PHBjfIV+8Xli3xUk65riYFHvfzuutwgdqD4ZbdoI7XojErJoC6wzmUUZZZqbe7cvufOJCWcgQdo0PxeYQ79GGJjqSdxc8cWiOVatB4CyCsGpz1EW3aG7SxtFL94SCGmtT3aW4O4tWuuQ+dAdWxuuTqBsFcfRhsFZUxR6kNKKrTWTEnIQklafIEYlcIRlz1g2ew00KhQSIpiEkC0UXJacRLJl8k1UBgyPwOPKI7kYSybGxjvZWCbyOOGrIxKKjvenqCKaJwG5AOtCr+3ZE2GEc1WC9tF6wtVMNfcrXqvfiCW1t1r1kbyINIkBai1RCjV",
+  "groups": "developers",
+  "uid": 2016,
+  "shell": "\/bin\/bash",
+  "comment": "Nick Monti"
+}
