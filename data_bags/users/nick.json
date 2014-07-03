@@ -1,6 +1,9 @@
 {
   "id": "nick",
-  "ssh_keys": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDCTx3lksFVPO1DhXjWBweo3PHBjfIV+8Xli3xUk65riYFHvfzuutwgdqD4ZbdoI7XojErJoC6wzmUUZZZqbe7cvufOJCWcgQdo0PxeYQ79GGJjqSdxc8cWiOVatB4CyCsGpz1EW3aG7SxtFL94SCGmtT3aW4O4tWuuQ+dAdWxuuTqBsFcfRhsFZUxR6kNKKrTWTEnIQklafIEYlcIRlz1g2ew00KhQSIpiEkC0UXJacRLJl8k1UBgyPwOPKI7kYSybGxjvZWCbyOOGrIxKKjvenqCKaJwG5AOtCr+3ZE2GEc1WC9tF6wtVMNfcrXqvfiCW1t1r1kbyINIkBai1RCjV",
+  "ssh_keys": [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDCTx3lksFVPO1DhXjWBweo3PHBjfIV+8Xli3xUk65riYFHvfzuutwgdqD4ZbdoI7XojErJoC6wzmUUZZZqbe7cvufOJCWcgQdo0PxeYQ79GGJjqSdxc8cWiOVatB4CyCsGpz1EW3aG7SxtFL94SCGmtT3aW4O4tWuuQ+dAdWxuuTqBsFcfRhsFZUxR6kNKKrTWTEnIQklafIEYlcIRlz1g2ew00KhQSIpiEkC0UXJacRLJl8k1UBgyPwOPKI7kYSybGxjvZWCbyOOGrIxKKjvenqCKaJwG5AOtCr+3ZE2GEc1WC9tF6wtVMNfcrXqvfiCW1t1r1kbyINIkBai1RCjV",
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC5hXTKrkjYWuCnRe1tEPiz8co6Ou696h0gLoY52/inErWkSOQDasuE0VcQy01wI1sJzbv7V6SuuZPti5++d8/L4r7uPnTyxe/04oZ5DkiqQVtZfjreLhWjDpVJJf3dLjVda/85QhrZALCaCyGGlG5xuGZEFJWBJw+ejaKQDM9x1+W/j0qd3uHFY2NliY0SjRqkPCoA3bszzZMXfusN+wh31eVebAg8IfzROXRtPcos8xamWMntv5GzkhR6xyLg/SjadUFOW6RbLdBr1eycVqJd9iUXjou/U8Qp9Lz3cD7fv+eva+RxRpMe15MpcLUwh/LGCGv/kmco1VOP1tSXpuQ/"
+  ],
   "groups": "developers",
   "uid": 2016,
   "shell": "\/bin\/bash",
