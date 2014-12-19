@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 #^syntax detection
 
-site 'http://community.opscode.com/api/v1'
+site 'http://supermarket.getchef.com/api/v1'
 
 cookbook "apt"
 cookbook "application", "~> 3.0"
@@ -43,6 +43,9 @@ cookbook "python",
 
 cookbook "round-three",
   :git => "https://github.com/umts/chef-round-three.git"
+
+cookbook "jenkins",
+  :git => "https://github.com/umts/chef-jenkins.git"
 
 cookbook "rsnapshot",
   :git => "https://github.com/umts/rsnapshot.git"
