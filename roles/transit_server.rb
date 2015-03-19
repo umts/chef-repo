@@ -22,7 +22,8 @@ default_attributes(
   },
   "openssh" => {
     "server" => {
-      "max_startups" => "10:30:100"
+      "max_startups" => "10:30:100",
+      "protocol" => "2"
     }
   },
   "apache" => {
