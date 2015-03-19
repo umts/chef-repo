@@ -1,9 +1,6 @@
 #Local information on current Vagrant status
 .vagrant
 
-#Per-user customizations to the .rvmrc file
-.rvmrc.local
-
 #Secret key used to decrypt data bags - get a copy from someone
 encrypted_data_bag_secret
 
@@ -13,6 +10,3 @@ encrypted_data_bag_secret
 
 #Vagrant boxes made by VeeWee
 *.box
-
-#Bundler logs and such
-/.bundle
