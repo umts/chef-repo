@@ -82,8 +82,7 @@ This particular repository comes with a slightly UMTS specific `.chef/knife.rb`
 file.  It expects the following things:
 
 * That your chef server username is the same as either your local username _or_
-  the value of the `CHEF\_SERVER\_USER` environment variable (your might consider
-  setting this in a `.rvmrc.local` file -- see below)
+  the value of the `CHEF\_SERVER\_USER` environment variable.
 * That your orgname (OpsCode Platform only) is either "umts" or set in the
   `ORGNAME` environment variable
 * That your client key is stored in `~/.chef/username.pem` (where "username"
@@ -123,20 +122,12 @@ cookbook "some-cookbook",
 
 Only then can the cookbook be uploaded to the chef server.
 
-rvm and Bundler
-===============
-
-There is a `Gemfile` in the project that installs chef, vagrant, and some other
-tools.  You can `bundle` and get it all set up.
-
-However, I'm also adding a fairly sophisticated `.rvmrc` file to the project.
-If you let it, rvm will create a gemset called "chef" and automatically use
-bundler to install the necessary gems into it.
-
-If you have personal customizations to add to the `.rvmrc` file -- say, for
-example, setting your chef server username environment variable -- add them to
-a file named `.rvmrc.local` in the project root.  That file will be sourced
-if it exists.
+ChefDK
+======
+We recommend use of [chef-dk][chef-dk], and as such the `.ruby\_version` in
+this repository is set to "system".  If you have [direnv][direnv]
+installed, it will use the `.envrc` in this repo to set up your `PATH`
+and various `GEM\_SOMETHING` environment variables to work with chef-dk.
 
 Next Steps
 ==========
@@ -146,3 +137,5 @@ what goes in those directories.
 
 [knifedoc]: http://help.opscode.com/faqs/chefbasics/knife
 [lib]: https://github.com/applicationsonline/librarian
+[chef-dk]: https://downloads.chef.io/chef-dk/
+[direnv]: http://direnv.net/
