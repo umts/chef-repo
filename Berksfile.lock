@@ -1,0 +1,66 @@
+DEPENDENCIES
+  apt
+  chef-client
+  kedpm
+    git: git://github.com/umts/chef-kedpm.git
+    revision: d3e99b964dcefb8e2e77fdab7ab322afec408ed0
+  kedpm-transit
+    git: git://github.com/umts/chef-kedpm-transit.git
+    revision: a462eb36f33e37fd5096656c203ce026dfb94bca
+  motd-tail-umts
+    git: git://github.com/umts/chef-motd-tail-umts.git
+    revision: 7f4c6903dbc26717db548fb220a9391f2f8c2d9b
+  ntp
+  oit-email
+    path: site-cookbooks/oit-email
+  rsnapshot
+    git: git://github.com/umts/rsnapshot.git
+    revision: c4f6735bf86417189e431574beceff11fce7df15
+  ssmtp
+    git: git://github.com/umts/chef-ssmtp.git
+    revision: d72d9afcc812f53998799b026d350c215b32861a
+  sudo
+  users
+
+GRAPH
+  apt (2.7.0)
+  build-essential (2.2.0)
+  chef-client (4.2.4)
+    cron (>= 1.2.0)
+    logrotate (>= 1.2.0)
+    windows (~> 1.11)
+  chef_handler (1.1.6)
+  cron (1.6.1)
+  iptables (0.14.1)
+  kedpm (0.1.0)
+    build-essential (>= 0.0.0)
+    python (>= 0.0.0)
+  kedpm-transit (0.1.0)
+    kedpm (>= 0.0.0)
+    rsnapshot (>= 0.0.0)
+  logrotate (1.9.1)
+  motd-tail (2.0.2)
+  motd-tail-umts (0.1.0)
+    motd-tail (>= 0.0.0)
+  ntp (1.7.0)
+  oit-email (0.0.1)
+    ssmtp (>= 0.0.0)
+  openssh (1.3.4)
+    iptables (>= 0.0.0)
+  python (1.4.6)
+    build-essential (>= 0.0.0)
+    yum-epel (>= 0.0.0)
+  rsnapshot (0.1.0)
+    cron (>= 0.0.0)
+    openssh (>= 0.0.0)
+    rsync (>= 0.0.0)
+    sudo (>= 0.0.0)
+  rsync (0.8.6)
+  ssmtp (0.0.1)
+  sudo (2.7.1)
+  users (1.8.2)
+  windows (1.36.6)
+    chef_handler (>= 0.0.0)
+  yum (3.5.3)
+  yum-epel (0.6.0)
+    yum (~> 3.0)
