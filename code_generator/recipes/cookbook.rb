@@ -24,6 +24,28 @@ cookbook_file "#{cookbook_dir}/Berksfile" do
   action :create_if_missing
 end
 
+# Env and ruby
+cookbook_file "#{cookbook_dir}/.envrc" do
+  source 'envrc'
+  action :create_if_missing
+end
+
+file "#{cookbook_dir}/.ruby-version" do
+  content "system\n"
+  action :create_if_missing
+end
+
+# Rakefile
+cookbook_file "#{cookbook_dir}/Rakefile" do
+  action :create_if_missing
+end
+
+# Rubocop
+cookbook_file "#{cookbook_dir}/.rubocop.yml" do
+  source 'rubocop.yml'
+  action :create_if_missing
+end
+
 # TK & Serverspec
 template "#{cookbook_dir}/.kitchen.yml" do
   source 'kitchen.yml.erb'

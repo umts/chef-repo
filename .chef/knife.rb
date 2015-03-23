@@ -29,6 +29,6 @@ if config_contexts.include? :chefdk
   end
 
   unless ARGV.include?('-I') || ARGV.include?('--license')
-    chefdk.license 'apache'
+    chefdk.license 'mit'
   end
 end
