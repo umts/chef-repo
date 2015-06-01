@@ -1,0 +1,11 @@
+{
+  "id": "peter",
+  "ssh_keys": [ 
+     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD2gpFQHHtgkSweTDAcrpUXn6JA6IaVxcm0e+S9WbEDDf20mF6oRKmFn5ORak3ueeOqgPiuj5LUoJ5v5xJ/goNSNzbWjOZ+qmhHiHTBnun0loWp0hSvOAGJP2Ulr4EPPhpzOwRcDzNk6e3Jpfl5q5W58onTW6BAOuPmvqCJyf9sSUDKrg/HoXfKktszuvJBJEYlNIYxDOItvHJnm61nwYv0vvxNyB5A49iZCPExf7V4j4Zi209Gx/Lu4Df0a5wKrvo+jKzKyj4fZSUgSwNqPPJpDsHBXe4KRn/Y5MwOJc2bz6bVq1N3dVkpqv/QegQCFbwuMe2gWF0AN+5VW2A7l3oV",
+     "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCeDIED/U5jFVwe8byX7QCsmEUF7O7TvBkFqTfSCqPxYaJCYyfLpzAyEg1MQCRBPhKg8/Rp1wu+91L2jlkt+Vt8Y9jrq8GXgcCWTFyrDF1mTwkxio/c0LyrUubhsbxVvec/oqHBAOPTxqEXs+FDuOyJxZwoJua2hLqeFucux1sV87oQXef03SXImR3fnHnlz/fR5MWnr9KmHOyECldEn9vH0WzZwuA7mjFsIK3AprxDNbZNZ4p3xQGa1yMDebxwwk2+/9gmbjzW5v9FpH53ZeXDe+1xYB2gfSciSwtJKePv9Fw6yU8Z2r2JIewh3/MNUh2bD3wzBAOVNNPAV99bcuEf"
+   ],
+  "groups": "developers",
+  "uid": 2018,
+  "shell": "\/bin\/bash",
+  "comment": "Peter Marathas"
+}
