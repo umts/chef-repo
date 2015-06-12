@@ -15,20 +15,12 @@ chef_server_url           "https://api.opscode.com/organizations/#{orgname}"
 encrypted_data_bag_secret File.join(current_dir, '..', 'encrypted_data_bag_secret')
 
 cookbook_copyright       "UMass Transit Service"
-cookbook_email           "transit-mis@admin.umass.edu"
+cookbook_email           "transit-it@admin.umass.edu"
+cookbook_license         "mit"
 
 if config_contexts.include? :chefdk
-  chefdk.generator_cookbook File.join(current_dir, '..', 'code_generator')
-
-  unless ARGV.include?('-c') || ARGV.include?('--copyright')
-    chefdk.copyright_holder  "UMass Transit Service"
-  end
-
-  unless ARGV.include?('-m') || ARGV.include?('--email')
-    chefdk.email 'transit-it@admin.umass.edu'
-  end
-
-  unless ARGV.include?('-I') || ARGV.include?('--license')
-    chefdk.license 'mit'
-  end
+  require_relative 'generator_cli'
+  cli = GeneratorCLI.new
+  cli.parse_options
+  chefdk cli.config
 end

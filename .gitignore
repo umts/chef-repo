@@ -1,6 +1,10 @@
 #Local information on current Vagrant status
 .vagrant
 
+#Test kitchen
+.kitchen/
+.kitchen.local.yml
+
 #Secret key used to decrypt data bags - get a copy from someone
 encrypted_data_bag_secret
 
