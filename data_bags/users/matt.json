@@ -1,9 +1,13 @@
 {
   "id": "matt",
-  "ssh_keys": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDn7SzPWH5fv153uUxoOyOk7XgUJtbU7MbSYmqaFVotN9YmJswx9aY3seyjj5psepW6m2JZmmarUF+kA+ac2uGLj8tCHKS2yPGGZyXOB3J3tvsc9to7j4qPkvp/JZJYUAUoAVl4EZO7UmhrTvVMkHsooIXY6MCkiz432iktiTzKDb21LsSfb+tWrhMrKV9HSeSiUesWpBUsVLQIpM5czNMqH4Z/JPbBpebsAgaf7Y+PhsTzJRYNL9FTDui1IAIw3sVSRklFsyauCE2zv2IKCTNprJ73OJQQgIAEDFpYezfipG7E4hlr8ndc/EyGGSEZtfIfApj9AtclDT11wbhh/7Al matt",
+  "ssh_keys": [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDn7SzPWH5fv153uUxoOyOk7XgUJtbU7MbSYmqaFVotN9YmJswx9aY3seyjj5psepW6m2JZmmarUF+kA+ac2uGLj8tCHKS2yPGGZyXOB3J3tvsc9to7j4qPkvp/JZJYUAUoAVl4EZO7UmhrTvVMkHsooIXY6MCkiz432iktiTzKDb21LsSfb+tWrhMrKV9HSeSiUesWpBUsVLQIpM5czNMqH4Z/JPbBpebsAgaf7Y+PhsTzJRYNL9FTDui1IAIw3sVSRklFsyauCE2zv2IKCTNprJ73OJQQgIAEDFpYezfipG7E4hlr8ndc/EyGGSEZtfIfApj9AtclDT11wbhh/7Al matt",
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDWRHD1wGDnnnWgoiv1jsCSJ+pDzBYfaZpc+Z1FlZQq+XFA7z6MCsWy4gadCWgTvrloyalUpHdKz3OJfrbQ6760ZnSUCtlALfSNFvwQ+JaxoeH0+E33ldmuEirNBlrOs01GCfvsVRtF+FYE172ikQQ+FwZR/RektBitAEttseDlXpRsgfDisflKtabWqsQmf3PMus9yr7lz04rtDcgARVzgI58cz0ClDnyB69anqVsztUIMMVPBZ05sATP3rEaAhkpaXHPNQt4asQaj124K5vFzD/ea+TseCxcZlMOv9XJ3SR3Cm4t7YfE3zfNysFmyqUDy69F0pTGauLzr19VkCZ6F matt@umts-sp3-2"
+  ],
   "groups": "sysadmin",
   "uid": 2001,
   "shell": "\/bin\/bash",
   "comment": "Matt Moretti",
   "openid": "http://id.wereb.us"
 }
+
