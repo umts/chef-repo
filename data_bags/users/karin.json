@@ -1,0 +1,8 @@
+{
+  "id": "karin",
+  "ssh_keys": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDHX5K0jfCUiVvvo/zaEIZhzOQ48RFMxZusxrXaBUA65eOJxqu95Ji8a2z4AKSGNzd25trehMeJyx7NNjznnHJrpTXLr6CihSCQDH8tyt4nA78M5M3U72hwoh4nB4sx7QjrRM86laagvPBbyOGJsoWTSWo5nBvTRlBX9YyKqJnh9M1dNznJfIi1YRtWXcZ9YFIF5OlvCFVvrQ8Gxsq4j+26/8s1TEHz+jvouq3jSgNRbTsNT7Enzp0WUVEEXTEzk1U5XeNYGq7StCYmGRheeZ1S8A5/OPUKr24Ji8c6W+UvXgN7lRMe8I81iFacPYxZZFk70cg3QnLTJNwsee9qBoQr+6PMStwVUGaMmpdXpFkgNSzCg1ufgFM3FQr8zDMbp1oF3D2ez+JMH6yIrbiajHlM+xDFx2Uw8UQJHuSfconFph+gb45x2Jj8sTzbyOeEIGX2Nchinr8f0EZ089WadmydlrqbN3hTAaKYqSyYETr6ZFBV9Wny756apjCkiF0wJFAxNbCKAUXbI5HCIafe6UQ3zB+TMn/MFUvMMp4AtDMbGuRf1Vhjx+N5VjMSaEjbov4ILo56y6sqloEhjMa44AgWo9HYH3YD2gd83nw7FZSCCd7TD7/7PwMXRZYLJ83Cdr6VJcdii61828upEe+A3DMPseJSO9xBK5AEoPv86hvkGw==",
+  "groups": "developers",
+  "uid": 2019,
+  "shell": "\/bin\/bash",
+  "comment": "Karin Eichelman"
+}

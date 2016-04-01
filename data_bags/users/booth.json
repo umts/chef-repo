@@ -4,5 +4,6 @@
   "groups": "sysadmin",
   "uid": 2017,
   "shell": "\/bin\/bash",
-  "comment": "Booth Potter"
+  "comment": "Booth Potter",
+  "action": "remove"
 }

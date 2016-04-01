@@ -4,5 +4,6 @@
   "groups": "developers",
   "uid": 2013,
   "shell": "\/bin\/bash",
-  "comment": "Mike Cedrone"
+  "comment": "Mike Cedrone",
+  "action": "remove"
 }
