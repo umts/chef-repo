@@ -1,0 +1,8 @@
+{
+  "id": "corey",
+  "ssh_keys": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCrGBdgNnSEujgCdfKEz+VpEgXx/PcEulpq10KSDeVpWBch2dazCSF7qMrajK4bn2h9oWCMf6nC9OaU6v6/Y6BxzPdYRymb6vZeUKKfyHakmf8ZXCak68myHq8AfvorvVcoSg/PD5KPnFv3i3QRiXr041VeLQI9SqbHDVA9Q4nrWg0j4GXkiHPrw1JhFwVY2qUdJA1Lt7xTipsSp4SOHUwfrH+1ss0w+3I5l9xcqNmb+fYGe7XJOL1VQ/j/8cccYHfe3VYf3DkFq1F8p+GGX5sAWH65R0DVPv23FIFinCSpJOXzfj5nzU+ymFvJ0nsAxW1nLLjYjUOvFvDYNjMZN1Ez coreyvaz@gmail.com",
+  "groups": "sysadmin",
+  "uid": 2020,
+  "shell": "\/bin\/bash",
+  "comment": "Corey Vaz"
+}
