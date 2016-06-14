@@ -1,9 +1,8 @@
 {
   "id": "brian",
-  "ssh_keys": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDUilej4q2+92ax0tQbgwol+FVU2Gy/iJfbSdN1quiZcuJEJtE61rhbDInT6qLkRGexRORBhtAbhmt8uMDniqTIK3owyHQvF9rKJZoUZkoFqsn1aZIDU8hocuuEMXwdndxer7b3hSJkYqeB4s+0OoWJBFBbxHcMthm59YBHPR7nCv3P3XzwQU7ONWEI2vXxilGO1ywGXR+5jpUQR1rKIrax4f2eimY824fXbIobMMiP+37G/vOdU/SKn+x/WzmJcj1J2WIU3FdMJSTuLBowetMgZ7fCgikdes4LhOZj3GkAfH9yiTIPnQY3867WlXmtGV5eEZ5fkO9QrwKZM4iwUfmL thebluenu@gmail.com",
-  "groups": "sysadmin",
-  "uid": 2008,
+  "ssh_keys": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDLy4x9YRG9hxYQ9Rm2T7L9hL9KjEkamQFdRLJie8ifYqgKog0ap8BYgBzMejVThBiqBdVwwx2solSm/KSIxfPYCkNDhzcdFR/hr7weIeDD61PArbid1F+kbneS47REhDYqJNuil+LDCSSjL98dPVrFZtA5dndQ0S1SaK3OzxA9zzPjoM45wJHhTGmueYp9DaGB8z2RKAUTdADZuSFZcDQepGEOviGMxU2K3sWRz3qqfX1mb/Pb0CK4kLW/GmVMbN3Sp96hiDgvQXbfB6KSb0XG5ZJlatuciKDjdId5L9FlDO91M0SuWUwqKNuiHoLZjLXr+K0qTYGimdhUT31PSzODKX2LfEJ7lM7AtCZokQ8AR10JgXwXL+P9z/KWZzcbM9hBac9R11pZSth7dj4R4WubYxaUXTD1TpiiEZoi/xTjhVMROygR7kTSjI2f7yqsJ8FUlqhnY1L6s4P/EIFgEsuEiyiuDKHMduG/22tawsuB2Bu0a/86zfDHu55HqAcP6/Y6K2oTyxPm4fkAfXXTriQgVPpFUsh59T670hSaJn6YZvvEfizHSElBj1w0zza+pXOOUw8HlwmoJmVQ0Li1ef1sz+y4aF3rpjmL4KLgUpVojvzciPyvFlVSTa1hkUwJZsV2PK2UAj5dMoSF5djdJdnnIKIYEzf0C7C4QODjVhkBFQ== bgregg@umass.edu",
+  "groups": "developers",
+  "uid": 2020,
   "shell": "\/bin\/bash",
-  "comment": "Brian Francis",
-  "action": "remove"
+  "comment": "Brian Gregg"
 }
