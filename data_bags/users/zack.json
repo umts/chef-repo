@@ -7,5 +7,6 @@
   "groups": "developers",
   "uid": 2015,
   "shell": "\/bin\/bash",
-  "comment": "Zack Windoloski"
+  "comment": "Zack Windoloski",
+  "action": "remove"
 }
