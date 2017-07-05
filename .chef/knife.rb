@@ -18,9 +18,9 @@ cookbook_copyright       "UMass Transit Service"
 cookbook_email           "transit-it@admin.umass.edu"
 cookbook_license         "mit"
 
-if config_contexts.include? :chefdk
-  require_relative 'generator_cli'
-  cli = GeneratorCLI.new
-  cli.parse_options
-  chefdk cli.config
+if config_contexts.is_a?(Hash) && config_contexts.include?(:chefdk) && chefdk.generator
+  chefdk.generator_cookbook = File.join(File.dirname(__FILE__), '..', 'code_generator')
+  chefdk.generator.license = cookbook_license
+  chefdk.generator.copyright_holder = cookbook_copyright
+  chefdk.generator.email = cookbook_email
 end
