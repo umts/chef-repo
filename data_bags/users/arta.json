@@ -1,0 +1,8 @@
+{
+  "id": "arta",
+  "ssh_keys": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCfigHlKqTJvGkd5+V5aFfAn7ZmBvk9jP0bmekiiZovNtrDnZIjOZ+AZVMXSZLNg/iGHydLmFktBFnLwKe4ANXNg67gL9aLJOkHCLVCteH0t1MYY5n34QwryNMFwRAuPJAblgsXBprLmO6KsoDxFrppJeKF2iPTIrTelAK44u5Fn/NfP9O8qmqV4yH0S6zZqsFXP4JqUjkIMgYpPUNBpFj2la0S/udYljbVTGqwYwjexnVxM1LsjO3oHI2Flf/uF6eOprog6P/hcBCh+QU/SdbyCnScfDtfGPSG5wqIuLul+rdGKtAOai0TgTHEG+tjIjqUr901AAzU3wKVdhiHtu2ywnpGM0FqCJ1+Xb9fJ71t+k85JmbiSIxSWdnNBvM+xHMvbye3eoyb3HTfo2yz8vvuSxA2S1mVzF44jaU1WrYZupqlVcljuQb0+vC17+OgceuLk+0aMT8qMptXBeKM+TFMxcxiKs4JwlSPGlmNGCDO9jS4rb0zQ78+CaxclwA/y+GcGMyfnFIWJUF9k01+iA2AR/3QlWZEQlHq3NRoteiBfyiJRChVV2zvG46750zH+riXxa/FJuci09yUdgfs+03+qkgQ3voD2JUb/JCM+2NjLNP5h+UdTLL7f56E9uP18zubiHQxlZe/TVbTZGI8T7eRB8t0GNwJQkoUJNTvnLdXPQ==",
+  "groups": "sysadmin",
+  "uid": 2023,
+  "shell": "\/bin\/bash",
+  "comment": "Arta Razavi"
+}
