@@ -1,9 +1,0 @@
-{
-  "id": "mike",
-  "ssh_keys": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDQ85IlBeIQhs8nD/qr51KJIy+TmeITBXST8bxMQTMEJWWtRymH+zid9Ecqh5Gimv9bt1mCh6EUvOjQZH1D7Cxb0teeVvXet9OZcAu01PHKXTvaU08LRJA1hyC1hE9kpGHELhBR7KQyrOglHEclitx9CWEKE1eXUCjxNnicZO+5mqet9JWIBwfIcX4FT9pjd5oI0+Jgueri8Oc3appzPyZ74LrNB0XwcCXpDRBq1DBirs7cphWkP0i3//2J2I05zSUX6nsTj1LnRdk3ZAgwAW3AlQdchsCzTNYl+AvxNLUDR16wjM66QsTczbM3yTmJXbyrBMpsU+3Mr8oQZG9q+pyD mikeCedrone503@gmail.com",
-  "groups": "developers",
-  "uid": 2013,
-  "shell": "\/bin\/bash",
-  "comment": "Mike Cedrone",
-  "action": "remove"
-}

@@ -1,5 +1,6 @@
-Requires Chef 0.10.0+.
+Create environments here, in either the Role Ruby DSL (.rb) or JSON (.json)
+files. To install environments on the server, use knife.
 
-This directory is for Ruby DSL and JSON files for environments. For more information see the Chef wiki page:
+For more information on environments, see the Chef wiki page:
 
-http://wiki.opscode.com/display/chef/Environments
+https://docs.chef.io/environments.html

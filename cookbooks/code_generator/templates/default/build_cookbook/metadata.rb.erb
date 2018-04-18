@@ -1,0 +1,10 @@
+name 'build_cookbook'
+maintainer '<%= copyright_holder %>'
+maintainer_email '<%= email %>'
+license '<%= license %>'
+version '0.1.0'
+chef_version '>= 12.14' if respond_to?(:chef_version)
+<% if build_cookbook_parent_is_cookbook -%>
+
+depends 'delivery-truck'
+<% end -%>

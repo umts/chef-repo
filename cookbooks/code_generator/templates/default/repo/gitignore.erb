@@ -12,6 +12,10 @@
 .chef
 .chef/*.pem
 .chef/encrypted_data_bag_secret
+<%- if policy_only -%>
+cookbooks/**
+!cookbooks/README.md
+<%- end -%>
 
 ## Ignore Chef-Zero files
 clients

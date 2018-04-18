@@ -1,9 +1,0 @@
-{
-    "id": "logan",
-    "ssh_keys": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDlfrWQ3JHCcfYQ1Ek1crAfDxC/FoAtTtLsIKU2pFYET0f+qgxTIvMdIxmggePlc+ebdwizGS3Nwg5RyPHjlGQQoHSoTRtQ2NMaosFeinh0xWAwjATra+3LJfyIZJu+ptb+GaXHWD8RCvKX18u1SrCyxeOWogNSPQSgMWQY9EF+aAGeooFutpOjH0zIz4y3w7XSDMo05D8T/voeaCbpzgeuGHO1ZMOP8MPucnmpWSlKPBxN7jF7XXlb0Y4AxPFnTi/dVSD2DygdtwGXB+vr0WLVKxv7K0Dvws3YeJaP/JG6C09l8rJj1qpIZuMSBdkgAZlFS+Asojs14cG1jRNbl9A9 phantom.patrol@gmail.com",
-    "groups": "sysadmin",
-    "uid": 2003,
-    "shell": "\/bin\/bash",
-    "comment": "G. Logan Slinski",
-    "action": "remove"
-}

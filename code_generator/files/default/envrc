@@ -1,2 +1,0 @@
-SHELL=$(echo $0 | sed -E 's/(-|.*\/)(.*)$/\2/')
-eval "$(chef shell-init $SHELL)"

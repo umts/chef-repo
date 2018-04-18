@@ -1,8 +1,0 @@
-{
-  "id": "aaron",
-  "ssh_keys": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCt364lfa2/n+e0+IBVsaGXvpFjfnK4oI3dukYq9rZm8b/bBZ6h28m8XIf5IzR6KPxdeiwgRPf36dQExPVSfPhEEeD9lPNf5yG/xxYb9LjPlvASlgIJHC4Iai7ke6wHuM2+bXm3OOtTRZvKdbwHEAE7pfn2Y73JySfbeT6oe5K53kAaL5TXghBchIm+XkgVHiTM5NQR5XOz//AOv0/6wNCSPFLB+LgNExvaN1fUdFOHQ+MN0ADOkoDgpG+XYyO/tGpXaBtxpHSgYpPJ82mHcqfiZ3uauHSUfO66Dlt1jIz1BbwzpuhH7k2lAcKiIq39oM0I31V7JFC+a223arEH3ziJVFdB9t6h0vZ/kCM8oEa2yIHr+IwfXVmPKU2trGCdItvCu029nCI4lcurBNzU9GdDpJ2csGfe1H4fqN7qVqlUYVvp4XFd63tCpBJXRaCA4/mqWqwDg9gW2kAPkV79+r6UzO1EUkJCLB7deonMJuLHwVYGt1JqHY3sYOnUoT8M/ttFcm68AI7wxfrL1hgMyk3uU7rIVySwMP+DF8KT0IfR/DmYV3iLYzZ2ZPfHemCMU1exwpCNYNK9jycPFaDG0rTnRn3eZUpZwLuu0iOXFANbcjEs+3OXOBxGnSO87+DuDKu7hCtt9iOxtMUQKLLZBKs1aXzW46HoH8aUvmvhscI7/Q== akaplowitz@umass.edu",
-  "groups": "sysadmin",
-  "uid": 2022,
-  "shell": "\/bin\/bash",
-  "comment": "Aaron Kaplowitz"
-}
