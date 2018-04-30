@@ -7,5 +7,6 @@
   "groups": "sysadmin",
   "uid": 2018,
   "shell": "\/bin\/bash",
-  "comment": "Peter Marathas"
+  "comment": "Peter Marathas",
+  "action": "remove"
 }
