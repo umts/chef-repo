@@ -1,0 +1,8 @@
+{
+  "id": "chauce",
+  "ssh_keys": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDGHN6fq8DMuo9ErV49ILTVmzFrE5429bPgWb4z4hW7gtL/oeRUzPH3ztaB4W8+l317sPVlgUN5YribS6syllJuwypCgC8/SxPpTtOw6eruV8KP8HC3DU7XHCycl6lFZ9hreWvqxmE/M9ifFLKbsbbdSsHBg9y5Ak0O5cfEyrwsgRwNP7hYwYguBU/EqABAioyXQvYfFpruGMRSVBLZjQvLGbnBkRyhQKLlbhq4IXXoUXBsoFz9cGksEFyGIdCmK5gJoDSLzKpQPoMt+qaBzSDQ7Euqc0eZ3UjC2iGVXf3gur8T881DMwShL8evWulLEkoQ+R6RkkIjWV2VIGiqY4tuyRZ1zHrcLcoGqs17HR7P5XuQcyVGihlbbD6w3PXnfq84HXXYmgS+aH6lhz3Qn+yKry2DoI/CUkB5MMMQ92kvRCpJ46PJMpI265U5W3MU/bosbcDC7eTb1uI9m+1KACXmZAmQG7SdcHE13xmbDDhRAbXUbEjYM8i8MIq+fuH1e9Jee9Nf0MSzbYXLbQXhUVN/qY3r6eiaPLGxEV99+ErvPTkCfCsDIiaOuys4N47B0lWATSdVw0WOgRy7uRZcZBvz51AG21B7+kLajNTNHWxScpTzJwy2hG0RFDWh1KtEaEgMkZ9rVct95n7JBubd3yRCTH3cnXeET6w/5kS+Vg6EQw==",
+  "groups": "sysadmin",
+  "uid": 2024,
+  "shell": "\/bin\/bash",
+  "comment": "Chauce Church"
+}
