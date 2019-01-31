@@ -1,0 +1,8 @@
+{
+  "id": "justin",
+  "ssh_keys": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDA0mUEZYA1+DfM/9LYzHWOYZO814Oz/Ez1SkfvShtc3CBprPoF96qmO3pWpJ2rzvA7hhJKt3liqEjNLn1PGqoxxS7yAkdPOMup32ukBGawzWfJ2ugKs+N5CTYeGvA4SLeNb2++HkWyHPb9nAbigrHkjh63YxL4ZuvrmmJCaU2dOWov8otszI1EuaAeCwPVJ+RkUXT6VFjwA/xsdhxDML16af7lIhpPc+Om+QPzNfpI4Kq/IFRICgoz3Yy20CLzXEnRqiofGYJl/VqvsmmmaePVLhBXXhvesS+iEA4zpnQ38U8igEMLgmja7yJHy1S9ReHTf+l2ZrrjTCeiKfAZb3f708SZSw19pO0+PyOi0i07PNTloizm/IbEP+SQ+hjOjrsflk4UFPtZPUbH1ZxbNHPsUtEY+AgfsdNtoeIglQ7ZNdaBwX5aXjjru8uaa9SKr8oonP817KrHE4AYUxB8fDEZWMs9A7fdmgHqvWS5TCSPhH3g39dpd+os/Vv2Q7lPxKXCh1F+tEwud6UA2ft+fIEsLWCsskHhdKdTKoxeWtEbfWXRVSj1xJ6bXjN9jIjOrNmfRzaL/dOgifHIJWy9GNAyXV9B+aNXzqUXV6eBnUfxtRTV7pDAaNntqU+WqmIUsd2+QaNS88iDCGQX8fqxSjBQ3bAgqHD7JRhvn+ciI/EwMw==",
+  "groups": "sysadmin",
+  "uid": 2027,
+  "shell": "\/bin\/bash",
+  "comment": "Justin Forgue"
+}
