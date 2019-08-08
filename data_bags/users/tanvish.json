@@ -1,0 +1,8 @@
+{
+  "id": "tanvish",
+  "ssh_keys": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC/xSCoitiEv8AYU9tRVT0tbyeGY57V7/VXrAxp9i0+6QQDelUZdAjxS2o+k97DTceXqNfaqYy1Heg1iasoVH5e4B/nGrTwuNXYFYV/czPa5z1u3PRnu+aizCDiGWPGmgZTpjV7u6IQRkoN1vuTOL7wdd3j6EuvU4HrKqQqgw+r4yTxhBUbu04fpDkaP6h654CACUjr8H6FCSIs/1lg8Qaf4N9ON5Wm+ce5kK52m9SONweOfFKRS5E1/8kQui2gsVRM5lEfdKn4NTbAO6D1BzQ60PnlS2dE3jIX8YCNLLdKOJzD8D8ZPnS9VfyMhFgLZR2oas27t5LqPmvXoQascI58qtZoFNDQ4kIjjvIhlKo4oirr74JDnHYIrvyG/muLqSH5CPgbTH3kn+iLplSwIFU38h/Mnp2IixGWlav7AZZ1b60lcz0ZyLfI/51mKWEtlsoMu0Ux4w+dWWru/VxDJChT0GeouzCQYJ9704IzLmRykEkXx2TFEE7nTQGCrXWdhDPJH8tANyaA3JbN7lGOyZ1RoVDM1rnBkpk7rLUCX1y09Otu4lSOGR0AOa3EM3Zms7pD13RBHnxkLzIqeWfKXRTF+up61En8/wj0+CRJeSM/QzuEwmkmNCaSQHsQDT556sNzyGFoirUsQ+3vzju2KIoVeREDggZdRvNgNfgBIiCT5w==",
+  "groups": "sysadmin",
+  "uid": 2028,
+  "shell": "\/bin\/bash",
+  "comment": "Tanvish Jha"
+}
