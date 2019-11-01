@@ -1,0 +1,8 @@
+{
+  "id": "james",
+  "ssh_keys": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDHaDRZ4h4asueES4yNWox1uMMj7FF3mWU3nAysHHINwe5i7C3ns3bHoRlnu6tWJ0/9U5dQKnstIGzDOpDoSph4gj2LF/lW3Crf7IclXUpYyB0QsTgrNbKbYBiLdCJiExwE3dW1cJHSysoXIQSicxTmwoQcCSlug1hpHw3UkqrwnH5QU5dXzsDkNkOUCqf2o6Iy2eYJ/YaiaKvDSMAWaJdNIacVoDR+N4YeJ4y8k+qdV+7n2r187b7DdkTm48naMcUgeS+5hRwuhk43eOxQl84djANJXPI+BOS+NXqILamAwnK88y8ywiQzZDwVa8YuI6un512Ty+jjd0vdotP9HmhAGdT8Y8VZb5A+LFcSBPK3CW40lVc2yl3d3RCekFnKc5V60VDXoXe8yzEpq3o9x7kg7CxF9okNY4/+q13wsIE5mcyXq7kimNs5Sy4jkrxCNhA43EwTKh99PRhKzlcLKZoz/vCjPDWLlqjjEl2croyZHm+tQ4oycA35x54K6GDa7oxgl+1y2hEMZx8haeOAuzarEESrCB5kwfxwXxzfMI7SomGq2yS0Vq9SNIreatMRfWJjFZSl9wBLguiqa9bEstMsxHozyNhuiutIlTEvHRv6hwYzTB9LgQ9asrM1oqFdqV3LxJGIVYMOOjpmX2WEIwhQRMu0pF0ddxCWxFwU9XBLLQ==",
+  "groups": "sysadmin",
+  "uid": 2029,
+  "shell": "\/bin\/bash",
+  "comment": "James Davis"
+}
