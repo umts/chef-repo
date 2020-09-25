@@ -1,0 +1,8 @@
+{
+  "id": "ben",
+  "ssh_keys": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCrEzOS3u5D9D/5SfmZlNTp41GfKQFlxLvGQYNSuTbcKoLwIRxFI6uNny/ss1Wco+RF5dbkTYDfM7uF7Qr5hSxvtOoJLDPTa7DCYkcGAszE3N0HreEjQzOdWjlSGFle9DYYzyeCXTueeyu+zFwgE1006kjumfnGMiAWFK6NOtdYUeBznrVIIOFccJW7SSRNrtvA5bCddIszsW62QXcEX4vE3xvWyE86XdY1ZXfAtVQIfJZgQ8aFhYXk+oRcMCaEeKGKST/9Tes3piqqJrBxY6rYnhM4JxZThVpqs1dXb5kHY8tZ73jRzgfxLjtMP6es+1UFxZi6RtUsKo+B59E8DTfdl2eNFhgdm+eNLPeWSmcfxAev6BObTaoPlubqr3NIR6YvWJQeTLpURg6CAebRoz6PGcCSg17PqoT96EvJXEs0zOHkluudb83x13mFL99B33/2RtOpOjHsov4sEhB+PdMQ1vPp0T+csS8MDAypZMlHsyTMI5OzcGQ9RNblH4JjF4LmudXth+xXoOOV69aLoPbOU3M2jpHUsSu/3pVS+wPj5tQHXTImLHFWW5lyTLx6nqWHhl6IiChfANzW4GphDTsvMQANn/bi1GuSleZs7rHUoIX3eekKyci1QkhKIXBAdeDlMS1+26mayZs1rpSqQm7LhCkyBCUj1d0/RXEv95e0aw==",
+  "groups": "sysadmin",
+  "uid": 2030,
+  "shell": "\/bin\/bash",
+  "comment": "Ben Melz"
+}
