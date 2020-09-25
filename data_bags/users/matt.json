@@ -7,7 +7,6 @@
   "groups": "sysadmin",
   "uid": 2001,
   "shell": "\/bin\/bash",
-  "comment": "Matt Moretti",
-  "openid": "http://id.wereb.us"
+  "comment": "Matt Moretti"
 }
 
