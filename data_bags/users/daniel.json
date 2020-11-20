@@ -1,0 +1,8 @@
+{
+  "id": "daniel",
+  "ssh_keys": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOgrVOt+kE/ig+y81ALx+o/7VWzZGPJKg1pxtNA2s797",
+  "groups": "sysadmin",
+  "uid": 2031,
+  "shell": "\/bin\/bash",
+  "comment": "Daniel Lacayo"
+}

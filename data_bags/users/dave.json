@@ -8,5 +8,6 @@
   "groups": ["developers", "sysadmin"],
   "uid": 2012,
   "shell": "\/bin\/bash",
-  "comment": "Dave Faulkenberry"
+  "comment": "Dave Faulkenberry",
+  "action": "remove"
 }
