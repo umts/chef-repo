@@ -1,0 +1,8 @@
+{
+  "id": "joeseph",
+  "ssh_keys": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC+DSr57/2k2mz37tg/amRgTK/9KwRt+Yj8byNDZWN1zIwatQHgVreLavkSK6+tjLM4nOkseeD5j8ytuuNH3xLQ0Fpu5yV9nl5UMwxWOSmerc0E21d3L4i/4i4NyJ5YXcNKAZceHTM+GlDSYKl+HUOp9j5c+YEI2g3oFsd9d2xDP8S6cg05sZOucHTIwTeu/5oCmE0R5Hx0F8uVJNBF5KSdHJ42oJ5FClyzTgeJBrBXP20kwoRaaFiT6Gc0574ZfPwbjY6bVvQeNfAEtpoiFTfaAVmuuFJ+90Cgcete6/osf01Nzbv9KdRZIYT7qf6JjzxoGj3UlTAiUo9O0bCwuk3f",
+  "groups": "sysadmin",
+  "uid": 2032,
+  "shell": "\/bin\/bash",
+  "comment": "Joseph O'Leary"
+}
