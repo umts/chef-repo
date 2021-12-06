@@ -7,5 +7,6 @@
   "groups": "sysadmin",
   "uid": 2026,
   "shell": "\/bin\/bash",
-  "comment": "Ava Meyer"
+  "comment": "Ava Meyer",
+  "action": "remove"
 }
