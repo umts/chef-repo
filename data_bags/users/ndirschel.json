@@ -1,0 +1,8 @@
+{
+  "id": "ndirschel",
+  "ssh_keys": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCksIAiwZfi/D1MRVH1jT8id1b0P61NE5xSjHQ/sDbbLRqFB2On0086Mb2kHf7BxKNK5fskImDbbwxhWM1p1wUyeWi/01irF1U0cIiTB1qtXNGq5ZYC1CYofjwxUi/rUYE/ofrlXN4dDBkeqfhNkwWq7yCKOng4uxo9afyVWDUQz8utaneaxGVK0F2u+3hxQnB4NAG3HRzV7QiwpvqRWGfXE5ejKBe4IvwLmS9QCDSr6AhNtX9BKppnceZrjc7P0fkd0PLCinTWOILg5LhEU1cVUwi/jdTyUXFVPh03S/nZ1/pLjowOifN9ffQntI3NvZhyx+LgSp+yRvsE4NdrtwcJf4PpMUcBsD7WZcOGVs6nrue+mSXfAJCpusWuyC/mTndD6aDHdAZ1mOyd3o34PvKqIas73eEhW9D19ID7M05auRk2Ysu1xGCzsKNIzioroIvUxriz5dEqdA3+aknNvyVm2eXhUFFPFt2Y0I+WXRt8CCMRBt7faHWzqtRvR3JcBOE=",
+  "groups": "sysadmin",
+  "uid": 2034,
+  "shell": "\/bin\/bash",
+  "comment": "Nicholas Dirschel"
+}
