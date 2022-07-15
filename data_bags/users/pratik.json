@@ -1,0 +1,8 @@
+{
+  "id": "pratik",
+  "ssh_keys": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMhGpvB5E6ww6a24tFofz0cTEKgNOQzwJ2NQC2z+D15t",
+  "groups": "sysadmin",
+  "uid": 2035,
+  "shell": "\/bin\/bash",
+  "comment": "Pratik Silwal"
+}

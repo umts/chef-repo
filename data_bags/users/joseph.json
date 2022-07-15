@@ -4,5 +4,6 @@
   "groups": "sysadmin",
   "uid": 2033,
   "shell": "\/bin\/bash",
-  "comment": "Joseph O'Leary"
+  "comment": "Joseph O'Leary",
+  "action": "remove"
 }
