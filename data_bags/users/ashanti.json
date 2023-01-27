@@ -1,0 +1,8 @@
+{
+  "id": "ashanti",
+  "ssh_keys": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIA3f31gIBIgH9arcWkjFWxFEIjRQFmdv5P1OSRhQ+VaO",
+  "groups": "sysadmin",
+  "uid": 2037,
+  "shell": "\/bin\/bash",
+  "comment": "Ashanti Roeung"
+}
