@@ -1,0 +1,9 @@
+{
+  "id": "andrew",
+
+  "ssh_keys": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDWMzMsM+oXYCyrfZHQiJn9kc3VOdr1nQk3XExq3yECu",
+  "groups": "sysadmin",
+  "uid": 2039,
+  "shell": "\/bin\/bash",
+  "comment": "Andrew Flammia"
+}
