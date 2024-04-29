@@ -14,3 +14,5 @@ encrypted_data_bag_secret
 
 #Vagrant boxes made by VeeWee
 *.box
+
+data_bags/users/authorized_keys.tar.gz

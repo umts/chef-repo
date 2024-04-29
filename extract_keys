@@ -1,0 +1,27 @@
+#!/usr/bin/env ruby
+
+#frozen_string_literal: true
+
+require 'json'
+require 'pathname'
+require 'rubygems/package'
+require 'zlib'
+
+userdir = Pathname.new(__dir__).join('data_bags/users')
+
+File.open(userdir.join('authorized_keys.tar.gz'), 'wb') do |outfile|
+  Zlib::GzipWriter.new(outfile) do |gz|
+    Gem::Package::TarWriter.new(gz) do |tar|
+      userdir.glob('*.json').each do |file|
+        data = JSON.parse(file.read)
+        next if data['action'] == 'remove'
+
+        username = data['id']
+        keys = Array(data['ssh_keys']).join("\n") + "\n"
+        tar.add_file_simple("authorized_keys/#{username}", 0o600, keys.length) do |f|
+          f.write(keys)
+        end
+      end
+    end
+  end
+end
