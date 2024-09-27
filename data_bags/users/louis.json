@@ -1,7 +1,10 @@
 {
   "id": "louis",
 
-  "ssh_keys": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKbBH3sh5ZwvjOFYn0xE/p8XU3YWLy2fTQVHtMybj0E0",
+  "ssh_keys": [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKbBH3sh5ZwvjOFYn0xE/p8XU3YWLy2fTQVHtMybj0E0",
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDUhK8Kl97A8hRAgp2O7mgfHvzi/I5UFiFqtS9+QE5+2fUsp60wRBS5ExRkJ36hEOyhVGGDxS/oZM+LwE1OQOsvB8D46swmfkfhGOY3CX/PgWU1+/twlnW05edW9vZKAMXaFucb88OMsM1qhhF5FN+2DvRa6nXZabUsbzyqJiyIKA1XRNGzZXzSKuG5uogtgDvYydJBPhXhpB3U2jWZ9VkN4yo2vPwPEH/UYiQQ3IojhEHB4Fi7Vv8gwmq1Sd+XhvLvJUf6BtE7zPW+TAsGPtsjJ0pNo9BP59S2AsRbjIdRzHPkvXkt1L0Oy8u5ezJWKDMoWQ+IPbM5lFcAbbeMFZv/QMuOrHNXzXI5fGY5bzDjzP0JJy1f9whnFvd33AeaOpwusjeWO5loOmMH1G0nxb0qsJ7y8fLioOtclsT++ltAQibdXOZ2hxaE0upZKI/Zl/P7nZes/sIt/8B1Ute+qp1XIFpZQGIjZMbk26sDdHFj5dsTT0RFNgBbsysMFs8gpHk="
+  ],
   "groups": "sysadmin",
   "uid": 2038,
   "shell": "\/bin\/bash",

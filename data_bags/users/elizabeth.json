@@ -1,7 +1,10 @@
 {
   "id": "elizabeth",
 
-  "ssh_keys": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDHB4mojROf+3YA+qjzN5m+qm5cLsfre5NVvC+0QByuW",
+  "ssh_keys": [
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDHB4mojROf+3YA+qjzN5m+qm5cLsfre5NVvC+0QByuW",
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP7s0oV3hNKkh17X/dvzF0isElD4wxdNgAgFC2LvwDUu"
+  ],
   "groups": "sysadmin",
   "uid": 2040,
   "shell": "\/bin\/bash",
